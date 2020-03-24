@@ -1,0 +1,24 @@
+{
+  "name": "frp-doc",
+  "version": "0.0.1",
+  "description": "frp documentation.",
+  "main": "none.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gofrp/frp-doc.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gofrp/frp-doc/issues"
+  },
+  "homepage": "https://github.com/gofrp/frp-doc#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.4.6",
+    "postcss-cli": "^5.0.1"
+  }
+}
