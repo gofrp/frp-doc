@@ -1,5 +1,0 @@
-language: bash
-
-script:
-    - chmod 755 ./deploy.sh
-    - ./deploy.sh && echo "Completed."
