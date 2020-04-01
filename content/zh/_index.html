@@ -1,0 +1,40 @@
++++
+title = "frp"
+linkTitle = "frp"
+
++++
+
+{{< blocks/cover title="简单、高效的内网穿透工具" height="full">}}
+<div class="mx-auto">
+	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
+		 &nbsp&nbsp&nbsp起步 <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+	</a>
+	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/fatedier/frp">
+		GITHUB <i class="fab fa-github ml-2 "></i>
+	</a>
+	<p class="lead mt-5">frp 支持多种代理类型，为不同场景下的需求提供丰富的解决方案。</p>
+	{{< blocks/link-down color="info" >}}
+</div>
+{{< /blocks/cover >}}
+
+
+{{% blocks/lead color="primary" %}}
+frp 采用 C/S 模式，将服务端部署在具有公网 IP 的机器上，客户端部署在内网或防火墙内的机器上，通过访问暴露在服务器上的端口，反向代理到处于内网的服务。
+在此基础上，frp 支持 TCP, UDP, HTTP, HTTPS 等多种协议，提供了加密、压缩，身份认证，代理限速，负载均衡等众多能力。
+{{% /blocks/lead %}}
+
+{{< blocks/section color="white">}}
+{{% blocks/feature icon="fab fa-app-store-ios" title="下载" %}}
+从 Github [Release](https://github.com/fatedier/frp/releases) 页面下载最新版本。
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature icon="fab fa-github" title="欢迎参与贡献!" url="https://github.com/fatedier/frp" %}}
+在 Github 上提交 [Issue](https://github.com/fatedier/frp/issues) 和 [Pull Request](https://github.com/fatedier/frp/pulls)。
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature icon="fab fa-weixin" title="交流" url="https://t.zsxq.com/eUvBMrZ" %}}
+加入知识星球兴趣圈 [frp](https://t.zsxq.com/eUvBMrZ) 和开发者共同交流。
+{{% /blocks/feature %}}
+{{< /blocks/section >}}

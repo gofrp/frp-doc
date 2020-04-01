@@ -11,7 +11,7 @@ enableGitInfo = true
 
 # Language settings
 contentDir = "content/en"
-defaultContentLanguage = "en"
+defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = false
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
@@ -58,12 +58,12 @@ description = "frp official website"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
-[languages.cn]
+[languages.zh]
 title = "frp"
 description = "frp official website"
 languageName ="中文"
 weight = 2
-contentDir = "content/cn"
+contentDir = "content/zh"
 
 [markup]
   [markup.goldmark]
