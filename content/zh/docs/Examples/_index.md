@@ -1,17 +1,8 @@
 
 ---
-title: "Examples"
-linkTitle: "Examples"
-weight: 3
-date: 2017-01-05
+title: "示例"
+linkTitle: "示例"
+weight: 4
 description: >
-  See your project in action!
+  这里包括多个常见的使用场景和配置示例，你可以用来亲自部署和体验这些示例。
 ---
-
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
-
-Do you have any example **applications** or **code** for your users in your repo or elsewhere? Link to your examples here.
-
-

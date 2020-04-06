@@ -1,7 +1,7 @@
 ---
-title: "Reference"
-linkTitle: "Reference"
-weight: 9
+title: "参考"
+linkTitle: "参考"
+weight: 6
 description: >
   Low level reference docs for your project.
 ---

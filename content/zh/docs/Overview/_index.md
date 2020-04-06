@@ -1,38 +1,28 @@
 ---
-title: "Overview"
-linkTitle: "Overview"
+title: "概览"
+linkTitle: "概览"
 weight: 1
 description: >
-  Here's where your user finds out if your project is for them.
+  一些概述，便于您快速的了解 frp。
 ---
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
+## frp 是什么？
 
+frp 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。
 
-The Overview is where your users find out about your project. Depending on the size of your docset, you can have a separate overview page (like this one) or put your overview contents in the Documentation landing page (like in the Docsy User Guide). 
+## 为什么使用 frp？
 
-Try answering these questions for your user in this page:
+通过在具有公网 IP 的节点上部署 frp 服务端，可以轻松地将内网服务穿透到公网，同时提供诸多专业的功能特性，这包括：
 
-## What is it?
+* 客户端服务端通信支持 TCP、KCP 以及 Websocket 等多种协议。
+* 采用 TCP 连接流式复用，在单个连接间承载更多请求，节省连接建立时间。
+* 代理组间的负载均衡。
+* 端口复用，多个服务通过同一个服务端端口暴露。
+* 多个原生支持的客户端插件（静态文件查看，HTTP、SOCK5 代理等），便于独立使用 frp 客户端完成某些工作。
+* 高度扩展性的服务端插件系统，方便结合自身需求进行功能扩展。
+* 服务端和客户端 UI 页面。
 
-Introduce your project, including what it does or lets you do, why you would use it, and its primary goal (and how it achieves it). This should be similar to your README description, though you can go into a little more detail here if you want.
+## 下一步？
 
-## Why do I want it?
-
-Help your user know if your project will help them. Useful information can include: 
-
-* **What is it good for?**: What types of problems does your project solve? What are the benefits of using it?
-
-* **What is it not good for?**: For example, point out situations that might intuitively seem suited for your project, but aren't for some reason. Also mention known limitations, scaling issues, or anything else that might let your users know if the project is not for them.
-
-* **What is it *not yet* good for?**: Highlight any useful features that are coming soon.
-
-## Where should I go next?
-
-Give your users next steps from the Overview. For example:
-
-* [Getting Started](/getting-started/): Get started with $project
-* [Examples](/examples/): Check out some example code!
-
+* [安装](/docs/setup/)：安装 frp。
+* [示例](/docs/examples/)：通过简单示例了解 frp 的应用场景。

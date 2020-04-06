@@ -1,17 +1,33 @@
 ---
-title: "Concepts"
-linkTitle: "Concepts"
-weight: 4
+title: "概念"
+linkTitle: "概念"
+weight: 3
 description: >
-  What does your user need to understand about your project in order to use it - or potentially contribute to it? 
+  一些概念，理解它们有助于您更好地了解和使用 frp。
 ---
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
+## 原理
 
-For many projects, users may not need much information beyond the information in the [Overview](/docs/overview/), so this section is **optional**. However if there are areas where your users will need a more detailed understanding of a given term or feature in order to do anything useful with your project (or to not make mistakes when using it) put that information in this section. For example, you may want to add some conceptual pages if you have a large project with many components and a complex architecture.
+frp 主要由 **客户端(frpc)** 和 **服务端(frps)** 组成，服务端通常部署在具有公网 IP 的机器上，客户端通常部署在需要穿透的内网服务所在的机器上。
 
-Remember to focus on what the user needs to know, not just what you think is interesting about your project! If they don’t need to understand your original design decisions to use or contribute to the project, don’t put them in, or include your design docs in your repo and link to them. Similarly, most users will probably need to know more about how features work when in use rather than how they are implemented. Consider a separate architecture page for more detailed implementation and system design information that potential project contributors can consult.
+内网服务由于没有公网 IP，不能被非局域网内的其他用户访问。
 
+用户通过访问服务端的 frps，由 frp 负责根据请求的端口或其他信息将请求路由到对应的内网机器，从而实现通信。
 
+## 代理
+
+在 frp 中一个代理对应一个需要暴露的内网服务。一个客户端支持同时配置多个代理。
+
+## 代理类型
+
+frp 支持多种代理类型来适配不同的使用场景。
+
+| 类型 | 描述 |
+| :--- | :--- |
+| tcp | 单纯的 TCP 端口映射，服务端会根据不同的端口路由到不同的内网服务。 |
+| udp | 单纯的 UDP 端口映射，服务端会根据不同的端口路由到不同的内网服务。 |
+| http | 针对 HTTP 应用定制了一些额外的功能，例如修改 Host Header，增加鉴权。 |
+| https | 针对 HTTPS 应用定制了一些额外的功能。 |
+| stcp | 安全的内网代理，需要在被访问者和访问者的机器上都部署 frpc，不需要在服务端暴露端口。 |
+| xtcp | 点对点内网穿透代理，功能同 stcp，但是流量不需要经过服务器中转。 |
+| tcpmux | 支持服务端 TCP 端口的多路复用，通过同一个端口访问不同的内网服务。 |
