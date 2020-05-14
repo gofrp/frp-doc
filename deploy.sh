@@ -13,4 +13,4 @@ curl -s -X POST \
   -H "Travis-API-Version: 3" \
   -H "Authorization: token ${ACCESS_TOKEN}" \
   -d "$body" \
-  https://api.travis-ci.org/repo/fatedier%2Ffrp-site/requests
+  https://api.travis-ci.com/repo/gofrp%2Ffrp-site/requests
