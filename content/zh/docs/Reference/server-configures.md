@@ -31,7 +31,7 @@ description: >
 | authentication_method | string | 鉴权方式 | token | token, oidc | |
 | authenticate_heartbeats | bool | 开启心跳消息鉴权 | false | | |
 | authenticate_new_work_conns | bool | 开启建立工作连接的鉴权 | false | | |
-| token | string | 鉴权使用的 token 值 | | | 客户端需要设置一样的值才能鉴权成功 |
+| token | string | 鉴权使用的 token 值 | | | 客户端需要设置一样的值才能鉴权通过 |
 | oidc_issuer | string | oidc_issuer | | | |
 | oidc_audience | string | oidc_audience | | | |
 | oidc_skip_expiry_check | bool | oidc_skip_expiry_check | | | |
