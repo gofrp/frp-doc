@@ -1,6 +1,5 @@
 ---
 title: "概念"
-linkTitle: "概念"
 weight: 3
 description: >
   一些概念，理解它们有助于您更好地了解和使用 frp。

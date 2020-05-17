@@ -1,6 +1,5 @@
 ---
 title: "转发 Unix 域套接字"
-date: 2020-04-05
 weight: 5
 description: >
   这个示例通过配置 Unix域套接字客户端插件来通过 TCP 端口访问内网的 Unix域套接字服务，例如 Docker Daemon。

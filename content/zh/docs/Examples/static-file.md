@@ -1,6 +1,5 @@
 ---
 title: "对外提供简单的文件访问服务"
-date: 2020-04-05
 weight: 6
 description: >
   这个示例通过配置 `static_file` 客户端插件来将本地文件暴露在公网上供其他人访问。

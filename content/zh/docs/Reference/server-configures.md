@@ -1,8 +1,6 @@
 ---
 title: "服务端配置"
-linkTitle: "服务端配置"
 weight: 1
-date: 2020-04-05
 description: >
   frp 服务端详细配置说明。
 ---

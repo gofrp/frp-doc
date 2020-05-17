@@ -1,6 +1,5 @@
 ---
 title: "安装"
-linkTitle: "安装"
 weight: 2
 description: >
   关于如何安装 frp 的说明。

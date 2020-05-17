@@ -1,8 +1,6 @@
 ---
 title: "代理配置"
-linkTitle: "代理配置"
 weight: 3
-date: 2020-04-05
 description: >
   frp 代理的详细配置说明。
 ---

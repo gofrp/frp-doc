@@ -1,6 +1,5 @@
 ---
 title: "通过 SSH 访问内网机器"
-date: 2020-04-05
 weight: 2
 description: >
   这个示例通过简单配置 TCP 类型的代理让用户访问到内网的服务器。

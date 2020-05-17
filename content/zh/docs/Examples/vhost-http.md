@@ -1,6 +1,5 @@
 ---
 title: "通过自定义域名访问内网的 Web 服务"
-date: 2020-04-05
 weight: 3
 description: >
   这个示例通过简单配置 HTTP 类型的代理让用户访问到内网的 Web 服务。

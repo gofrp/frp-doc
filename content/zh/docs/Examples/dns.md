@@ -1,6 +1,5 @@
 ---
 title: "转发 DNS 查询请求"
-date: 2020-04-05
 weight: 4
 description: >
   这个示例通过简单配置 UDP 类型的代理转发 DNS 查询请求。

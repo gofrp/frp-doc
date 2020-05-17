@@ -1,6 +1,5 @@
 ---
 title: "设置 BasicAuth 鉴权"
-date: 2020-04-05
 weight: 3
 ---
 
