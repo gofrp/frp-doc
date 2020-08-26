@@ -12,7 +12,7 @@ description: >
 | server_addr | string | 连接服务端的地址 | 0.0.0.0 | | |
 | server_port | int | 连接服务端的端口 | 7000 | | |
 | http_proxy | string | 连接服务端使用的代理地址 | | | 格式为 {protocol}://user:passwd@192.168.1.128:8080 protocol 目前支持 http 和 socks5 |
-| log_file | string | 日志文件地址 | ./frps.log | | 如果设置为 console，会将日志打印在标准输出中 |
+| log_file | string | 日志文件地址 | ./frpc.log | | 如果设置为 console，会将日志打印在标准输出中 |
 | log_level | string | 日志等级 | info | trace, debug, info, warn, error | |
 | log_max_days | int | 日志文件保留天数 | 3 | | |
 | disable_log_color | bool | 禁用标准输出中的日志颜色 | false | | |
