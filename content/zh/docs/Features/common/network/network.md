@@ -1,6 +1,6 @@
 ---
 title: "通信安全及优化"
-weight: 5
+weight: 1
 ---
 
 ### 加密与压缩
@@ -24,16 +24,6 @@ use_compression = true
 通过设置 `use_encryption = true`，将 frpc 与 frps 之间的通信内容加密传输，将会有效防止传输内容被截取。
 
 如果传输的报文长度较长，通过设置 `use_compression = true` 对传输内容进行压缩，可以有效减小 frpc 与 frps 之间的网络流量，加快流量转发速度，但是会额外消耗一些 CPU 资源。
-
-### TLS
-
-通过在 `frpc.ini` 的 `[common]` 中配置 `tls_enable = true` 来启用此功能，使 frpc 和 frps 之间的流量都通过 TLS 协议加密传输，安全性更高。
-
-为了端口复用，frp 建立 TLS 连接的第一个字节为 0x17。
-
-通过将 `frps.ini` 的 `[common]` 中 `tls_only` 设置为 true，可以强制 frps 只接受 TLS 连接的客户端。
-
-**注意：启用此功能后除 xtcp 外，可以不用再设置 use_encryption 重复加密**
 
 ### TCP 多路复用
 
