@@ -15,7 +15,7 @@ description: >
 | :--- | :--- | :--- | :--- | :--- | :--- | :---|
 | type | string | 代理类型 | 是 | tcp | tcp, udp, http, https, stcp, sudp, xtcp, tcpmux | |
 | use_encryption | bool | 是否启用加密功能 | 否 | false | | 启用后该代理和服务端之间的通信内容都会被加密传输 |
-| user_compression | bool | 是否启用压缩功能 | 否 | false | | 启用后该代理和服务端之间的通信内容都会被压缩传输 |
+| use_compression | bool | 是否启用压缩功能 | 否 | false | | 启用后该代理和服务端之间的通信内容都会被压缩传输 |
 | proxy_protocol_version | string | 启用 proxy protocol 协议的版本 | 否 | | v1, v2 | 如果启用，则 frpc 和本地服务建立连接后会发送 proxy protocol 的协议，包含了原请求的 IP 地址和端口等内容 |
 | bandwidth_limit | string | 设置单个 proxy 的带宽限流 | 否 | | | 单位为 MB 或 KB，0 表示不限制，如果启用，会作用于对应的 frpc |
 
