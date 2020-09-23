@@ -86,7 +86,10 @@ enable Common Name matching with GODEBUG=x509ignoreCN=0`
 下面简单示例如何用 openssl 生成 ca 和双方 SAN 证书。
 
 
-准备默认 OpenSSL 配置文件于当前目录
+准备默认 OpenSSL 配置文件于当前目录。此配置文件在 linux 系统下通常位于 `/etc/pki/tls/openssl.cnf`，在 mac 系统下通常位于 `/System/Library/OpenSSL/openssl.cnf`。
+
+如果存在，则直接拷贝到当前目录，例如 `cp /etc/pki/tls/openssl.cnf ./my-openssl.cnf`。如果不存在可以使用下面的命令来创建。
+
 ```
 cat > my-openssl.cnf << EOF
 [ ca ]
