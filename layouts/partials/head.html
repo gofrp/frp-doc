@@ -20,6 +20,17 @@
 {{ end }}
 {{ partialCached "head-css.html" . "asdf" }}
 <script src="{{ "js/jquery-3.3.1.min.js" | relURL }}"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+      var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3e71b775dd51aa4d6720c9f6e0dca126";
+          var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 {{ if .Site.Params.offlineSearch }}
 <script
   src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
