@@ -44,4 +44,4 @@ server_port = 7000
 http_proxy = http://user:pwd@192.168.1.128:8080
 ```
 
-将 `http_proxy` 设置为 `socks5//user:pwd@192.168.1.128:8080` 也可以连接到 SOCKS5 代理。
+将 `http_proxy` 设置为 `socks5://user:pwd@192.168.1.128:8080` 也可以连接到 SOCKS5 代理。
