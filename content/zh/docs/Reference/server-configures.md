@@ -21,6 +21,10 @@ description: >
 | detailed_errors_to_client | bool | 禁用服务端返回详细错误信息给客户端 | true | | |
 | heart_beat_timeout | int | 服务端和客户端心跳连接的超时时间 | 90 | | 单位：秒 |
 | user_conn_timeout | int | 用户建立连接后等待客户端响应的超时时间 | 10 | | 单位：秒 |
+| udp_packet_size | int | 代理 UDP 服务时支持的最大包长度 | 1500 | | 服务端和客户端的值需要一致 |
+| tls_cert_file | string | TLS 服务端证书文件路径 | | | |
+| tls_key_file | string | TLS 服务端密钥文件路径 | | | |
+| tls_trusted_ca_file | string | TLS CA 证书路径 | | | |
 
 ### 权限验证
 

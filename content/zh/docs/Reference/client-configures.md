@@ -11,7 +11,7 @@ description: >
 | :--- | :--- | :--- | :--- | :--- | :---|
 | server_addr | string | 连接服务端的地址 | 0.0.0.0 | | |
 | server_port | int | 连接服务端的端口 | 7000 | | |
-| http_proxy | string | 连接服务端使用的代理地址 | | | 格式为 {protocol}://user:passwd@192.168.1.128:8080 protocol 目前支持 http 和 socks5 |
+| http_proxy | string | 连接服务端使用的代理地址 | | | 格式为 {protocol}://user:passwd@192.168.1.128:8080 protocol 目前支持 http、socks5、ntlm |
 | log_file | string | 日志文件地址 | ./frpc.log | | 如果设置为 console，会将日志打印在标准输出中 |
 | log_level | string | 日志等级 | info | trace, debug, info, warn, error | |
 | log_max_days | int | 日志文件保留天数 | 3 | | |
@@ -22,8 +22,13 @@ description: >
 | login_fail_exit | bool | 第一次登陆失败后是否退出 | true | | |
 | protocol | string | 连接服务端的通信协议 | tcp | tcp, kcp, websocket | |
 | tls_enable | bool | 启用 TLS 协议加密连接 | false | | |
+| tls_cert_file | string | TLS 客户端证书文件路径 | | | |
+| tls_key_file | string | TLS 客户端密钥文件路径 | | | |
+| tls_trusted_ca_file | string | TLS CA 证书路径 | | | |
+| tls_server_name | string | TLS Server 名称 | | | 为空则使用 server_addr |
 | heartbeat_interval | int | 向服务端发送心跳包的间隔时间 | 30 | | |
 | heartbeat_timeout | int | 和服务端心跳的超时时间 | 90 | | |
+| udp_packet_size | int | 代理 UDP 服务时支持的最大包长度 | 1500 | | 服务端和客户端的值需要一致 |
 | start | string | 指定启用部分代理 | | | 当配置了较多代理，但是只希望启用其中部分时可以通过此参数指定，默认为全部启用 |
 
 ### 权限验证

@@ -66,23 +66,35 @@ SOCKS5 代理。
 
 ### http2https
 
-将本地的 HTTPS 请求以 HTTP 的形式暴露出去。
+将本地的 HTTPS 服务以 HTTP 的形式暴露出去。
 
 | 参数 | 可选 | 描述 |
 | :--- | :--- | :--- |
-| plugin_local_addr | 否 | 本地 HTTPS 服务地址 |
-| plugin_host_header_rewrite | 是 | 如果配置，发送给本地 HTTPS 服务的请求的 Host 字段会被修改 |
-| plugin_header_{header name} | 是 | 发送给本地 HTTPS 服务的请求会被加上指定的 header 字段 |
+| plugin_local_addr | 否 | 本地服务地址 |
+| plugin_host_header_rewrite | 是 | 如果配置，发送给本地服务的请求的 Host 字段会被修改 |
+| plugin_header_{header name} | 是 | 发送给本地服务的请求会被加上指定的 header 字段 |
 
 
 ### https2http
 
-将本地的 HTTP 请求以 HTTPS 的形式暴露出去。
+将本地的 HTTP 服务以 HTTPS 的形式暴露出去。
 
 | 参数 | 可选 | 描述 |
 | :--- | :--- | :--- |
-| plugin_local_addr | 否 | 本地 HTTP 服务地址 |
+| plugin_local_addr | 否 | 本地服务地址 |
 | plugin_crt_path | 否 | HTTPS 所需的证书文件 |
 | plugin_key_path | 否 | HTTPS 所需的密钥文件 |
-| plugin_host_header_rewrite | 是 | 如果配置，发送给本地 HTTP 服务的请求的 Host 字段会被修改 |
-| plugin_header_{header name} | 是 | 发送给本地 HTTP 服务的请求会被加上指定的 header 字段 |
+| plugin_host_header_rewrite | 是 | 如果配置，发送给本地服务的请求的 Host 字段会被修改 |
+| plugin_header_{header name} | 是 | 发送给本地服务的请求会被加上指定的 header 字段 |
+
+### https2https
+
+将本地的 HTTPS 服务以 HTTPS 的形式暴露出去。
+
+| 参数 | 可选 | 描述 |
+| :--- | :--- | :--- |
+| plugin_local_addr | 否 | 本地服务地址 |
+| plugin_crt_path | 否 | HTTPS 所需的证书文件 |
+| plugin_key_path | 否 | HTTPS 所需的密钥文件 |
+| plugin_host_header_rewrite | 是 | 如果配置，发送给本地服务的请求的 Host 字段会被修改 |
+| plugin_header_{header name} | 是 | 发送给本地服务的请求会被加上指定的 header 字段 |

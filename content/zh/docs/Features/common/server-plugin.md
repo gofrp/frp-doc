@@ -204,14 +204,16 @@ path = /handler
 ops = Login
 
 [plugin.port-manager]
-addr = 127.0.0.1:9001
+addr = https://127.0.0.1:9001
 path = /handler
 ops = NewProxy
+tls_verify = true
 ```
 
-addr: 插件监听的网络地址。
-path: 插件监听的 HTTP 请求路径。
+addr: 插件监听的网络地址，支持 HTTP 和 HTTPS，默认为 HTTP。
+path: 插件监听的请求路径。
 ops: 插件需要处理的操作列表，多个 op 以英文逗号分隔。
+tls_verify: 如果是 HTTPS 协议，支持忽略 TLS 身份验证。
 
 ### 元数据
 
