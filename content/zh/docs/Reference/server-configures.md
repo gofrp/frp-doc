@@ -54,8 +54,8 @@ description: >
 | :--- | :--- | :--- | :--- | :--- | :---|
 | dashboard_addr | string | 启用 Dashboard 监听的本地地址 | 0.0.0.0 | | |
 | dashboard_port | int | 启用 Dashboard 监听的本地端口 | 0 | | |
-| dashboard_user | string | HTTP BasicAuth 用户名 | admin | | |
-| dashboard_pwd | string | HTTP BasicAuth 密码 | admin | | |
+| dashboard_user | string | HTTP BasicAuth 用户名 | | | |
+| dashboard_pwd | string | HTTP BasicAuth 密码 | | | |
 | enable_prometheus | bool | 是否提供 Prometheus 监控接口 | false | | 需要同时启用了 Dashboard 才会生效 |
 | asserts_dir | string | 静态资源目录 | | | Dashboard 使用的资源默认打包在二进制文件中，通过指定此参数使用自定义的静态资源 |
 

@@ -17,12 +17,12 @@ weight: 4
 # frps.ini
 [common]
 dashboard_port = 7500
-# dashboard 用户名密码，默认都为 admin，如果不需要，需要主动设置为空
+# dashboard 用户名密码，可选，默认为空
 dashboard_user = admin
 dashboard_pwd = admin
 ```
 
-打开浏览器通过 `http://[server_addr]:7500` 访问 Dashboard 界面，用户名密码默认为 `admin`。
+打开浏览器通过 `http://[server_addr]:7500` 访问 Dashboard 界面，输入用户名密码 `admin`。
 
 ### 客户端管理界面
 
@@ -39,7 +39,7 @@ admin_user = admin
 admin_pwd = admin
 ```
 
-打开浏览器通过 `http://127.0.0.1:7400` 访问 Admin UI，用户名密码默认为 `admin`。
+打开浏览器通过 `http://127.0.0.1:7400` 访问 Admin UI。
 
 如果想要在外网环境访问 Admin UI，可以将 7400 端口通过 frp 映射出去即可，但需要重视安全风险。
 

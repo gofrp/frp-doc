@@ -50,6 +50,6 @@ description: >
 | :--- | :--- | :--- | :--- | :--- | :---|
 | admin_addr | string | 启用 AdminUI 监听的本地地址 | 0.0.0.0 | | |
 | admin_port | int | 启用 AdminUI 监听的本地端口 | 0 | | |
-| admin_user | string | HTTP BasicAuth 用户名 | admin | | |
-| admin_pwd | string | HTTP BasicAuth 密码 | admin | | |
+| admin_user | string | HTTP BasicAuth 用户名 | | | |
+| admin_pwd | string | HTTP BasicAuth 密码 | | | |
 | asserts_dir | string | 静态资源目录 | | | AdminUI 使用的资源默认打包在二进制文件中，通过指定此参数使用自定义的静态资源 |
