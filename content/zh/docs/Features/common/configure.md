@@ -67,6 +67,41 @@ export FRP_SSH_REMOTE_PORT="6000"
 
 frpc 会自动使用环境变量渲染配置文件模版，所有环境变量需要以 `.Envs` 为前缀。
 
+### 配置校验
+
+通过执行 `frpc verify -c ./frpc.ini` 或 `frps verify -c ./frps.ini` 可以对配置文件中的参数进行预先校验。
+
+```
+frpc: the configuration file ./frpc.ini syntax is ok
+```
+
+如果出现此结果，则说明新的配置文件没有错误，否则会输出具体的错误信息。
+
+### 配置拆分
+
+通过 `includes` 参数可以在主配置中包含其他配置文件，从而实现将代理配置拆分到多个文件中管理。
+
+```ini
+# frpc.ini
+[common]
+server_addr = x.x.x.x
+server_port = 7000
+includes = ./confd/*.ini
+```
+
+```ini
+# ./confd/test.ini
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 6000
+```
+
+上述配置在 frpc.ini 中通过 includes 额外包含了 `./confd` 目录下所有的 ini 文件的代理配置内容，效果等价于将这两个文件合并成一个文件。
+
+需要注意的是 includes 指定的文件中只能包含代理配置，common 段落的配置只能放在主配置文件中。
+
 ### 完整配置参数
 
 由于 frp 目前支持的功能和配置项较多，未在文档中列出的功能参数可以在 [参考](/docs/reference) 中查看。
