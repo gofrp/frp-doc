@@ -19,7 +19,7 @@ description: >
 | log_max_days | int | 日志文件保留天数 | 3 | | |
 | disable_log_color | bool | 禁用标准输出中的日志颜色 | false | | |
 | detailed_errors_to_client | bool | 服务端返回详细错误信息给客户端 | true | | |
-| heart_beat_timeout | int | 服务端和客户端心跳连接的超时时间 | 90 | | 单位：秒 |
+| heartbeat_timeout | int | 服务端和客户端心跳连接的超时时间 | 90 | | 单位：秒 |
 | user_conn_timeout | int | 用户建立连接后等待客户端响应的超时时间 | 10 | | 单位：秒 |
 | udp_packet_size | int | 代理 UDP 服务时支持的最大包长度 | 1500 | | 服务端和客户端的值需要一致 |
 | tls_cert_file | string | TLS 服务端证书文件路径 | | | |
