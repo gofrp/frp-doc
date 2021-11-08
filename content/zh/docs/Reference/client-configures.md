@@ -26,6 +26,7 @@ description: >
 | tls_key_file | string | TLS 客户端密钥文件路径 | | | |
 | tls_trusted_ca_file | string | TLS CA 证书路径 | | | |
 | tls_server_name | string | TLS Server 名称 | | | 为空则使用 server_addr |
+| disable_custom_tls_first_byte | bool | TLS 不发送 0x17 | false | | 当为 true 时，不能端口复用 |
 | heartbeat_interval | int | 向服务端发送心跳包的间隔时间 | 30 | | |
 | heartbeat_timeout | int | 和服务端心跳的超时时间 | 90 | | |
 | udp_packet_size | int | 代理 UDP 服务时支持的最大包长度 | 1500 | | 服务端和客户端的值需要一致 |
