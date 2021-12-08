@@ -32,11 +32,13 @@ server_port = 7000
 type = tcpmux
 multiplexer = httpconnect
 custom_domains = test1
+local_port = 80
 
 [proxy2]
 type = tcpmux
 multiplexer = httpconnect
 custom_domains = test2
+local_port = 8080
 ```
 
 通过上面的配置，frps 如果接收到 HTTP CONNECT 请求内容:
