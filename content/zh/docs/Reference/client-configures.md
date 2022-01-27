@@ -11,6 +11,7 @@ description: >
 | :--- | :--- | :--- | :--- | :--- | :---|
 | server_addr | string | 连接服务端的地址 | 0.0.0.0 | | |
 | server_port | int | 连接服务端的端口 | 7000 | | |
+| connect_server_local_ip | string | 连接服务端时所绑定的本地 IP | | | |
 | http_proxy | string | 连接服务端使用的代理地址 | | | 格式为 {protocol}://user:passwd@192.168.1.128:8080 protocol 目前支持 http、socks5、ntlm |
 | log_file | string | 日志文件地址 | ./frpc.log | | 如果设置为 console，会将日志打印在标准输出中 |
 | log_level | string | 日志等级 | info | trace, debug, info, warn, error | |
@@ -27,6 +28,7 @@ description: >
 | tls_trusted_ca_file | string | TLS CA 证书路径 | | | |
 | tls_server_name | string | TLS Server 名称 | | | 为空则使用 server_addr |
 | disable_custom_tls_first_byte | bool | TLS 不发送 0x17 | false | | 当为 true 时，不能端口复用 |
+| tcp_mux_keepalive_interval | int | tcp_mux 的心跳检查间隔时间 | 60 | | 单位：秒 |
 | heartbeat_interval | int | 向服务端发送心跳包的间隔时间 | 30 | | |
 | heartbeat_timeout | int | 和服务端心跳的超时时间 | 90 | | |
 | udp_packet_size | int | 代理 UDP 服务时支持的最大包长度 | 1500 | | 服务端和客户端的值需要一致 |
