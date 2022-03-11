@@ -70,7 +70,7 @@ Response
 
 ### 操作类型
 
-目前插件支持管理的操作类型有 `Login`、`NewProxy`、`Ping`、`NewWorkConn` 和 `NewUserConn`。
+目前插件支持管理的操作类型有 `Login`、`NewProxy`、`CloseProxy`、`Ping`、`NewWorkConn` 和 `NewUserConn`。
 
 #### Login
 
@@ -132,6 +132,25 @@ Response
         "multiplexer": <string>
 
         "metas": map<string>string
+    }
+}
+```
+
+#### CloseProxy
+
+代理关闭。(仅用于通知)
+
+注意: 当单个 frpc 会注册大量 proxy 时，慎重使用此接口，可能会由于连接数超限而影响服务的可用性。
+
+```
+{
+    "content": {
+        "user": {
+            "user": <string>,
+            "metas": map<string>string
+            "run_id": <string>
+        },
+        "proxy_name": <string>
     }
 }
 ```

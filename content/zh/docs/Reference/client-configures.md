@@ -12,6 +12,7 @@ description: >
 | server_addr | string | 连接服务端的地址 | 0.0.0.0 | | |
 | server_port | int | 连接服务端的端口 | 7000 | | |
 | connect_server_local_ip | string | 连接服务端时所绑定的本地 IP | | | |
+| dial_server_timeout | int | 连接服务端的超时时间 | 10 | | |
 | http_proxy | string | 连接服务端使用的代理地址 | | | 格式为 {protocol}://user:passwd@192.168.1.128:8080 protocol 目前支持 http、socks5、ntlm |
 | log_file | string | 日志文件地址 | ./frpc.log | | 如果设置为 console，会将日志打印在标准输出中 |
 | log_level | string | 日志等级 | info | trace, debug, info, warn, error | |
@@ -29,10 +30,11 @@ description: >
 | tls_server_name | string | TLS Server 名称 | | | 为空则使用 server_addr |
 | disable_custom_tls_first_byte | bool | TLS 不发送 0x17 | false | | 当为 true 时，不能端口复用 |
 | tcp_mux_keepalive_interval | int | tcp_mux 的心跳检查间隔时间 | 60 | | 单位：秒 |
-| heartbeat_interval | int | 向服务端发送心跳包的间隔时间 | 30 | | |
+| heartbeat_interval | int | 向服务端发送心跳包的间隔时间 | 30 | | 建议启用 tcp_mux_keepalive_interval，将此值设置为 -1 |
 | heartbeat_timeout | int | 和服务端心跳的超时时间 | 90 | | |
 | udp_packet_size | int | 代理 UDP 服务时支持的最大包长度 | 1500 | | 服务端和客户端的值需要一致 |
 | start | string | 指定启用部分代理 | | | 当配置了较多代理，但是只希望启用其中部分时可以通过此参数指定，默认为全部启用 |
+| meta_xxx | map | 附加元数据 | | | 会传递给服务端插件，提供附加能力 |
 
 ### 权限验证
 
@@ -46,6 +48,7 @@ description: >
 | oidc_client_secret | string | oidc_client_secret | | | |
 | oidc_audience | string | oidc_audience | | | |
 | oidc_token_endpoint_url | string | oidc_token_endpoint_url | | | |
+| oidc_additional_xxx | map | OIDC 附加参数 | | | map 结构，key 需要以 `oidc_additional_` 开头 |
 
 ### UI
 
