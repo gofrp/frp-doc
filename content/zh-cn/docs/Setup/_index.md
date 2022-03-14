@@ -5,7 +5,9 @@ description: >
   关于如何安装 frp 的说明。
 ---
 
+{{% pageinfo %}}
 frp 采用 Golang 编写，支持跨平台，仅需下载对应平台的二进制文件即可执行，没有额外依赖。
+{{% /pageinfo %}}
 
 ## 系统需求
 

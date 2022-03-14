@@ -1,5 +1,11 @@
 ---
-title: "v0"
+title: "版本历史"
+linkTitle: "版本历史"
+menu:
+  main:
+    weight: 30
+cascade:
+- type: "docs"
 ---
 
 #### v0.40.0

@@ -1,6 +1,13 @@
 baseURL = "/"
 title = "frp"
 
+# Language settings
+contentDir = "content/en"
+defaultContentLanguage = "zh-cn"
+defaultContentLanguageInSubdir = false
+# Useful when translating.
+enableMissingTranslationPlaceholders = true
+
 enableRobotsTXT = true
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
@@ -9,15 +16,10 @@ theme = ["docsy"]
 # Will give values to .Lastmod etc.
 enableGitInfo = true
 
-# Language settings
-contentDir = "content/en"
-defaultContentLanguage = "zh"
-defaultContentLanguageInSubdir = false
-# Useful when translating.
-enableMissingTranslationPlaceholders = true
-
+# Comment out to enable taxonomies in Docsy
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
+[params.taxonomy]
 # Highlighting config
 pygmentsCodeFences = true
 pygmentsUseClasses = false
@@ -44,6 +46,13 @@ resampleFilter = "CatmullRom"
 quality = 75
 anchor = "smart"
 
+# Additional menu items
+[[menu.main]]
+  name = "Github"
+  weight = 50
+  url = "https://github.com/fatedier/frp"
+  pre = "<i class='fab fa-github'></i>"
+
 [services]
 [services.googleAnalytics]
 # Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
@@ -58,19 +67,26 @@ description = "frp official website"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
-[languages.zh]
+[languages.zh-cn]
 title = "frp"
 description = "frp official website"
 languageName ="中文"
 weight = 2
-contentDir = "content/zh"
+contentDir = "content/zh-cn"
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+    [markup.highlight]
+      # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
+      style = "tango"
+      # Uncomment if you want your chosen highlight style used for code blocks without a specified language
+      # guessSyntax = "true"
 
 # Everything below this are Site Params
+# [outputs]
+# section = ["HTML", "print", "RSS"]
 
 [params]
 copyright = "The frp Authors"
@@ -105,6 +121,10 @@ github_project_repo = "https://github.com/fatedier/frp"
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
 
+# Uncomment this if you have a newer GitHub repo with "main" as the default branch,
+# or specify a new value if you want to reference another branch in your GitHub links
+# github_branch= "main"
+
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 # gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 
@@ -114,18 +134,30 @@ algolia_docsearch = false
 # Enable Lunr.js offline search
 offlineSearch = true
 
+# Enable syntax highlighting and copy buttons on code blocks with Prism
+prism_syntax_highlighting = false
+
 # User interface configuration
 [params.ui]
-# Enable to show the side bar menu in its compact state.
-sidebar_menu_compact = true
-#  Set to true to disable breadcrumb navigation.
+# Set to true to disable breadcrumb navigation.
 breadcrumb_disable = false
-#  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
-sidebar_search_disable = false
-#  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
-navbar_logo = true
 # Set to true to disable the About link in the site footer
 footer_about_disable = false
+# Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
+navbar_logo = true
+# Set to true if you don't want the top navbar to be translucent when over a `block/cover`, like on the homepage.
+navbar_translucent_over_cover_disable = false
+# Enable to show the side bar menu in its compact state.
+sidebar_menu_compact = true
+# Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
+sidebar_search_disable = false
+# As well as the completely expanded and compact menu options, you can also create a foldable menu by setting the site parameter.
+sidebar_menu_foldable = true
+# On large sites (default: > 2000 pages) the section menu is not generated for each page,
+# but cached for the whole section. The HTML classes for marking the active menu item (and menu path) are then set using JS.
+sidebar_cache_limit = 2000
+# Set a desired menu depth to always be visible
+ul_show = 1
 
 # Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
 # This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
@@ -136,6 +168,12 @@ enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
 yes = 'Glad to hear it! Please <a href="https://github.com/gofrp/frp-doc/issues/new">tell us how we can improve</a>.'
 no = 'Sorry to hear that. Please <a href="https://github.com/gofrp/frp-doc/issues/new">tell us how we can improve</a>.'
+
+# Adds a reading time to the top of each doc.
+# If you want this feature, but occasionally need to remove the Reading time from a single page,
+# add "hide_readingtime: true" to the page's front matter
+[params.ui.readingtime]
+enable = false
 
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.

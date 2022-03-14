@@ -25,7 +25,7 @@ plugin_http_passwd = abc
 
 `plugin_http_user` 和 `plugin_http_passwd` 即为 `http_proxy` 插件可选的配置参数。
 
-### http_proxy
+## http_proxy
 
 HTTP 代理插件，用于将内网机器作为 HTTP 代理暴露给其他服务，可以通过此代理访问到此内网机器能够访问到的其他服务。
 
@@ -34,7 +34,7 @@ HTTP 代理插件，用于将内网机器作为 HTTP 代理暴露给其他服务
 | plugin_http_user | 是 | HTTP 代理用户名 |
 | plugin_http_passwd | 是 | HTTP 代理密码 |
 
-### socks5
+## socks5
 
 SOCKS5 代理。
 
@@ -44,7 +44,7 @@ SOCKS5 代理。
 | plugin_passwd | 是 | 连接代理的密码 |
 
 
-### static_file
+## static_file
 
 静态文件浏览服务，通过暴露一个简单的 HTTP 服务查看指定的目录下的文件。
 
@@ -55,7 +55,7 @@ SOCKS5 代理。
 | plugin_http_user | 是 | HTTP BasicAuth 用户名 |
 | plugin_http_passwd | 是 | HTTP BasicAuth 密码 |
 
-### unix_domain_socket
+## unix_domain_socket
 
 代理本地 Unix 域套接字的服务。
 
@@ -64,7 +64,7 @@ SOCKS5 代理。
 | plugin_unix_path | 否 | 本地 Unix 域套接字地址 |
 
 
-### http2https
+## http2https
 
 将本地的 HTTPS 服务以 HTTP 的形式暴露出去。
 
@@ -75,7 +75,7 @@ SOCKS5 代理。
 | plugin_header_{header name} | 是 | 发送给本地服务的请求会被加上指定的 header 字段 |
 
 
-### https2http
+## https2http
 
 将本地的 HTTP 服务以 HTTPS 的形式暴露出去。
 
@@ -87,7 +87,7 @@ SOCKS5 代理。
 | plugin_host_header_rewrite | 是 | 如果配置，发送给本地服务的请求的 Host 字段会被修改 |
 | plugin_header_{header name} | 是 | 发送给本地服务的请求会被加上指定的 header 字段 |
 
-### https2https
+## https2https
 
 将本地的 HTTPS 服务以 HTTPS 的形式暴露出去。
 

@@ -9,11 +9,11 @@ weight: 3
 
 只有通过身份验证的客户端(frpc)才能成功连接 frps。
 
-### Token
+## Token
 
 基于 Token 的身份验证方式比较简单，需要在 frpc 和 frps 的 `[common]` 段落中配置上相同的 `token` 参数即可。
 
-### OIDC
+## OIDC
 
 OIDC 是 `OpenID Connect` 的简称，验证流程参考 [Client Credentials Grant](https://tools.ietf.org/html/rfc6749#section-4.4)。
 
@@ -37,7 +37,7 @@ oidc_audience = https://oidc-audience.com/.default
 oidc_token_endpoint_url = https://example-oidc-endpoint.com/oauth2/v2.0/token
 ```
 
-### 参数说明
+## 参数说明
 
 | 类型 | 描述 |
 | :--- | :--- |

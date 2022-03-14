@@ -5,7 +5,7 @@ weight: 4
 
 目前 frpc 和 frps 分别内置了相应的 Web 界面方便用户使用。
 
-### 服务端 Dashboard
+## 服务端 Dashboard
 
 服务端 Dashboard 使用户可以通过浏览器查看 frp 的状态以及代理统计信息。
 
@@ -24,7 +24,7 @@ dashboard_pwd = admin
 
 打开浏览器通过 `http://[server_addr]:7500` 访问 Dashboard 界面，输入用户名密码 `admin`。
 
-### 客户端管理界面
+## 客户端管理界面
 
 frpc 内置的 Admin UI 可以帮助用户通过浏览器来查询和管理客户端的 proxy 状态和配置。
 

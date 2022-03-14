@@ -11,7 +11,7 @@ weight: 2
 
 **注意：启用此功能后除 xtcp 外，可以不用再设置 use_encryption 重复加密**
 
-### TLS 默认开启方式
+## TLS 默认开启方式
 
 ```ini
 # frpc.ini
@@ -21,7 +21,7 @@ tls_enable = true
 
 frpc 开启 TLS 加密功能，但是默认不校验 frps 的证书。
 
-### frpc 单向校验 frps 身份
+## frpc 单向校验 frps 身份
 
 ```ini
 # frpc.ini
@@ -40,7 +40,7 @@ frpc 需要额外加载 ca 证书，frps 需要额外指定 TLS 配置。frpc �
 
 合法: 如果证书是 ca 签发的，或者证书是在 ca 的信任链中，那即认为: 该证书对 ca 而言是合法的。
 
-### frps 单向验证 frpc 的身份
+## frps 单向验证 frpc 的身份
 
 ```ini
 # frpc.ini
@@ -56,7 +56,7 @@ tls_trusted_ca_file = /to/ca/path/ca.crt
 
 frpc 需要额外加载 TLS 配置，frps 需要额外加载 ca 证书。frps 通过 ca 证书单向验证 frpc 的身份。这就要求 frpc 的 `client.crt` 对 frps 的 ca 是合法的。
 
-### 双向验证
+## 双向验证
 
 ```ini
 # frpc.ini
@@ -75,7 +75,7 @@ tls_trusted_ca_file = /to/ca/path/ca.crt
 
 双向验证即 frpc 和 frps 通过本地 ca 证书去验证对方的身份。理论上 frpc 和 frps 的 ca 证书可以不同，只要能验证对方身份即可。
 
-### OpenSSL 生成证书示例
+## OpenSSL 生成证书示例
 
 `x509: certificate relies on legacy Common Name field, use SANs or temporarily
 enable Common Name matching with GODEBUG=x509ignoreCN=0`

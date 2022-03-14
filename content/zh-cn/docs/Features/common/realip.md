@@ -3,11 +3,11 @@ title: "获取用户真实 IP"
 weight: 7
 ---
 
-### HTTP X-Forwarded-For
+## HTTP X-Forwarded-For
 
 目前只有 `HTTP` 类型的代理支持这一功能，可以通过用户请求的 header 中的 `X-Forwarded-For` 来获取用户真实 IP，默认启用。
 
-### Proxy Protocol
+## Proxy Protocol
 
 frp 支持通过 `Proxy Protocol` 协议来传递经过 frp 代理的请求的真实 IP，此功能支持所有以 TCP 为底层协议的类型，不支持 UDP。
 
