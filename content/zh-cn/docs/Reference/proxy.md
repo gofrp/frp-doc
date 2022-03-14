@@ -5,11 +5,11 @@ description: >
   frp 代理的详细配置说明。
 ---
 
-### 通用配置
+## 通用配置
 
 通用配置是指不同类型的代理共同使用的一些配置参数。
 
-#### 基础配置
+### 基础配置
 
 | 参数 | 类型 | 说明 | 是否必须 | 默认值 | 可选值 | 备注 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :---|
@@ -19,7 +19,7 @@ description: >
 | proxy_protocol_version | string | 启用 proxy protocol 协议的版本 | 否 | | v1, v2 | 如果启用，则 frpc 和本地服务建立连接后会发送 proxy protocol 的协议，包含了原请求的 IP 地址和端口等内容 |
 | bandwidth_limit | string | 设置单个 proxy 的带宽限流 | 否 | | | 单位为 MB 或 KB，0 表示不限制，如果启用，会作用于对应的 frpc |
 
-#### 本地服务配置
+### 本地服务配置
 
 `local_ip` 和 `plugin` 的配置必须配置一个，且只能生效一个，如果配置了 `plugin`，则 `local_ip` 配置无效。
 
@@ -30,7 +30,7 @@ description: >
 | plugin | string | 客户端插件名称 | 否 | | 见客户端插件的功能说明 | 用于扩展 frpc 的能力，能够提供一些简单的本地服务，如果配置了 plugin，则 local_ip 和 local_port 无效，两者只能配置一个 |
 | plugin_params | map | 客户端插件参数 | 否 | | | map 结构，key 需要都以 "plugin_" 开头，每一个 plugin 需要的参数也不一样，具体见客户端插件参数中的内容 |
 
-#### 负载均衡和健康检查
+### 负载均衡和健康检查
 
 | 参数 | 类型 | 说明 | 是否必须 | 默认值 | 可选值 | 备注 |
 | :--- | :---: | :--- | :---: | :---: | :--- | :--- |
@@ -42,19 +42,19 @@ description: >
 | health_check_interval_s | int | 健康检查周期(秒) | 否 | 10 | | 每隔多长时间进行一次健康检查 |
 | health_check_url | string | 健康检查的 HTTP 接口 | 否 | | | 如果 health_check_type 类型是 http，则需要配置此参数，指定发送 http 请求的 url，例如 "/health" |
 
-### TCP
+## TCP
 
 | 参数 | 类型 | 说明 | 是否必须 | 默认值 | 可选值 | 备注 |
 | :--- | :---: | :--- | :---: | :---: | :--- | :--- |
 | remote_port | int | 服务端绑定的端口 | 是 | | | 用户访问此端口的请求会被转发到 local_ip:local_port |
 
-### UDP
+## UDP
 
 | 参数 | 类型 | 说明 | 是否必须 | 默认值 | 可选值 | 备注 |
 | :--- | :---: | :--- | :---: | :---: | :--- | :--- |
 | remote_port | int | 服务端绑定的端口 | 是 | | | 用户访问此端口的请求会被转发到 local_ip:local_port |
 
-### HTTP
+## HTTP
 
 `custom_domains` 和 `subdomain` 必须要配置其中一个，两者可以同时生效。
 
@@ -68,7 +68,7 @@ description: >
 | host_header_rewrite | string | 替换 Host header | 否 | | | 替换发送到本地服务 HTTP 请求中的 Host 字段 |
 | headers | map | 替换 header | 否 | | | map 中的 key 是要替换的 header 的 key，value 是替换后的内容 |
 
-### HTTPS
+## HTTPS
 
 `custom_domains` 和 `subdomain` 必须要配置其中一个，两者可以同时生效。
 
@@ -77,21 +77,21 @@ description: >
 | custom_domains | []string | 服务器绑定自定义域名 | 是(和 subdomain 两者必须配置一个) | | | 用户通过 vhost_http_port 访问的 HTTP 请求如果 Host 在 custom_domains 配置的域名中，则会被路由到此代理配置的本地服务 |
 | subdomain | string | 自定义子域名 | 是(和 custom_domains 两者必须配置一个) | | | 和 custom_domains 作用相同，但是只需要指定子域名前缀，会结合服务端的 subdomain_host 生成最终绑定的域名 |
 
-### STCP
+## STCP
 
 | 参数 | 类型 | 说明 | 是否必须 | 默认值 | 可选值 | 备注 |
 | :--- | :---: | :--- | :---: | :---: | :--- | :--- |
 | role | string | 角色 | 是 | server | server,visitor | server 表示服务端，visitor 表示访问端 |
 | sk | string | 密钥 | 是 | | | 服务端和访问端的密钥需要一致，访问端才能访问到服务端 |
 
-### SUDP
+## SUDP
 
 | 参数 | 类型 | 说明 | 是否必须 | 默认值 | 可选值 | 备注 |
 | :--- | :---: | :--- | :---: | :---: | :--- | :--- |
 | role | string | 角色 | 是 | server | server,visitor | server 表示服务端，visitor 表示访问端 |
 | sk | string | 密钥 | 是 | | | 服务端和访问端的密钥需要一致，访问端才能访问到服务端 |
 
-### XTCP
+## XTCP
 
 | 参数 | 类型 | 说明 | 是否必须 | 默认值 | 可选值 | 备注 |
 | :--- | :---: | :--- | :---: | :---: | :--- | :--- |

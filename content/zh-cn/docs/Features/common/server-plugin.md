@@ -9,7 +9,7 @@ frp 服务端插件会以单独进程的形式运行，并且监听在一个端�
 
 frps 在执行某些操作前，会根据配置向服务端插件发送 RPC 请求，根据插件的响应来执行相应的操作。
 
-### RPC 请求
+## RPC 请求
 
 服务端插件接收到操作请求后，可以给出三种回应。
 
@@ -17,7 +17,7 @@ frps 在执行某些操作前，会根据配置向服务端插件发送 RPC 请�
 * 允许操作，不需要修改操作内容。
 * 允许操作，对操作请求进行修改后，返回修改后的内容。
 
-### 接口
+## 接口
 
 接口路径可以在 frps 配置中为每个插件单独配置，这里以 `/handler` 为例。
 
@@ -68,11 +68,11 @@ Response
 }
 ```
 
-### 操作类型
+## 操作类型
 
 目前插件支持管理的操作类型有 `Login`、`NewProxy`、`CloseProxy`、`Ping`、`NewWorkConn` 和 `NewUserConn`。
 
-#### Login
+### Login
 
 用户登录操作信息
 
@@ -94,7 +94,7 @@ Response
 }
 ```
 
-#### NewProxy
+### NewProxy
 
 创建代理的相关信息
 
@@ -136,7 +136,7 @@ Response
 }
 ```
 
-#### CloseProxy
+### CloseProxy
 
 代理关闭。(仅用于通知)
 
@@ -155,7 +155,7 @@ Response
 }
 ```
 
-#### Ping
+### Ping
 
 心跳相关信息
 
@@ -173,7 +173,7 @@ Response
 }
 ```
 
-#### NewWorkConn
+### NewWorkConn
 
 创建工作连接
 
@@ -192,7 +192,7 @@ Response
 }
 ```
 
-#### NewUserConn
+### NewUserConn
 
 创建用户连接 (支持 `tcp`、`stcp`、`https` 和 `tcpmux` 协议)。
 
@@ -212,7 +212,7 @@ Response
 ```
 
 
-### frps 中插件配置
+## frps 中插件配置
 
 ```ini
 [common]
@@ -235,7 +235,7 @@ path: 插件监听的请求路径。
 ops: 插件需要处理的操作列表，多个 op 以英文逗号分隔。
 tls_verify: 如果是 HTTPS 协议，支持忽略 TLS 身份验证。
 
-### 元数据
+## 元数据
 
 为了减少 frps 的代码修改，同时提高管理插件的扩展能力，在 frpc 的配置文件中引入自定义元数据的概念。元数据会在调用 RPC 请求时发送给插件。
 

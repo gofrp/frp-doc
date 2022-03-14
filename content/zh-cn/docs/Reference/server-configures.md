@@ -5,7 +5,7 @@ description: >
   frp 服务端详细配置说明。
 ---
 
-### 基础配置
+## 基础配置
 
 | 参数 | 类型 | 说明 | 默认值 | 可选值 | 备注 |
 | :--- | :--- | :--- | :--- | :--- | :---|
@@ -27,7 +27,7 @@ description: >
 | tls_key_file | string | TLS 服务端密钥文件路径 | | | |
 | tls_trusted_ca_file | string | TLS CA 证书路径 | | | |
 
-### 权限验证
+## 权限验证
 
 | 参数 | 类型 | 说明 | 默认值 | 可选值 | 备注 |
 | :--- | :--- | :--- | :--- | :--- | :---|
@@ -40,7 +40,7 @@ description: >
 | oidc_skip_expiry_check | bool | oidc_skip_expiry_check | | | |
 | oidc_skip_issuer_check | bool | oidc_skip_issuer_check | | | |
 
-### 管理配置
+## 管理配置
 
 | 参数 | 类型 | 说明 | 默认值 | 可选值 | 备注 |
 | :--- | :--- | :--- | :--- | :--- | :---|
@@ -49,7 +49,7 @@ description: >
 | max_ports_per_client | int | 限制单个客户端最大同时存在的代理数 | 0 | | 0 表示没有限制 |
 | tls_only | bool | 只接受启用了 TLS 的客户端连接 | false | | |
 
-### Dashboard, 监控
+## Dashboard, 监控
 
 | 参数 | 类型 | 说明 | 默认值 | 可选值 | 备注 |
 | :--- | :--- | :--- | :--- | :--- | :---|
@@ -60,7 +60,7 @@ description: >
 | enable_prometheus | bool | 是否提供 Prometheus 监控接口 | false | | 需要同时启用了 Dashboard 才会生效 |
 | asserts_dir | string | 静态资源目录 | | | Dashboard 使用的资源默认打包在二进制文件中，通过指定此参数使用自定义的静态资源 |
 
-### HTTP & HTTPS
+## HTTP & HTTPS
 
 | 参数 | 类型 | 说明 | 默认值 | 可选值 | 备注 |
 | :--- | :--- | :--- | :--- | :--- | :---|
@@ -70,7 +70,7 @@ description: >
 | subdomain_host | string | 二级域名后缀 | | | |
 | custom_404_page | string | 自定义 404 错误页面地址 | | | |
 
-### TCPMUX
+## TCPMUX
 
 | 参数 | 类型 | 说明 | 默认值 | 可选值 | 备注 |
 | :--- | :--- | :--- | :--- | :--- | :---|
