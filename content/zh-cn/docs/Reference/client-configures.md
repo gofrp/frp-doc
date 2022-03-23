@@ -13,6 +13,7 @@ description: >
 | server_port | int | 连接服务端的端口 | 7000 | | |
 | connect_server_local_ip | string | 连接服务端时所绑定的本地 IP | | | |
 | dial_server_timeout | int | 连接服务端的超时时间 | 10 | | |
+| dial_server_keepalive | int | 和服务端底层 TCP 连接的 keepalive 间隔时间，单位秒 | 7200 | | 负数不启用 |
 | http_proxy | string | 连接服务端使用的代理地址 | | | 格式为 {protocol}://user:passwd@192.168.1.128:8080 protocol 目前支持 http、socks5、ntlm |
 | log_file | string | 日志文件地址 | ./frpc.log | | 如果设置为 console，会将日志打印在标准输出中 |
 | log_level | string | 日志等级 | info | trace, debug, info, warn, error | |
@@ -59,3 +60,4 @@ description: >
 | admin_user | string | HTTP BasicAuth 用户名 | | | |
 | admin_pwd | string | HTTP BasicAuth 密码 | | | |
 | asserts_dir | string | 静态资源目录 | | | AdminUI 使用的资源默认打包在二进制文件中，通过指定此参数使用自定义的静态资源 |
+| pprof_enable | bool | 启动 Go HTTP pprof | false | | 用于应用调试 |

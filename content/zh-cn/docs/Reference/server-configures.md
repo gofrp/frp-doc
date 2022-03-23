@@ -20,6 +20,7 @@ description: >
 | disable_log_color | bool | 禁用标准输出中的日志颜色 | false | | |
 | detailed_errors_to_client | bool | 服务端返回详细错误信息给客户端 | true | | |
 | tcp_mux_keepalive_interval | int | tcp_mux 的心跳检查间隔时间 | 60 | | 单位：秒 |
+| tcp_keepalive | int | 和客户端底层 TCP 连接的 keepalive 间隔时间，单位秒 | 7200 | | 负数不启用 |
 | heartbeat_timeout | int | 服务端和客户端心跳连接的超时时间 | 90 | | 单位：秒 |
 | user_conn_timeout | int | 用户建立连接后等待客户端响应的超时时间 | 10 | | 单位：秒 |
 | udp_packet_size | int | 代理 UDP 服务时支持的最大包长度 | 1500 | | 服务端和客户端的值需要一致 |
@@ -59,6 +60,7 @@ description: >
 | dashboard_pwd | string | HTTP BasicAuth 密码 | | | |
 | enable_prometheus | bool | 是否提供 Prometheus 监控接口 | false | | 需要同时启用了 Dashboard 才会生效 |
 | asserts_dir | string | 静态资源目录 | | | Dashboard 使用的资源默认打包在二进制文件中，通过指定此参数使用自定义的静态资源 |
+| pprof_enable | bool | 启动 Go HTTP pprof | false | | 用于应用调试 |
 
 ## HTTP & HTTPS
 

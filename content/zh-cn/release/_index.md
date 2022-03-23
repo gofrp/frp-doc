@@ -8,6 +8,12 @@ cascade:
 - type: "docs"
 ---
 
+#### v0.41.0
+
+  * [new] 支持 go http pprof。
+  * [improve] 底层 TCP keepalive 间隔默认设置为 2 小时。
+  * [improve] `sudp` visitor 在需要时才发起和服务端的连接，避免 server 下线后频繁打印日志。
+
 #### v0.40.0
 
   * [new] frpc 新增 `dial_server_timeout` ，支持配置连接服务端的超时时间。
