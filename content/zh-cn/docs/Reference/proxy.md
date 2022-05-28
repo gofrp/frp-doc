@@ -63,6 +63,7 @@ description: >
 | custom_domains | []string | 服务器绑定自定义域名 | 是(和 subdomain 两者必须配置一个) | | | 用户通过 vhost_http_port 访问的 HTTP 请求如果 Host 在 custom_domains 配置的域名中，则会被路由到此代理配置的本地服务 |
 | subdomain | string | 自定义子域名 | 是(和 custom_domains 两者必须配置一个) | | | 和 custom_domains 作用相同，但是只需要指定子域名前缀，会结合服务端的 subdomain_host 生成最终绑定的域名 |
 | locations | []string | URL 路由配置 | 否 | | | 采用最大前缀匹配的规则，用户请求匹配响应的 location 配置，则会被路由到此代理 |
+| route_by_http_user | string | 根据 HTTP Basic Auth user 路由 | 否 | | | |
 | http_user | string | 用户名 | 否 | | | 如果配置此参数，暴露出去的 HTTP 服务需要采用 Basic Auth 的鉴权才能访问 |
 | http_pwd | string | 密码 | 否 | | | 结合 http_user 使用 |
 | host_header_rewrite | string | 替换 Host header | 否 | | | 替换发送到本地服务 HTTP 请求中的 Host 字段 |
@@ -97,3 +98,14 @@ description: >
 | :--- | :---: | :--- | :---: | :---: | :--- | :--- |
 | role | string | 角色 | 是 | server | server,visitor | server 表示服务端，visitor 表示访问端 |
 | sk | string | 密钥 | 是 | | | 服务端和访问端的密钥需要一致，访问端才能访问到服务端 |
+
+## TCPMUX
+
+`custom_domains` 和 `subdomain` 必须要配置其中一个，两者可以同时生效。
+
+| 参数 | 类型 | 说明 | 是否必须 | 默认值 | 可选值 | 备注 |
+| :--- | :---: | :--- | :---: | :---: | :--- | :--- |
+| multiplexer | string | 复用器类型 | 是 | | httpconnect | |
+| custom_domains | []string | 服务器绑定自定义域名 | 是(和 subdomain 两者必须配置一个) | | | 用户通过 tcpmux_httpconnect_port 访问的 CONNECT 请求如果 Host 在 custom_domains 配置的域名中，则会被路由到此代理配置的本地服务 |
+| subdomain | string | 自定义子域名 | 是(和 custom_domains 两者必须配置一个) | | | 和 custom_domains 作用相同，但是只需要指定子域名前缀，会结合服务端的 subdomain_host 生成最终绑定的域名 |
+| route_by_http_user | string | 根据 HTTP Basic Auth user 路由 | 否 | | | |

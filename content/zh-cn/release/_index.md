@@ -8,6 +8,12 @@ cascade:
 - type: "docs"
 ---
 
+#### v0.43.0
+
+  * [new] http 和 tcpmux 类型的 proxy 新增 `route_by_http_user` 参数，支持根据 HTTP Basic Auth user 来进行路由。
+  * [new] http 类型的 proxy 支持 CONNECT method 的转发。
+  * [new] tcpmux 类型新增 `tcpmux_passthrough` ，为 true 时，会透传 `CONNECT` 请求的内容。
+
 #### v0.42.0
 
   * [new] frpc 支持指定配置目录，为每一个配置文件启动一个客户端实例。(注意这种模式下无法支持所有的功能)

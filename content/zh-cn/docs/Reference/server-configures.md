@@ -77,3 +77,4 @@ description: >
 | 参数 | 类型 | 说明 | 默认值 | 可选值 | 备注 |
 | :--- | :--- | :--- | :--- | :--- | :---|
 | tcpmux_httpconnect_port | int | 为 TCPMUX 类型代理监听的端口 | 0 | | 启用后才支持 TCPMUX 类型的代理，默认不启用 | 
+| tcpmux_passthrough | bool | 是否透传 CONNECT 请求 | false | | 通常在本地服务是 HTTP Proxy 时使用 |
