@@ -24,7 +24,7 @@ frp 采用 Golang 编写，支持跨平台，仅需下载对应平台的二进�
 
 ## 开始使用！
 
-编写配置文件，先通过 `./frps -c ./frps.ini` 启动服务端，再通过 `./frpc -c ./frpc.ini` 启动客户端。如果需要在后台长期运行，建议结合其他工具使用，例如 `systemd` 和 `supervisor`。
+编写配置文件，先通过 `./frps -c ./frps.ini` 启动服务端，再通过 `./frpc -c ./frpc.ini` 启动客户端。如果需要在后台长期运行，建议结合其他工具使用，例如 [systemd](/docs/examples/systemd/) 和 `supervisor`。
 
 如果是 Windows 用户，需要在 cmd 终端中执行命令。
 
