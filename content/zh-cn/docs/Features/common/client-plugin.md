@@ -82,8 +82,8 @@ SOCKS5 代理。
 | 参数 | 可选 | 描述 |
 | :--- | :--- | :--- |
 | plugin_local_addr | 否 | 本地服务地址 |
-| plugin_crt_path | 否 | HTTPS 所需的证书文件 |
-| plugin_key_path | 否 | HTTPS 所需的密钥文件 |
+| plugin_crt_path | 是 | HTTPS 所需的证书文件，如果 crt 和 key 都为空，则使用自动生成的证书 |
+| plugin_key_path | 是 | HTTPS 所需的密钥文件 |
 | plugin_host_header_rewrite | 是 | 如果配置，发送给本地服务的请求的 Host 字段会被修改 |
 | plugin_header_{header name} | 是 | 发送给本地服务的请求会被加上指定的 header 字段 |
 
@@ -94,7 +94,7 @@ SOCKS5 代理。
 | 参数 | 可选 | 描述 |
 | :--- | :--- | :--- |
 | plugin_local_addr | 否 | 本地服务地址 |
-| plugin_crt_path | 否 | HTTPS 所需的证书文件 |
-| plugin_key_path | 否 | HTTPS 所需的密钥文件 |
+| plugin_crt_path | 是 | HTTPS 所需的证书文件，如果 crt 和 key 都为空，则使用自动生成的证书 |
+| plugin_key_path | 是 | HTTPS 所需的密钥文件 |
 | plugin_host_header_rewrite | 是 | 如果配置，发送给本地服务的请求的 Host 字段会被修改 |
 | plugin_header_{header name} | 是 | 发送给本地服务的请求会被加上指定的 header 字段 |

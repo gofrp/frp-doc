@@ -58,6 +58,9 @@ description: >
 | dashboard_port | int | 启用 Dashboard 监听的本地端口 | 0 | | |
 | dashboard_user | string | HTTP BasicAuth 用户名 | | | |
 | dashboard_pwd | string | HTTP BasicAuth 密码 | | | |
+| dashboard_tls_mode | bool | 是否启用 TLS 模式 | false | | |
+| dashboard_tls_cert_file | string | TLS 证书文件路径 | | | |
+| dashboard_tls_key_file | string | TLS 密钥文件路径 | | | |
 | enable_prometheus | bool | 是否提供 Prometheus 监控接口 | false | | 需要同时启用了 Dashboard 才会生效 |
 | asserts_dir | string | 静态资源目录 | | | Dashboard 使用的资源默认打包在二进制文件中，通过指定此参数使用自定义的静态资源 |
 | pprof_enable | bool | 启动 Go HTTP pprof | false | | 用于应用调试 |

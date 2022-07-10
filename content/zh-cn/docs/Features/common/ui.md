@@ -24,6 +24,14 @@ dashboard_pwd = admin
 
 打开浏览器通过 `http://[server_addr]:7500` 访问 Dashboard 界面，输入用户名密码 `admin`。
 
+你也可以通过配置 TLS 证书来启用 HTTPS 接口:
+
+```ini
+dashboard_tls_mode = true
+dashboard_tls_cert_file = server.crt
+dashboard_tls_key_file = server.key
+```
+
 ## 客户端管理界面
 
 frpc 内置的 Admin UI 可以帮助用户通过浏览器来查询和管理客户端的 proxy 状态和配置。

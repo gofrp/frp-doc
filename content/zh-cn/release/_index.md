@@ -8,6 +8,12 @@ cascade:
 - type: "docs"
 ---
 
+#### v0.44.0
+
+  * [new] `https2https` 和 `https2http` 插件中，如果 `plugin_key_path` 和 `plugin_crt_path` 都为空，则使用自动创建的证书。
+  * [new] frps dashboard 支持配置 TLS 证书。
+  * [fix] 修复 XTCP 使用 IPv6 地址遇到错误的问题。
+
 #### v0.43.0
 
   * [new] http 和 tcpmux 类型的 proxy 新增 `route_by_http_user` 参数，支持根据 HTTP Basic Auth user 来进行路由。
