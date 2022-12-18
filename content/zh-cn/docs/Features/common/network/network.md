@@ -75,7 +75,7 @@ tcp_mux = false
     kcp_bind_port = 7000
     ```
 
-2. 在 frpc.ini 指定需要使用的协议类型，目前只支持 TCP 和 KCP。其他代理配置不需要变更：
+2. 在 frpc.ini 指定需要使用的协议类型，其他代理配置不需要变更：
 
     ```ini
     # frpc.ini
@@ -84,4 +84,31 @@ tcp_mux = false
     # server_port 指定为 frps 的 kcp_bind_port
     server_port = 7000
     protocol = kcp
+    ```
+
+## 支持 QUIC 协议
+
+底层通信协议支持选择 QUIC 协议，底层采用 UDP 传输，解决了 TCP 上的一些问题，传输效率更高，连接延迟低。
+
+开启 QUIC 协议支持：
+
+1. 在 frps.ini 中启用 QUIC 协议支持，指定一个 udp 端口用于接收客户端请求：
+
+    ```ini
+    # frps.ini
+    [common]
+    bind_port = 7000
+    # quic 绑定的是 udp 端口，可以和 bind_port 一样
+    quic_bind_port = 7000
+    ```
+
+2. 在 frpc.ini 指定需要使用的协议类型，其他代理配置不需要变更：
+
+    ```ini
+    # frpc.ini
+    [common]
+    server_addr = x.x.x.x
+    # server_port 指定为 frps 的 quic_bind_port
+    server_port = 7000
+    protocol = quic
     ```

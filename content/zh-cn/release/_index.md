@@ -8,6 +8,15 @@ cascade:
 - type: "docs"
 ---
 
+#### v0.46.0
+
+  * [new] frpc 增加 `oidc_scope` 配置。
+  * [new] frpc 和 frps 之间的通信协议支持选择 quic。
+
+#### v0.45.0
+
+  * [improve] http group 的负载均衡调整为每一个请求都会以轮询的方式转发到 group 中的所有 frpc proxy。之前单个并发时会始终转发到同一个 proxy。
+
 #### v0.44.0
 
   * [new] `https2https` 和 `https2http` 插件中，如果 `plugin_key_path` 和 `plugin_crt_path` 都为空，则使用自动创建的证书。

@@ -13,6 +13,10 @@ description: >
 | bind_port | int | 服务端监听端口 | 7000 | | 接收 frpc 的连接 |
 | bind_udp_port | int | 服务端监听 UDP 端口 | 0 | | 用于辅助创建 P2P 连接 |
 | kcp_bind_port | int | 服务端监听 KCP 协议端口 | 0 | | 用于接收采用 KCP 连接的 frpc |
+| quic_bind_port | int | 服务端监听 QUIC 协议端口 | 0 | | 用于接收采用 QUIC 连接的 frpc |
+| quic_keepalive_period | int | quic 协议 keepalive 间隔，单位: 秒 | 10 | | |
+| quic_max_idle_timeout | int | quic 协议的最大空闲超时时间，单位: 秒 | 30 | | |
+| quic_max_incoming_streams | int | quic 协议最大并发 stream 数 | 100000 | | |
 | proxy_bind_addr | string | 代理监听地址 | 同 bind_addr | | 可以使代理监听在不同的网卡地址 |
 | log_file | string | 日志文件地址 | ./frps.log | | 如果设置为 console，会将日志打印在标准输出中 |
 | log_level | string | 日志等级 | info | trace, debug, info, warn, error | |

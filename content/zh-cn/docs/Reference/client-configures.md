@@ -23,7 +23,10 @@ description: >
 | user | string | 用户名 | | | 设置此参数后，代理名称会被修改为 {user}.{proxyName}，避免代理名称和其他用户冲突 |
 | dns_server | string | 使用 DNS 服务器地址 | | | 默认使用系统配置的 DNS 服务器，指定此参数可以强制替换为自定义的 DNS 服务器地址 |
 | login_fail_exit | bool | 第一次登陆失败后是否退出 | true | | |
-| protocol | string | 连接服务端的通信协议 | tcp | tcp, kcp, websocket | |
+| protocol | string | 连接服务端的通信协议 | tcp | tcp, kcp, quic, websocket | |
+| quic_keepalive_period | int | quic 协议 keepalive 间隔，单位: 秒 | 10 | | |
+| quic_max_idle_timeout | int | quic 协议的最大空闲超时时间，单位: 秒 | 30 | | |
+| quic_max_incoming_streams | int | quic 协议最大并发 stream 数 | 100000 | | |
 | tls_enable | bool | 启用 TLS 协议加密连接 | false | | |
 | tls_cert_file | string | TLS 客户端证书文件路径 | | | |
 | tls_key_file | string | TLS 客户端密钥文件路径 | | | |
@@ -48,6 +51,7 @@ description: >
 | oidc_client_id | string | oidc_client_id | | | |
 | oidc_client_secret | string | oidc_client_secret | | | |
 | oidc_audience | string | oidc_audience | | | |
+| oidc_scope | string | oidc_scope | | | |
 | oidc_token_endpoint_url | string | oidc_token_endpoint_url | | | |
 | oidc_additional_xxx | map | OIDC 附加参数 | | | map 结构，key 需要以 `oidc_additional_` 开头 |
 
