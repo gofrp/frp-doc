@@ -11,7 +11,7 @@ cascade:
 #### v0.46.0
 
   * [new] frpc 增加 `oidc_scope` 配置。
-  * [new] frpc 和 frps 之间的通信协议支持选择 quic。
+  * [new] frpc 和 frps 之间的通信协议支持 quic。
 
 #### v0.45.0
 
