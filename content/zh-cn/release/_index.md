@@ -8,6 +8,11 @@ cascade:
 - type: "docs"
 ---
 
+#### v0.46.1
+
+  * [fix] 服务端插件 NewWorkConn 请求没有设置正确的 op 名称。
+  * [fix] QUIC stream 泄露。
+
 #### v0.46.0
 
   * [new] frpc 增加 `oidc_scope` 配置。
