@@ -16,7 +16,7 @@ description: >
     bind_port = 7000
     ```
 
-2. 在需要暴露到内网的机器上部署 frpc，且配置如下：
+2. 在需要暴露到外网的机器上部署 frpc，且配置如下：
 
     ```ini
     [common]
