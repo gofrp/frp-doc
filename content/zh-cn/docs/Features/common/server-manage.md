@@ -37,3 +37,5 @@ bandwidth_limit = 1MB
 ```
 
 在代理配置中增加 `bandwidth_limit` 字段启用此功能，目前仅支持 `MB` 和 `KB` 单位。
+
+限速能力默认在客户端实现，如果希望启用服务端限速，需要额外配置 `bandwidth_limit_mode = server`。

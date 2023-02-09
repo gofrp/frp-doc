@@ -8,6 +8,12 @@ cascade:
 - type: "docs"
 ---
 
+#### v0.47.0
+
+  * [new] 新增 `bandwidth_limit_mode` ，默认值为 `client` 功能和当前保持一致，在 frpc 端实现限流。可选值 `server` ，启用服务端限流。主要用于支持通过服务端插件动态修改单个 Proxy 限流的能力。
+  * [improve] `dns_server` 支持配置 ipv6 地址。
+  * [improve] 使用 `quic` 协议时 frpc 支持 graceful shudown。
+
 #### v0.46.1
 
   * [fix] 服务端插件 NewWorkConn 请求没有设置正确的 op 名称。
