@@ -110,3 +110,5 @@ description: >
 | custom_domains | []string | 服务器绑定自定义域名 | 是(和 subdomain 两者必须配置一个) | | | 用户通过 tcpmux_httpconnect_port 访问的 CONNECT 请求如果 Host 在 custom_domains 配置的域名中，则会被路由到此代理配置的本地服务 |
 | subdomain | string | 自定义子域名 | 是(和 custom_domains 两者必须配置一个) | | | 和 custom_domains 作用相同，但是只需要指定子域名前缀，会结合服务端的 subdomain_host 生成最终绑定的域名 |
 | route_by_http_user | string | 根据 HTTP Basic Auth user 路由 | 否 | | | |
+| http_user | string | 用户名 | 否 | | | 如果配置此参数，通过 HTTP CONNECT 建立连接时需要通过 Proxy-Authorization 附加上正确的身份信息 |
+| http_pwd | string | 密码 | 否 | | | 结合 http_user 使用 |

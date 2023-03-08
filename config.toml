@@ -123,7 +123,7 @@ github_project_repo = "https://github.com/fatedier/frp"
 
 # Uncomment this if you have a newer GitHub repo with "main" as the default branch,
 # or specify a new value if you want to reference another branch in your GitHub links
-# github_branch= "main"
+github_branch= "master"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 # gcs_engine_id = "011737558837375720776:fsdu1nryfng"

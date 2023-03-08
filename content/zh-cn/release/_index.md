@@ -8,6 +8,12 @@ cascade:
 - type: "docs"
 ---
 
+#### v0.48.0
+
+  * [New] `tcpmux` 的 `httpconnect` 类型支持通过 `http_user` 和 `http_pwd` 参数启用身份验证。
+  * [Improved] web 框架升级到 vue3 + element-plus，dashboard 增加部分信息展示并且支持深色模式。
+  * [Improved] e2e 测试切换到 ginkgo v2。
+
 #### v0.47.0
 
   * [new] 新增 `bandwidth_limit_mode` ，默认值为 `client` 功能和当前保持一致，在 frpc 端实现限流。可选值 `server` ，启用服务端限流。主要用于支持通过服务端插件动态修改单个 Proxy 限流的能力。
