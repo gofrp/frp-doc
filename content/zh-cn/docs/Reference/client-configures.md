@@ -11,6 +11,7 @@ description: >
 | :--- | :--- | :--- | :--- | :--- | :---|
 | server_addr | string | 连接服务端的地址 | 0.0.0.0 | | |
 | server_port | int | 连接服务端的端口 | 7000 | | |
+| nat_hole_stun_server | string | xtcp 打洞所需的 stun 服务器地址 | stun.easyvoip.com:3478 | | |
 | connect_server_local_ip | string | 连接服务端时所绑定的本地 IP | | | |
 | dial_server_timeout | int | 连接服务端的超时时间 | 10 | | |
 | dial_server_keepalive | int | 和服务端底层 TCP 连接的 keepalive 间隔时间，单位秒 | 7200 | | 负数不启用 |

@@ -8,6 +8,13 @@ cascade:
 - type: "docs"
 ---
 
+#### v0.49.0
+
+  * [new] frpc 新增 nathole discover 命令用于测试当前网络的 NAT 类型。
+  * [new] xtcp 重构，大幅提高穿透成功率。（和之前的版本不兼容）
+  * [new] 校验密码时使用 subtle.ConstantTimeCompare ，密码不正确时引入一定的延迟。
+  * [fix] 修复 frps dashboard 打开多个 table 条目卡顿的问题。
+
 #### v0.48.0
 
   * [New] `tcpmux` 的 `httpconnect` 类型支持通过 `http_user` 和 `http_pwd` 参数启用身份验证。

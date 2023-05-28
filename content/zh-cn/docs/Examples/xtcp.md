@@ -9,22 +9,16 @@ frp 提供了一种新的代理类型 `xtcp` 用于应对在希望传输大量�
 
 使用方式同 `stcp` 类似，需要在两边都部署上 frpc 用于建立直接的连接。
 
-**目前处于开发的初级阶段，并不能穿透所有类型的 NAT 设备，所以穿透成功率较低。穿透失败时可以尝试 `stcp` 的方式。**
+**XTCP 并不能穿透所有类型的 NAT 设备，穿透失败时可以尝试 `stcp` 的方式。**
 
-1. frps.ini 内容如下，需要额外配置监听一个 UDP 端口用于支持该类型的客户端：
-
-    ```ini
-    [common]
-    bind_port = 7000
-    bind_udp_port = 7000
-    ```
-
-2. 在需要暴露到外网的机器上部署 frpc，且配置如下：
+1. 在需要暴露到外网的机器上部署 frpc，且配置如下：
 
     ```ini
     [common]
     server_addr = x.x.x.x
     server_port = 7000
+    # 当默认的 stun server 不可用时，可以配置一个新的
+    # nat_hole_stun_server = xxx
 
     [p2p_ssh]
     type = xtcp
@@ -34,12 +28,14 @@ frp 提供了一种新的代理类型 `xtcp` 用于应对在希望传输大量�
     local_port = 22
     ```
 
-3. 在想要访问内网服务的机器上也部署 frpc，且配置如下：
+2. 在想要访问内网服务的机器上也部署 frpc，且配置如下：
 
     ```ini
     [common]
     server_addr = x.x.x.x
     server_port = 7000
+    # 当默认的 stun server 不可用时，可以配置一个新的
+    # nat_hole_stun_server = xxx
 
     [p2p_ssh_visitor]
     type = xtcp
@@ -51,8 +47,10 @@ frp 提供了一种新的代理类型 `xtcp` 用于应对在希望传输大量�
     # 绑定本地端口用于访问 ssh 服务
     bind_addr = 127.0.0.1
     bind_port = 6000
+    # 当需要自动保持隧道打开时，设置为 true
+    # keep_tunnel_open = false
     ```
 
-4. 通过 SSH 访问内网机器，假设用户名为 test：
+3. 通过 SSH 访问内网机器，假设用户名为 test：
 
     `ssh -oPort=6000 test@127.0.0.1`
