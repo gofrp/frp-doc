@@ -107,6 +107,7 @@ description: >
 | keep_tunnel_open | bool | 是否保持隧道打开 | 否 | false | | 如果开启，会定期检查隧道状态并尝试保持打开 |
 | max_retries_an_hour | int | 每小时尝试打开隧道的次数 | 否 | 8 | | 仅在 keep_tunnel_open 为 true 时有效 |
 | min_retry_interval | int | 重试打开隧道的最小间隔时间，单位: 秒 | 否 | 90 | | 仅在 keep_tunnel_open 为 true 时有效 |
+| protocol | string | 隧道底层通信协议 | 否 | quic | quic, kcp | |
 
 ## TCPMUX
 
