@@ -31,7 +31,7 @@ description: >
 | tls_cert_file | string | TLS 服务端证书文件路径 | | | |
 | tls_key_file | string | TLS 服务端密钥文件路径 | | | |
 | tls_trusted_ca_file | string | TLS CA 证书路径 | | | |
-| nat_hole_analysis_data_reserve_hours | int | 打洞策略数据的保留时间 | 168 | | |
+| nat_hole_analysis_data_reserve_hours | int | 打洞策略数据的保留时间 | 168 | | 单位：时 |
 
 ## 权限验证
 
