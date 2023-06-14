@@ -11,7 +11,6 @@ description: >
 | :--- | :--- | :--- | :--- | :--- | :---|
 | bind_addr | string | 服务端监听地址 | 0.0.0.0 | | |
 | bind_port | int | 服务端监听端口 | 7000 | | 接收 frpc 的连接 |
-| bind_udp_port | int | 服务端监听 UDP 端口 | 0 | | 用于辅助创建 P2P 连接 |
 | kcp_bind_port | int | 服务端监听 KCP 协议端口 | 0 | | 用于接收采用 KCP 连接的 frpc |
 | quic_bind_port | int | 服务端监听 QUIC 协议端口 | 0 | | 用于接收采用 QUIC 连接的 frpc |
 | quic_keepalive_period | int | quic 协议 keepalive 间隔，单位: 秒 | 10 | | |
