@@ -28,12 +28,12 @@ description: >
 | quic_keepalive_period | int | quic 协议 keepalive 间隔，单位: 秒 | 10 | | |
 | quic_max_idle_timeout | int | quic 协议的最大空闲超时时间，单位: 秒 | 30 | | |
 | quic_max_incoming_streams | int | quic 协议最大并发 stream 数 | 100000 | | |
-| tls_enable | bool | 启用 TLS 协议加密连接 | false | | |
+| tls_enable | bool | 启用 TLS 协议加密连接 | true | | |
 | tls_cert_file | string | TLS 客户端证书文件路径 | | | |
 | tls_key_file | string | TLS 客户端密钥文件路径 | | | |
 | tls_trusted_ca_file | string | TLS CA 证书路径 | | | |
 | tls_server_name | string | TLS Server 名称 | | | 为空则使用 server_addr |
-| disable_custom_tls_first_byte | bool | TLS 不发送 0x17 | false | | 当为 true 时，不能端口复用 |
+| disable_custom_tls_first_byte | bool | TLS 不发送 0x17 | true | | 当为 true 时，不能端口复用 |
 | tcp_mux_keepalive_interval | int | tcp_mux 的心跳检查间隔时间 | 60 | | 单位：秒 |
 | heartbeat_interval | int | 向服务端发送心跳包的间隔时间 | 30 | | 建议启用 tcp_mux_keepalive_interval，将此值设置为 -1 |
 | heartbeat_timeout | int | 和服务端心跳的超时时间 | 90 | | |

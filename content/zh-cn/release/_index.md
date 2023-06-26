@@ -8,6 +8,14 @@ cascade:
 - type: "docs"
 ---
 
+#### v0.50.0
+
+  * [new] stcp, sudp, xtcp 支持 `allow_users`，默认只允许同 user 访问，`*` 表示允许任何用户访问，visitor 配置支持 `server_user`，以支持连接到其他用户的代理。
+  * [new] xtcp 连接失败时支持 fallback 到指定的其他 visitor。
+  * [improve] 提高 yamux `MaxStreamWindowSize` 的默认值到 6MB，以提升高延迟场景下的流量转发速率。
+  * [fix] xtcp: 修复同名的 proxy 会导致之前正常运行的 proxy 失效的问题。
+  * [change] 为了提高安全性，`tls_enable` 和 `disable_custom_tls_first_byte` 的默认值将会设置为 true。如果希望恢复之前的默认值，你需要主动将这两个参数的值设置为 false。
+
 #### v0.49.0
 
   * [new] frpc 新增 nathole discover 命令用于测试当前网络的 NAT 类型。

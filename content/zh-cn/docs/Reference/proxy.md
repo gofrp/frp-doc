@@ -83,8 +83,9 @@ description: >
 
 | 参数 | 类型 | 说明 | 是否必须 | 默认值 | 可选值 | 备注 |
 | :--- | :---: | :--- | :---: | :---: | :--- | :--- |
-| role | string | 角色 | 是 | server | server,visitor | server 表示服务端，visitor 表示访问端 |
+| role | string | 角色 | 是 | server | server | server 表示服务端 |
 | sk | string | 密钥 | 是 | | | 服务端和访问端的密钥需要一致，访问端才能访问到服务端 |
+| allow_users | []string | 允许访问的 visitor 用户 | 否 | | | 默认只允许同一用户下的 visitor 访问，配置为 * 则允许任何 visitor 访问 |
 
 ## SUDP
 
@@ -92,6 +93,7 @@ description: >
 | :--- | :---: | :--- | :---: | :---: | :--- | :--- |
 | role | string | 角色 | 是 | server | server,visitor | server 表示服务端，visitor 表示访问端 |
 | sk | string | 密钥 | 是 | | | 服务端和访问端的密钥需要一致，访问端才能访问到服务端 |
+| allow_users | []string | 允许访问的 visitor 用户 | 否 | | | 默认只允许同一用户下的 visitor 访问，配置为 * 则允许任何 visitor 访问 |
 
 ## XTCP
 
@@ -99,15 +101,7 @@ description: >
 | :--- | :---: | :--- | :---: | :---: | :--- | :--- |
 | role | string | 角色 | 是 | server | server,visitor | server 表示服务端，visitor 表示访问端 |
 | sk | string | 密钥 | 是 | | | 服务端和访问端的密钥需要一致，访问端才能访问到服务端 |
-
-## XTCP visitor
-
-| 参数 | 类型 | 说明 | 是否必须 | 默认值 | 可选值 | 备注 |
-| :--- | :---: | :--- | :---: | :---: | :--- | :--- |
-| keep_tunnel_open | bool | 是否保持隧道打开 | 否 | false | | 如果开启，会定期检查隧道状态并尝试保持打开 |
-| max_retries_an_hour | int | 每小时尝试打开隧道的次数 | 否 | 8 | | 仅在 keep_tunnel_open 为 true 时有效 |
-| min_retry_interval | int | 重试打开隧道的最小间隔时间，单位: 秒 | 否 | 90 | | 仅在 keep_tunnel_open 为 true 时有效 |
-| protocol | string | 隧道底层通信协议 | 否 | quic | quic, kcp | |
+| allow_users | []string | 允许访问的 visitor 用户 | 否 | | | 默认只允许同一用户下的 visitor 访问，配置为 * 则允许任何 visitor 访问 |
 
 ## TCPMUX
 
