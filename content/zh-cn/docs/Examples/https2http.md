@@ -10,6 +10,7 @@ description: >
     ```ini
     [common]
     bind_port = 7000
+    vhost_https_port = 443
     ```
 
 2. frpc.ini 内容如下：
