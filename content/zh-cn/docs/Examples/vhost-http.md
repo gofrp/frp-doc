@@ -1,11 +1,13 @@
 ---
 title: "通过自定义域名访问内网的 Web 服务"
-weight: 3
+weight: 15
 description: >
   这个示例通过简单配置 HTTP 类型的代理让用户访问到内网的 Web 服务。
 ---
 
 HTTP 类型的代理相比于 TCP 类型，不仅在服务端只需要监听一个额外的端口 `vhost_http_port` 用于接收 HTTP 请求，还额外提供了基于 HTTP 协议的诸多功能。
+
+HTTPS 与此类似，但是需要注意，frp 的 https 代理需要本地服务是 HTTPS 服务，frps 端不会做 TLS 终止。也可以结合 https2http 插件来实现将本地的 HTTP 服务以 HTTPS 协议暴露出去。
 
 1. 修改 frps.ini 文件，设置监听 HTTP 请求端口为 8080：
 
@@ -14,6 +16,8 @@ HTTP 类型的代理相比于 TCP 类型，不仅在服务端只需要监听一�
     bind_port = 7000
     vhost_http_port = 8080
     ```
+
+   https 代理的话需要配置 `vhost_https_port`。
 
 2. 修改 frpc.ini 文件，假设 frps 所在的服务器的 IP 为 x.x.x.x，`local_port` 为本地机器上 Web 服务监听的端口, 绑定自定义域名为 `custom_domains`。
 

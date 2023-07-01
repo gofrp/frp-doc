@@ -1,6 +1,6 @@
 ---
 title: "安全地暴露内网服务"
-weight: 8
+weight: 40
 description: >
   这个示例将会创建一个只有自己能访问到的 SSH 服务代理。
 ---

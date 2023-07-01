@@ -1,6 +1,6 @@
 ---
 title: "转发 DNS 查询请求"
-weight: 4
+weight: 20
 description: >
   这个示例通过简单配置 UDP 类型的代理转发 DNS 查询请求。
 ---
