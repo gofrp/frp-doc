@@ -24,7 +24,7 @@ description: >
 | user | string | 用户名 | | | 设置此参数后，代理名称会被修改为 {user}.{proxyName}，避免代理名称和其他用户冲突 |
 | dns_server | string | 使用 DNS 服务器地址 | | | 默认使用系统配置的 DNS 服务器，指定此参数可以强制替换为自定义的 DNS 服务器地址 |
 | login_fail_exit | bool | 第一次登陆失败后是否退出 | true | | |
-| protocol | string | 连接服务端的通信协议 | tcp | tcp, kcp, quic, websocket | |
+| protocol | string | 连接服务端的通信协议 | tcp | tcp, kcp, quic, websocket, wss | |
 | quic_keepalive_period | int | quic 协议 keepalive 间隔，单位: 秒 | 10 | | |
 | quic_max_idle_timeout | int | quic 协议的最大空闲超时时间，单位: 秒 | 30 | | |
 | quic_max_incoming_streams | int | quic 协议最大并发 stream 数 | 100000 | | |

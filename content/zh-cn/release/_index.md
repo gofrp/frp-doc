@@ -8,6 +8,13 @@ cascade:
 - type: "docs"
 ---
 
+#### v0.51.0
+
+  * [new] frpc 支持通过 wss 连接 frps。
+  * [new] frpc 支持通过 stop 命令停止服务。
+  * [improve] `Service.Run` 支持传入 context。
+  * [fix] 修复一处由于 yamux 的 bug 导致 wss 在某些插件中无法正常工作的问题。
+
 #### v0.50.0
 
   * [new] stcp, sudp, xtcp 支持 `allow_users`，默认只允许同 user 访问，`*` 表示允许任何用户访问，visitor 配置支持 `server_user`，以支持连接到其他用户的代理。
