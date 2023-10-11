@@ -2,7 +2,7 @@ baseURL = "/"
 title = "frp"
 
 # Language settings
-contentDir = "content/en"
+contentDir = "content/zh-cn"
 defaultContentLanguage = "zh-cn"
 defaultContentLanguageInSubdir = false
 # Useful when translating.
@@ -10,16 +10,24 @@ enableMissingTranslationPlaceholders = true
 
 enableRobotsTXT = true
 
-# Hugo allows theme composition (and inheritance). The precedence is from left to right.
-theme = ["github.com/google/docsy", "github.com/google/docsy/dependencies"]
-
 # Will give values to .Lastmod etc.
 enableGitInfo = true
 
 # Comment out to enable taxonomies in Docsy
 disableKinds = ["taxonomy"]
 
+[taxonomies]
+tag = "tags"
+category = "categories"
+
 [params.taxonomy]
+# set taxonomyCloud = [] to hide taxonomy clouds
+taxonomyCloud = ["tags", "categories"]
+# If used, must have same length as taxonomyCloud
+taxonomyCloudTitle = ["Tag Cloud", "Categories"]
+# set taxonomyPageHeader = [] to hide taxonomies on the page headers
+taxonomyPageHeader = ["tags", "categories"]
+
 # Highlighting config
 pygmentsCodeFences = true
 pygmentsUseClasses = false
@@ -66,6 +74,7 @@ title = "frp"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
+contentDir = "content/en"
 params.description = "frp official website"
 [languages.zh-cn]
 title = "frp"
@@ -76,6 +85,8 @@ params.description = "frp official website"
 
 [markup]
   [markup.goldmark]
+    [markup.goldmark.parser.attribute]
+      block = true
     [markup.goldmark.renderer]
       unsafe = true
     [markup.highlight]
@@ -129,7 +140,7 @@ github_branch= "master"
 # gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 
 # Enable Algolia DocSearch
-[search]
+[params.search]
 algolia = false
 
 # Enable Lunr.js offline search
