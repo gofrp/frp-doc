@@ -17,7 +17,7 @@ theme = ["github.com/google/docsy", "github.com/google/docsy/dependencies"]
 enableGitInfo = true
 
 # Comment out to enable taxonomies in Docsy
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy"]
 
 [params.taxonomy]
 # Highlighting config
@@ -63,16 +63,16 @@ anchor = "smart"
 [languages]
 [languages.en]
 title = "frp"
-description = "frp official website"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
+params.description = "frp official website"
 [languages.zh-cn]
 title = "frp"
-description = "frp official website"
 languageName ="中文"
 weight = 2
 contentDir = "content/zh-cn"
+params.description = "frp official website"
 
 [markup]
   [markup.goldmark]
@@ -129,7 +129,8 @@ github_branch= "master"
 # gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 
 # Enable Algolia DocSearch
-algolia_docsearch = false
+[search]
+algolia = false
 
 # Enable Lunr.js offline search
 offlineSearch = true
@@ -199,8 +200,8 @@ enable = false
   proxy = "direct"
   [module.hugoVersion]
     extended = true
-    min = "0.110.0"
-    max = "0.110.0"
+    min = "0.119.0"
+    max = "0.119.0"
   [[module.imports]]
     path = "github.com/google/docsy"
   [[module.imports]]
