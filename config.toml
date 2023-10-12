@@ -4,7 +4,7 @@ title = "frp"
 # Language settings
 contentDir = "content/zh-cn"
 defaultContentLanguage = "zh-cn"
-defaultContentLanguageInSubdir = false
+defaultContentLanguageInSubdir = true
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
 
