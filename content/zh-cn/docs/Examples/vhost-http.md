@@ -2,43 +2,54 @@
 title: "通过自定义域名访问内网的 Web 服务"
 weight: 15
 description: >
-  这个示例通过简单配置 HTTP 类型的代理让用户访问到内网的 Web 服务。
+  通过简单配置 HTTP 类型的代理，您可以让用户通过自定义域名访问内网的 Web 服务。
 ---
 
-HTTP 类型的代理相比于 TCP 类型，不仅在服务端只需要监听一个额外的端口 `vhost_http_port` 用于接收 HTTP 请求，还额外提供了基于 HTTP 协议的诸多功能。
+HTTP 类型的代理非常适合将内网的 Web 服务通过自定义域名提供给外部用户。相比于 TCP 类型代理，HTTP 代理不仅可以复用端口，还提供了基于 HTTP 协议的许多功能。
 
 HTTPS 与此类似，但是需要注意，frp 的 https 代理需要本地服务是 HTTPS 服务，frps 端不会做 TLS 终止。也可以结合 https2http 插件来实现将本地的 HTTP 服务以 HTTPS 协议暴露出去。
 
-1. 修改 frps.ini 文件，设置监听 HTTP 请求端口为 8080：
+### 步骤
 
-    ```ini
-    [common]
-    bind_port = 7000
-    vhost_http_port = 8080
+1. **配置 frps.toml**
+
+   在 frps.toml 文件中添加以下内容，以指定 HTTP 请求的监听端口为 8080：
+
+    ```toml
+    bindPort = 7000
+    vhostHTTPPort = 8080
     ```
 
-   https 代理的话需要配置 `vhost_https_port`。
+   如果需要配置 HTTPS 代理，还需要设置 `vhostHTTPSPort`。
 
-2. 修改 frpc.ini 文件，假设 frps 所在的服务器的 IP 为 x.x.x.x，`local_port` 为本地机器上 Web 服务监听的端口, 绑定自定义域名为 `custom_domains`。
+2. **配置 frpc.toml**
 
-    ```ini
-    [common]
-    server_addr = x.x.x.x
-    server_port = 7000
+   在 frpc.toml 文件中添加以下内容，确保设置了正确的服务器 IP 地址、本地 Web 服务监听端口和自定义域名：
 
-    [web]
-    type = http
-    local_port = 80
-    custom_domains = www.yourdomain.com
+    ```toml
+    serverAddr = "x.x.x.x"
+    serverPort = 7000
 
-    [web2]
-    type = http
-    local_port = 8080
-    custom_domains = www.yourdomain2.com
+    [[proxies]]
+    name = "web"
+    type = "http"
+    localPort = 80
+    customDomains = ["www.yourdomain.com"]
+
+    [[proxies]]
+    name = "web2"
+    type = "http"
+    localPort = 8080
+    customDomains = ["www.yourdomain2.com"]
     ```
 
-3. 分别启动 frps 和 frpc。
+3. **启动 frps 和 frpc**
 
-4. 将 `www.yourdomain.com` 和 `www.yourdomain2.com` 的域名 A 记录解析到 IP `x.x.x.x`，如果服务器已经有对应的域名，也可以将 CNAME 记录解析到服务器原先的域名。或者可以通过修改 HTTP 请求的 Host 字段来实现同样的效果。
+4. **域名解析**
 
-5. 通过浏览器访问 `http://www.yourdomain.com:8080` 即可访问到处于内网机器上 80 端口的服务，访问 `http://www.yourdomain2.com:8080` 则访问到内网机器上 8080 端口的服务。
+   将 `www.yourdomain.com` 和 `www.yourdomain2.com` 的域名 A 记录解析到服务器的 IP 地址 `x.x.x.x`。如果服务器已经有对应的域名，您还可以将 CNAME 记录解析到原始域名。另外，通过修改 HTTP 请求的 Host 字段也可以实现相同的效果。
+
+
+5. **通过浏览器访问**
+
+   使用浏览器访问 `http://www.yourdomain.com:8080` 即可访问内网机器上的 80 端口服务，访问 `http://www.yourdomain2.com:8080` 可以访问内网机器上的 8080 端口服务。

@@ -2,32 +2,41 @@
 title: "转发 Unix 域套接字"
 weight: 25
 description: >
-  这个示例通过配置 Unix域套接字客户端插件来通过 TCP 端口访问内网的 Unix域套接字服务，例如 Docker Daemon。
+  通过配置 Unix 域套接字客户端插件，您可以使用 TCP 端口访问内网的 Unix 域套接字服务，例如 Docker Daemon。
 ---
 
-1. frps.ini 内容如下：
+### 步骤
 
-    ```ini
-    [common]
-    bind_port = 7000
+1. **配置 frps.toml**
+
+   在 frps.toml 文件中添加以下内容：
+
+    ```toml
+    bindPort = 7000
     ```
 
-2. frpc.ini 内容如下：
+2. **配置 frpc.toml**
 
-    ```ini
-    [common]
-    server_addr = x.x.x.x
-    server_port = 7000
+   在 frpc.toml 文件中添加以下内容，确保设置正确的 Unix 域套接字路径：
 
-    [unix_domain_socket]
-    type = tcp
-    remote_port = 6000
-    plugin = unix_domain_socket
-    plugin_unix_path = /var/run/docker.sock
+    ```toml
+    serverAddr = "x.x.x.x"
+    serverPort = 7000
+
+    [[proxies]]
+    name = "unix_domain_socket"
+    type = "tcp"
+    remotePort = 6000
+    [proxies.plugin]
+    type = "unix_domain_socket"
+    # Unix 域套接字路径
+    unixPath = "/var/run/docker.sock"
     ```
 
-3. 分别启动 frps 和 frpc。
+3. **启动 frps 和 frpc**
 
-4. 通过 curl 命令查看 docker 版本信息
+4. **使用 curl 查看 Docker 版本信息**
 
-    `curl http://x.x.x.x:6000/version`
+   ```bash
+   curl http://x.x.x.x:6000/version
+   ```

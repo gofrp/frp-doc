@@ -6,26 +6,32 @@ description: >
 ---
 
 {{% pageinfo %}}
-frp 采用 Golang 编写，支持跨平台，仅需下载对应平台的二进制文件即可执行，没有额外依赖。
+frp 采用 Go 语言编写，支持跨平台，只需下载适用于您平台的二进制文件即可执行，无需额外依赖。
 {{% /pageinfo %}}
 
 ## 系统需求
 
-由于采用 Golang 编写，所以系统需求和最新的 Golang 对系统和平台的要求一致，具体可以参考 [Golang System requirements](https://golang.org/doc/install#requirements)。
-
+由于采用 Go 语言编写，因此系统需求与最新的 Go 语言对系统和平台的要求一致，具体请参考 [Golang System requirements](https://golang.org/doc/install#requirements)。
 
 ## 下载
 
-目前可以在 Github 的 [Release](https://github.com/fatedier/frp/releases) 页面中下载到最新版本的客户端和服务端二进制文件，所有文件被打包在一个压缩包中。
+您可以从 GitHub 的 [Release](https://github.com/fatedier/frp/releases) 页面中下载最新版本的客户端和服务器二进制文件。所有文件都打包在一个压缩包中，还包含了一份完整的配置参数说明。
 
 ## 部署
 
-解压缩下载的压缩包，将其中的 frpc 拷贝到内网服务所在的机器上，将 frps 拷贝到具有公网 IP 的机器上，放置在任意目录。
+1. 解压下载的压缩包。
+2. 将 `frpc` 复制到内网服务所在的机器上。
+3. 将 `frps` 复制到拥有公网 IP 地址的机器上，并将它们放在任意目录。
 
 ## 开始使用！
 
-编写配置文件，先通过 `./frps -c ./frps.ini` 启动服务端，再通过 `./frpc -c ./frpc.ini` 启动客户端。如果需要在后台长期运行，建议结合其他工具使用，例如 [systemd](/docs/setup/systemd/) 和 `supervisor`。
+1. 编写配置文件，目前支持的文件格式包括 TOML/YAML/JSON，旧的 INI 格式仍然支持，但已经不再推荐。
+2. 使用以下命令启动服务器：`./frps -c ./frps.toml`。
+3. 使用以下命令启动客户端：`./frpc -c ./frpc.toml`。
+4. 如果需要在后台长期运行，建议结合其他工具，如 [systemd](/docs/setup/systemd/) 和 `supervisor`。
 
-如果是 Windows 用户，需要在 cmd 终端中执行命令。
+如果您是 Windows 用户，需要在命令提示符中执行相同的命令。
 
-配置文件如何编写可以参考 [示例](/docs/examples/) 中的内容。
+有关如何编写配置文件，请参考 [示例](../examples/) 部分中的内容。
+
+完整的配置项说明，请参考 [Reference](../reference/) 中的内容。

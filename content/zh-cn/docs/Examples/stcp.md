@@ -2,54 +2,61 @@
 title: "安全地暴露内网服务"
 weight: 40
 description: >
-  这个示例将会创建一个只有自己能访问到的 SSH 服务代理。
+  通过创建一个只有授权用户能够访问的 SSH 服务代理，实现内网服务的安全暴露。
 ---
 
-对于某些服务来说如果直接暴露于公网上将会存在安全隐患。
+某些内网服务，如果直接暴露在公网上，可能存在安全风险。使用 `stcp(secret tcp)` 类型的代理可以让您安全地将内网服务暴露给经过授权的用户，这需要访问者也部署 frpc 客户端。
 
-使用 `stcp(secret tcp)` 类型的代理可以避免让任何人都能访问到要穿透的服务，但是访问者也需要运行另外一个 frpc 客户端。
+### 步骤
 
-1. frps.ini 内容如下：
+1. **配置 frps.toml**
 
-    ```ini
-    [common]
-    bind_port = 7000
+    在 frps.toml 文件中添加以下内容：
+
+    ```toml
+    bindPort = 7000
     ```
 
-2. 在需要暴露到外网的机器上部署 frpc，且配置如下：
+2. **部署 frpc 客户端并配置**
 
-    ```ini
-    [common]
-    server_addr = x.x.x.x
-    server_port = 7000
+    在需要将内网服务暴露到公网的机器上部署 frpc，并创建如下配置：
 
-    [secret_ssh]
-    type = stcp
-    # 只有 sk 一致的用户才能访问到此服务
-    sk = abcdefg
-    local_ip = 127.0.0.1
-    local_port = 22
+    ```toml
+    serverAddr = "x.x.x.x"
+    serverPort = 7000
+
+    [[proxies]]
+    name = "secret_ssh"
+    type = "stcp"
+    # 只有与此处设置的 secretKey 一致的用户才能访问此服务
+    secretKey = "abcdefg"
+    localIP = "127.0.0.1"
+    localPort = 22
     ```
 
-3. 在想要访问内网服务的机器上也部署 frpc，且配置如下：
+3. **在访问者机器上部署并配置 frpc**
 
-    ```ini
-    [common]
-    server_addr = x.x.x.x
-    server_port = 7000
+    在想要访问内网服务的机器上也部署 frpc，并创建如下配置：
 
-    [secret_ssh_visitor]
-    type = stcp
-    # stcp 的访问者
-    role = visitor
+    ```toml
+    serverAddr = "x.x.x.x"
+    serverPort = 7000
+
+    [[visitors]]
+    name = "secret_ssh_visitor"
+    type = "stcp"
     # 要访问的 stcp 代理的名字
-    server_name = secret_ssh
-    sk = abcdefg
-    # 绑定本地端口用于访问 SSH 服务
-    bind_addr = 127.0.0.1
-    bind_port = 6000
+    serverName = "secret_ssh"
+    secretKey = "abcdefg"
+    # 绑定本地端口以访问 SSH 服务
+    bindAddr = "127.0.0.1"
+    bindPort = 6000
     ```
 
-4. 通过 SSH 访问内网机器，假设用户名为 test：
+4. **通过 SSH 访问内网机器**
 
-    `ssh -oPort=6000 test@127.0.0.1`
+   使用以下命令通过 SSH 访问内网机器，假设用户名为 test：
+
+   ```bash
+   ssh -o Port=6000 test@127.0.0.1
+   ```
