@@ -2,55 +2,63 @@
 title: "点对点内网穿透"
 weight: 45
 description: >
-  这个示例将会演示一种不通过服务器中转流量的方式来访问内网服务。
+  这个示例将演示如何通过点对点 (P2P) 连接来访问内网服务，流量不会通过服务器中转。
 ---
 
-frp 提供了一种新的代理类型 `xtcp` 用于应对在希望传输大量数据且流量不经过服务器的场景。
+frp 提供了一种新的代理类型 `xtcp`，用于在需要传输大量数据且不希望流量经过服务器的情况下实现内网穿透。
 
-使用方式同 `stcp` 类似，需要在两边都部署上 frpc 用于建立直接的连接。
+与 `stcp` 类似，使用 `xtcp` 需要在两端都部署 frpc 以建立直接连接。
 
-**XTCP 并不能穿透所有类型的 NAT 设备，穿透失败时可以尝试 `stcp` 的方式。**
+需要注意的是，`xtcp` 并不适用于所有类型的 NAT 设备，如果穿透失败，可以尝试使用 `stcp` 代理。
 
-1. 在需要暴露到外网的机器上部署 frpc，且配置如下：
+### 步骤
 
-    ```ini
-    [common]
-    server_addr = x.x.x.x
-    server_port = 7000
-    # 当默认的 stun server 不可用时，可以配置一个新的
-    # nat_hole_stun_server = xxx
+1. **配置需要暴露到外网的机器上的 frpc.toml 文件**
 
-    [p2p_ssh]
-    type = xtcp
-    # 只有 sk 一致的用户才能访问到此服务
-    sk = abcdefg
-    local_ip = 127.0.0.1
-    local_port = 22
+   在 frpc.toml 文件中添加以下内容，确保设置了正确的服务器地址和端口以及共享密钥 (`secretKey`)，以及本地服务的 IP 地址和端口：
+
+    ```toml
+    serverAddr = "x.x.x.x"
+    serverPort = 7000
+    # 如果默认的 STUN 服务器不可用，可以配置一个新的 STUN 服务器
+    # natHoleStunServer = "xxx"
+
+    [[proxies]]
+    name = "p2p_ssh"
+    type = "xtcp"
+    # 只有共享密钥 (secretKey) 与服务器端一致的用户才能访问该服务
+    secretKey = "abcdefg"
+    localIP = "127.0.0.1"
+    localPort = 22
     ```
 
-2. 在想要访问内网服务的机器上也部署 frpc，且配置如下：
+2. **在想要访问内网服务的机器上部署 frpc**
 
-    ```ini
-    [common]
-    server_addr = x.x.x.x
-    server_port = 7000
-    # 当默认的 stun server 不可用时，可以配置一个新的
-    # nat_hole_stun_server = xxx
+   在 frpc.toml 文件中添加以下内容，确保设置了正确的服务器地址和端口，共享密钥 (`secretKey`) 以及要访问的 P2P 代理的名称：
 
-    [p2p_ssh_visitor]
-    type = xtcp
-    # xtcp 的访问者
-    role = visitor
-    # 要访问的 xtcp 代理的名字
-    server_name = p2p_ssh
-    sk = abcdefg
-    # 绑定本地端口用于访问 ssh 服务
-    bind_addr = 127.0.0.1
-    bind_port = 6000
-    # 当需要自动保持隧道打开时，设置为 true
-    # keep_tunnel_open = false
+    ```toml
+    serverAddr = "x.x.x.x"
+    serverPort = 7000
+    # 如果默认的 STUN 服务器不可用，可以配置一个新的 STUN 服务器
+    # natHoleStunServer = "xxx"
+
+    [[visitors]]
+    name = "p2p_ssh_visitor"
+    type = "xtcp"
+    # 要访问的 P2P 代理的名称
+    serverName = "p2p_ssh"
+    secretKey = "abcdefg"
+    # 绑定本地端口以访问 SSH 服务
+    bindAddr = "127.0.0.1"
+    bindPort = 6000
+    # 如果需要自动保持隧道打开，将其设置为 true
+    # keepTunnelOpen = false
+    
+
+3. **通过 SSH 访问内网机器**
+
+   使用 SSH 命令访问内网机器，假设用户名为 `test`：
+
     ```
-
-3. 通过 SSH 访问内网机器，假设用户名为 test：
-
-    `ssh -oPort=6000 test@127.0.0.1`
+    ssh -oPort=6000 test@127.0.0.1
+    ```
