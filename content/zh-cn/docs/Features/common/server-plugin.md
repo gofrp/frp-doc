@@ -216,45 +216,47 @@ Response
 
 ## frps 中插件配置
 
-```ini
-[common]
-bind_port = 7000
+```toml
+bindPort = 7000
 
-[plugin.user-manager]
-addr = 127.0.0.1:9000
-path = /handler
-ops = Login
+[[httpPlugins]]
+name = "user-manager"
+addr = "127.0.0.1:9000"
+path = "/handler"
+ops = ["Login"]
 
-[plugin.port-manager]
-addr = https://127.0.0.1:9001
-path = /handler
-ops = NewProxy
-tls_verify = true
+[[httpPlugins]]
+name = "port-manager"
+addr = "127.0.0.1:9001"
+path = "/handler"
+ops = ["NewProxy"]
 ```
 
-addr: 插件监听的网络地址，支持 HTTP 和 HTTPS，默认为 HTTP。
-path: 插件监听的请求路径。
-ops: 插件需要处理的操作列表，多个 op 以英文逗号分隔。
-tls_verify: 如果是 HTTPS 协议，支持忽略 TLS 身份验证。
+* addr: 插件监听的网络地址，支持 HTTP 和 HTTPS，默认为 HTTP。
+* path: 插件监听的请求路径。
+* ops: 插件需要处理的操作列表，多个 op 以英文逗号分隔。
+* tls_verify: 如果是 HTTPS 协议，支持忽略 TLS 身份验证。
 
 ## 元数据
 
 为了减少 frps 的代码修改，同时提高管理插件的扩展能力，在 frpc 的配置文件中引入自定义元数据的概念。元数据会在调用 RPC 请求时发送给插件。
 
-元数据以 `meta_` 开头，可以配置多个，元数据分为两种，一种配置在 `common` 下，一种配置在各个 `proxy` 中。
+有两种类型的元数据条目，全局条目和每个代理配置下的条目。全局元数据将在客户端登录时附加在 Login 请求中，并在其他 RPC 请求中附加在 `user.metas` 中。
+
+每个代理配置下的元数据条目仅会在 NewProxy 操作中通过 metas 传递。
 
 ```
-# frpc.ini
-[common]
-server_addr = 127.0.0.1
-server_port = 7000
-user = fake
-meta_token = fake
-meta_version = 1.0.0
+# frpc.toml
+serverAddr = "127.0.0.1"
+serverPort = 7000
+user = "fake"
+metadatas.token = "fake"
+metadatas.version = "1.0.0"
 
-[ssh]
-type = tcp
-local_port = 22
-remote_port = 6000
-meta_id = 123
+[[proxies]]
+name = "ssh"
+type = "tcp"
+localPort = 22
+remotePort = 6000
+metadatas.id = "123"
 ```
