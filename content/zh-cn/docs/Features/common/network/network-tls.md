@@ -3,15 +3,15 @@ title: "自定义 TLS 协议加密"
 weight: 2
 ---
 
-`use_encryption` 和 `STCP` 等功能能有效防止流量内容在通信过程中被盗取，但是无法判断对方的身份是否合法，存在被中间人攻击的风险。为此 frp 支持 frpc 和 frps 之间的流量通过 TLS 协议加密，并且支持客户端或服务端单向验证，双向验证等功能。
+`transport.useEncryption` 和 `STCP` 等功能能有效防止流量内容在通信过程中被盗取，但是无法判断对方的身份是否合法，存在被中间人攻击的风险。为此 frp 支持 frpc 和 frps 之间的流量通过 TLS 协议加密，并且支持客户端或服务端单向验证，双向验证等功能。
 
-当 `frps.ini` 的 `common` 中 `tls_only = true` 时，表示 server 端只接受 TLS 连接的客户端，这也是 frps 验证 frpc 身份的前提条件。如果 `frps.ini` 的 `common` 中 `tls_trusted_ca_file` 内容是有效的话，那么默认就会开启 `tls_only = true`。
+当 `frps.toml` 中 `transport.tls.force = true` 时，表示 server 端只接受 TLS 连接的客户端，这也是 frps 验证 frpc 身份的前提条件。如果 `frps.toml` 中 `transport.tls.trustedCaFile` 内容是有效的话，那么默认就会开启 `transport.tls.force = true`。
 
-**注意：启用此功能后除 xtcp 且 xtcp 的 protocol 配置为 kcp 外，可以不用再设置 use_encryption 重复加密**
+**注意：启用此功能后除 xtcp ，可以不用再设置 use_encryption 重复加密**
 
 ## TLS 默认开启方式
 
-从 v0.50.0 开始，`tls_enable` 的默认值将会为 true，默认开启 TLS 协议加密。
+从 v0.50.0 开始，`transport.tls.enable` 的默认值将会为 true，默认开启 TLS 协议加密。
 
 如果 frps 端没有配置证书，则会使用随机生成的证书来加密流量。
 
@@ -19,51 +19,44 @@ weight: 2
 
 ## frpc 单向校验 frps 身份
 
-```ini
-# frpc.ini
-[common]
-tls_trusted_ca_file = /to/ca/path/ca.crt
+```toml
+# frpc.toml
+transport.tls.trustedCaFile = "/to/ca/path/ca.crt"
 
-# frps.ini
-[common]
-tls_cert_file = /to/cert/path/server.crt
-tls_key_file = /to/key/path/server.key
+# frps.toml
+transport.tls.certFile = "/to/cert/path/server.crt"
+transport.tls.keyFile = "/to/key/path/server.key"
 ```
 
-frpc 需要额外加载 ca 证书，frps 需要额外指定 TLS 配置。frpc 通过 ca 证书单向验证 frps 
-的身份。这就要求 frps 的 `server.crt` 对 frpc 的 ca 是合法的。
+frpc 需要额外加载 ca 证书，frps 需要额外指定 TLS 配置。frpc 通过 ca 证书单向验证 frps 的身份。这就要求 frps 的 `server.crt` 对 frpc 的 ca 是合法的。
 
 合法: 如果证书是 ca 签发的，或者证书是在 ca 的信任链中，那即认为: 该证书对 ca 而言是合法的。
 
 ## frps 单向验证 frpc 的身份
 
-```ini
-# frpc.ini
-[common]
-tls_cert_file = /to/cert/path/client.crt
-tls_key_file = /to/key/path/client.key
+```toml
+# frpc.toml
+transport.tls.certFile = "/to/cert/path/client.crt"
+transport.tls.keyFile = "/to/key/path/client.key"
 
 # frps.ini
-[common]
-tls_trusted_ca_file = /to/ca/path/ca.crt
+transport.tls.trustedCaFile = "/to/ca/path/ca.crt"
 ```
 
 frpc 需要额外加载 TLS 配置，frps 需要额外加载 ca 证书。frps 通过 ca 证书单向验证 frpc 的身份。这就要求 frpc 的 `client.crt` 对 frps 的 ca 是合法的。
 
 ## 双向验证
 
-```ini
-# frpc.ini
-[common]
-tls_cert_file = /to/cert/path/client.crt
-tls_key_file = /to/key/path/client.key
-tls_trusted_ca_file = /to/ca/path/ca.crt
+```toml
+# frpc.toml
+transport.tls.certFile = "/to/cert/path/client.crt"
+transport.tls.keyFile = "/to/key/path/client.key"
+transport.tls.trustedCaFile = "/to/ca/path/ca.crt"
 
-# frps.ini
-[common]
-tls_cert_file = /to/cert/path/server.crt
-tls_key_file = /to/key/path/server.key
-tls_trusted_ca_file = /to/ca/path/ca.crt
+# frps.toml
+transport.tls.certFile = "/to/cert/path/server.crt"
+transport.tls.keyFile = "/to/key/path/server.key"
+transport.tls.trustedCaFile = "/to/ca/path/ca.crt"
 ```
 
 双向验证即 frpc 和 frps 通过本地 ca 证书去验证对方的身份。理论上 frpc 和 frps 的 ca 证书可以不同，只要能验证对方身份即可。

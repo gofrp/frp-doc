@@ -9,14 +9,15 @@ frp 支持通过 HTTP Basic Auth 来保护你的 web 服务，使用户需要通
 
 该功能目前仅限于 HTTP 类型的代理，需要在 frpc 的代理配置中添加用户名和密码的设置。
 
-```ini
-# frpc.ini
-[web]
-type = http
-local_port = 80
-custom_domains = test.yourdomain.com
-http_user = abc
-http_pwd = abc
+```toml
+# frpc.toml
+[[proxies]]
+name = "web"
+type = "http"
+localPort = 80
+customDomains = ["test.yourdomain.com"]
+httpUser = "abc"
+httpPassword = "abc"
 ```
 
 通过浏览器访问 `http://test.yourdomain.com`，需要输入配置的用户名和密码才能访问。

@@ -3,44 +3,45 @@ title: "身份认证"
 weight: 3
 ---
 
-目前 frpc 和 frps 之间支持两种身份验证方式，`token` 和 `oidc`，默认为 `token`。
-
-通过 `frpc.ini` 和 `frps.ini` 的 `[common]` 段落中配置 `authentication_method` 来指定要使用的身份验证方式。
-
-只有通过身份验证的客户端(frpc)才能成功连接 frps。
+目前 frpc 和 frps 之间支持两种身份验证方式，`token` 和 `oidc`，默认为 `token`。这些认证方式允许您验证客户端与服务端之间的通信，并确保只有授权用户能够建立连接。
 
 ## Token
 
-基于 Token 的身份验证方式比较简单，需要在 frpc 和 frps 的 `[common]` 段落中配置上相同的 `token` 参数即可。
+Token 身份认证是一种简单的身份认证方式，只需要在 frp 的客户端 frpc 和服务端 frps 配置文件中配置相同的 token 即可。
 
-## OIDC
+### 配置示例
 
-OIDC 是 `OpenID Connect` 的简称，验证流程参考 [Client Credentials Grant](https://tools.ietf.org/html/rfc6749#section-4.4)。
-
-启用这一验证方式，参考配置如下：
-
-```ini
-# frps.ini
-[common]
-authentication_method = oidc
-oidc_issuer = https://example-oidc-issuer.com/
-oidc_audience = https://oidc-audience.com/.default
+```toml
+# frps.toml
+bindPort = 7000
+auth.token = "abc"
 ```
 
-```ini
-# frpc.ini
-[common]
-authentication_method = oidc
-oidc_client_id = 98692467-37de-409a-9fac-bb2585826f18 # Replace with OIDC client ID
-oidc_client_secret = oidc_secret
-oidc_audience = https://oidc-audience.com/.default
-oidc_token_endpoint_url = https://example-oidc-endpoint.com/oauth2/v2.0/token
+```toml
+# frpc.toml
+auth.token = "abc"
 ```
 
-## 参数说明
+## OIDC (OpenID Connect) 身份认证
 
-| 类型 | 描述 |
-| :--- | :--- |
-| authentication_method | 身份验证方式，token 或 oidc，默认为 token。 |
-| authenticate_heartbeats | 在每一个心跳包中附加上身份认证信息，客户端服务端需要一致。 |
-| authenticate_new_work_conns | 在每次创建工作连接时附加上身份认证信息，客户端服务端需要一致。 |
+OIDC 身份认证是一种基于开放标准的身份认证方式，它通过使用 OIDC 提供者进行身份验证。
+
+验证流程参考 [Client Credentials Grant](https://tools.ietf.org/html/rfc6749#section-4.4)。
+
+### 配置示例
+
+```toml
+# frps.toml
+auth.method = "oidc"
+auth.oidc.issuer = "https://example-oidc-issuer.com/"
+auth.oidc.audience = "https://oidc-audience.com/.default"
+```
+
+```toml
+# frpc.toml
+auth.method = "oidc"
+auth.oidc.clientID = "98692467-37de-409a-9fac-bb2585826f18"
+auth.oidc.clientSecret = "oidc_secret"
+auth.oidc.audience = "https://oidc-audience.com/.default"
+auth.oidc.tokenEndpointURL = "https://example-oidc-endpoint.com/oauth2/v2.0/token"
+```

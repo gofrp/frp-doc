@@ -11,50 +11,48 @@ weight: 4
 
 **注：Dashboard 尚未针对大量的 proxy 数据展示做优化，如果出现 Dashboard 访问较慢的情况，请不要启用此功能。**
 
-需要在 frps.ini 中指定 dashboard 服务使用的端口，即可开启此功能：
+需要在 frps.toml 中指定 dashboard 服务使用的端口，即可开启此功能：
 
-```ini
-# frps.ini
-[common]
-dashboard_port = 7500
+```toml
+# frps.toml
+webServer.port = 7500
 # dashboard 用户名密码，可选，默认为空
-dashboard_user = admin
-dashboard_pwd = admin
+webServer.user = "admin"
+webServer.password = "admin"
 ```
 
-打开浏览器通过 `http://[server_addr]:7500` 访问 Dashboard 界面，输入用户名密码 `admin`。
+打开浏览器通过 `http://[server addr]:7500` 访问 Dashboard 界面，输入用户名密码 `admin`。
 
 你也可以通过配置 TLS 证书来启用 HTTPS 接口:
 
-```ini
-dashboard_tls_mode = true
-dashboard_tls_cert_file = server.crt
-dashboard_tls_key_file = server.key
+```toml
+webServer.tls.certFile = "server.crt"
+webServer.tls.keyFile = "server.key"
 ```
 
 ## 客户端管理界面
 
 frpc 内置的 Admin UI 可以帮助用户通过浏览器来查询和管理客户端的 proxy 状态和配置。
 
-需要在 frpc.ini 中指定 admin 服务使用的端口，即可开启此功能：
+需要在 frpc.toml 中指定 admin 服务使用的端口，即可开启此功能：
 
-```ini
-# frpc.ini
-[common]
-admin_addr = 127.0.0.1
-admin_port = 7400
-admin_user = admin
-admin_pwd = admin
+```toml
+# frpc.toml
+webServer.addr = "127.0.0.1"
+webServer.port = 7400
+webServer.user = "admin"
+webServer.password = "admin"
 ```
 
 打开浏览器通过 `http://127.0.0.1:7400` 访问 Admin UI。
 
 如果想要在外网环境访问 Admin UI，可以将 7400 端口通过 frp 映射出去即可，但需要重视安全风险。
 
-```ini
-# frpc.ini
-[admin_ui]
-type = tcp
-local_port = 7400
-remote_port = 7400
+```toml
+# frpc.toml
+[[proxies]]
+name = "admin_ui"
+type = "tcp"
+localPort = 7400
+remotePort = 7400
 ```
