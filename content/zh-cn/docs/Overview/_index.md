@@ -24,5 +24,5 @@ frp 是一款高性能的反向代理应用，专注于内网穿透。它支持�
 
 ## 下一步？
 
-* [安装](/docs/setup/)：了解如何安装 frp。
-* [示例](/docs/examples/)：通过简单示例了解 frp 的不同应用场景。
+* [安装](/zh-cn/docs/setup/)：了解如何安装 frp。
+* [示例](/zh-cn/docs/examples/)：通过简单示例了解 frp 的不同应用场景。
