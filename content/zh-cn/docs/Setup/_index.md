@@ -28,7 +28,7 @@ frp 采用 Go 语言编写，支持跨平台，只需下载适用于您平台的
 1. 编写配置文件，目前支持的文件格式包括 TOML/YAML/JSON，旧的 INI 格式仍然支持，但已经不再推荐。
 2. 使用以下命令启动服务器：`./frps -c ./frps.toml`。
 3. 使用以下命令启动客户端：`./frpc -c ./frpc.toml`。
-4. 如果需要在后台长期运行，建议结合其他工具，如 [systemd](/docs/setup/systemd/) 和 `supervisor`。
+4. 如果需要在后台长期运行，建议结合其他工具，如 [systemd](systemd/) 和 `supervisor`。
 
 如果您是 Windows 用户，需要在命令提示符中执行相同的命令。
 
