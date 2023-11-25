@@ -79,3 +79,11 @@ description: >
 | path | string | 插件接口的 Path。 | Yes |
 | ops | []string | 插件需要生效的操作列表，具体可选值请参考服务端插件的说明文档。 | Yes |
 | tlsVerify | bool | 当插件地址为 HTTPS 协议时，是否校验插件的 TLS 证书，默认为不校验。 | No |
+
+### SSHTunnelGateway
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| bindPort| int | SSH 服务器监听端口。| YES |
+| privateKeyFile | string | SSH 服务器私钥文件路径。若为空，frps将读取autoGenPrivateKeyPath路径下的私钥文件。| No |
+| autoGenPrivateKeyPath  | string |私钥文件自动生成路径，默认为./.autogen_ssh_key。若文件不存在或内容为空，frps将自动生成RSA私钥文件并存储到该路径。|No|
+| authorizedKeysFile  | string |SSH 客户端授权密钥文件路径。若为空，则不进行SSH客户端鉴权认证。非空可实现SSH免密登录认证。| No |
