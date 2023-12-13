@@ -1,6 +1,6 @@
 ---
 title: "配置文件"
-weight: 1
+weight: 10
 ---
 
 从 v0.52.0 版本开始，frp 开始支持 TOML、YAML 和 JSON 作为配置文件格式。

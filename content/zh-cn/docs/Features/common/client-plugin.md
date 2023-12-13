@@ -1,6 +1,6 @@
 ---
 title: "客户端插件"
-weight: 11
+weight: 110
 ---
 
 默认情况下，frpc 仅会将请求转发到本地 TCP 或 UDP 端口，即通过 `localIP` 和 `localPort` 指定的本地服务地址。

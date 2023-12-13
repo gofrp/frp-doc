@@ -22,6 +22,7 @@ description: >
 | tcpmuxPassthrough | bool | 对于 tcpmux 类型的代理是否透传 CONNECT 请求。| No |
 | subDomainHost | string | 二级域名后缀。 | No |
 | custom404Page | string | 自定义 404 错误页面地址。 | No |
+| sshTunnelGateway| [SSHTunnelGateway](#sshtunnelgateway) | ssh 隧道网关配置。 | No |
 | webServer | [WebServerConfig](../common#webserverconfig) | 服务端 Dashboard 配置。 | No |
 | enablePrometheus | bool | 是否提供 Prometheus 监控接口，需要同时启用了 webServer 后才会生效。 | No |
 | log | [LogConfig](../common#logconfig) | 日志配置。 | No |
@@ -81,6 +82,7 @@ description: >
 | tlsVerify | bool | 当插件地址为 HTTPS 协议时，是否校验插件的 TLS 证书，默认为不校验。 | No |
 
 ### SSHTunnelGateway
+
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | bindPort| int | SSH 服务器监听端口。| YES |
