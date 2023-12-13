@@ -1,6 +1,6 @@
 ---
 title: "监控"
-weight: 2
+weight: 20
 ---
 
 目前，frps 服务端支持两种监控系统：内存监控和 Prometheus 监控。

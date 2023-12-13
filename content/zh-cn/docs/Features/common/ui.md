@@ -1,6 +1,6 @@
 ---
 title: "Web 界面"
-weight: 4
+weight: 40
 ---
 
 目前 frpc 和 frps 分别内置了相应的 Web 界面方便用户使用。
