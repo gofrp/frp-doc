@@ -55,13 +55,13 @@ description: >
     使用 SSH ProxyCommand 访问内网机器 A，假设用户名为 test。使用以下命令：
 
     ```bash
-    ssh -o 'proxycommand socat - PROXY:x.x.x.x:machine-a.example.com:22,proxyport=5002' test@machine-a
+    ssh -o 'proxycommand socat - PROXY:x.x.x.x:%h:%p,proxyport=5002' test@machine-a.example.com
     ```
 
    要访问内网机器 B，只需更改域名，假设用户名仍然为 test：
 
     ```bash
-    ssh -o 'proxycommand socat - PROXY:x.x.x.x:machine-b.example.com:22,proxyport=5002' test@machine-b
+    ssh -o 'proxycommand socat - PROXY:x.x.x.x:%h:%p,proxyport=5002' test@machine-b.example.com
     ```
 
 通过按照以上步骤进行配置，您可以实现多个 SSH 服务复用同一端口，以便在具有公网 IP 的机器上进行访问。
