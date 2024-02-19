@@ -18,7 +18,7 @@ description: >
 
 2. **在内网机器 A 上部署 frpc**
 
-   创建 frpc 配置文件，例如 frpc.ini，然后将以下内容添加到配置文件中：
+   创建 frpc 配置文件，例如 frpc.toml，然后将以下内容添加到配置文件中：
 
     ```toml
     serverAddr = "x.x.x.x"

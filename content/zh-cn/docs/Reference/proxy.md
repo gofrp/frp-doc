@@ -11,6 +11,7 @@ description: >
 | :--- | :--- | :--- | :--- |
 | name | string | 代理名称。 | Yes |
 | type | string | 代理类型，可选值为 tcp, udp, http, https, tcpmux, stcp, sudp, xtcp。 | Yes |
+| annotations | map[string]string | 代理的注释信息，会被展示在 server 的 dashboard 中。 | No |
 | transport | [ProxyTransport](#proxytransport) | 代理网络层配置。 | No |
 | metadatas | map[string]string | 附加元数据，会传递给服务端插件，提供附加能力。 | No |
 | loadBalancer | [LoadBalancerConfig](#loadbalancerconfig) | 负载均衡配置。 | No |
