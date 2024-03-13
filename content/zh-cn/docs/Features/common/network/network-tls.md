@@ -39,7 +39,7 @@ frpc 需要额外加载 ca 证书，frps 需要额外指定 TLS 配置。frpc �
 transport.tls.certFile = "/to/cert/path/client.crt"
 transport.tls.keyFile = "/to/key/path/client.key"
 
-# frps.ini
+# frps.toml
 transport.tls.trustedCaFile = "/to/ca/path/ca.crt"
 ```
 
