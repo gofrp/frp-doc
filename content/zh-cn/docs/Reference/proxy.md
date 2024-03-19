@@ -52,6 +52,7 @@ description: >
 | maxFailed | int | 健康检查连续错误次数，连续检查错误多少次认为服务不健康，默认为 1。 | No |
 | intervalSeconds | int | 健康检查周期(秒)，每隔多长时间进行一次健康检查，默认为 10s。 | No |
 | path | string | 健康检查的 HTTP 接口，如果健康检查类型是 http，则需要配置此参数，指定发送 http 请求的 path，例如 `/health`。 | No |
+| httpHeaders | [[]HTTPHeader](../common#httpheader) | 健康检查的 HTTP 请求头，仅在健康检查类型是 http 时生效。 | No |
 
 ### DomainConfig
 
