@@ -56,3 +56,10 @@ description: >
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | set | map[string]string | 在 Header 中设置指定的 KV 值。 | No |
+
+### HTTPHeader
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| name | string | Header 名称。 | Yes |
+| value | string | Header 值。 | Yes |
