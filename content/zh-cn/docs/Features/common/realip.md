@@ -5,7 +5,9 @@ weight: 70
 
 ## HTTP X-Forwarded-For
 
-目前只有 `HTTP` 类型的代理支持这一功能，可以通过用户请求的 header 中的 `X-Forwarded-For` 来获取用户真实 IP，默认启用。
+目前只有 `http` 类型的代理或者启用了 `https2http` 或 `https2https` 插件的代理支持这一功能。
+
+可以通过 HTTP/HTTPS 请求 header 中的 `X-Forwarded-For` 来获取用户真实 IP，默认启用。
 
 ## Proxy Protocol
 
