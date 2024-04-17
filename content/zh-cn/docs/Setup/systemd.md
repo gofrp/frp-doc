@@ -41,6 +41,10 @@ description: >
     Type = simple
     # 启动frps的命令，需修改为您的frps的安装路径
     ExecStart = /path/to/frps -c /path/to/frps.toml
+    # 自动重启
+    Restart = always
+    # 延迟 3秒 重启
+    RestartSec = 3
 
     [Install]
     WantedBy = multi-user.target
