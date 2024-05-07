@@ -86,6 +86,7 @@ description: >
 | httpPassword | string | HTTP Basic Auth 密码。 | No |
 | hostHeaderRewrite | string | 替换 Host Header。 | No |
 | requestHeaders | [HeaderOperations](../common#headeroperations) | 对请求 Header 的操作配置。 | No |
+| responseHeaders | [HeaderOperations](../common#headeroperations) | 对响应 Header 的操作配置。 | No |
 | routeByHTTPUser | string | 根据 HTTP Basic Auth user 路由。 | No |
 
 ### HTTPSProxyConfig
