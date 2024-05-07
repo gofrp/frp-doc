@@ -32,6 +32,7 @@ localPort = 80
 customDomains = ["test.yourdomain.com"]
 hostHeaderRewrite = "dev.yourdomain.com"
 requestHeaders.set.x-from-where = "frp"
+responseHeaders.set.foo = "bar"
 ```
 
-根据如上的配置，会在请求的 Header 中加上 `x-from-where: frp`。
+根据如上的配置，会在请求的 Header 中加上 `x-from-where: frp`，在响应的 Header 中加上 `foo: bar`。
