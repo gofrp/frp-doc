@@ -61,7 +61,7 @@ Response
 
 ```
 {
-    "unchange": "false",
+    "unchange": false,
     "content": {
         ... // 替换后的操作信息，格式必须和请求时的一致
     }
