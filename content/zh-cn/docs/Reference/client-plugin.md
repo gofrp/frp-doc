@@ -49,6 +49,7 @@ description: >
 | localAddr | string | 本地 HTTPS 服务地址。 | Yes |
 | hostHeaderRewrite | string | 替换 Host header。 | No |
 | requestHeaders | [HeaderOperations](../common#headeroperations) | 对请求 Header 的操作配置。 | No |
+| enableHTTP2 | bool | 是否启用 HTTP/2，默认启用。 | No |
 | crtPath | string | TLS 证书文件路径。 | No |
 | keyPath | string | TLS 密钥文件路径。 | No |
 
@@ -59,5 +60,6 @@ description: >
 | localAddr | string | 本地 HTTPS 服务地址。 | Yes |
 | hostHeaderRewrite | string | 替换 Host header。 | No |
 | requestHeaders | [HeaderOperations](../common#headeroperations) | 对请求 Header 的操作配置。 | No |
+| enableHTTP2 | bool | 是否启用 HTTP/2，默认启用。 | No |
 | crtPath | string | TLS 证书文件路径。 | No |
 | keyPath | string | TLS 密钥文件路径。 | No |
