@@ -15,6 +15,7 @@ description: >
 
     ```toml
     bindPort = 7000
+    secretKey = "abcdefg"
     ```
 
 2. **部署 frpc 客户端并配置**
