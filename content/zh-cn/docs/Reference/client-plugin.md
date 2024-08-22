@@ -63,3 +63,11 @@ description: >
 | enableHTTP2 | bool | 是否启用 HTTP/2，默认启用。 | No |
 | crtPath | string | TLS 证书文件路径。 | No |
 | keyPath | string | TLS 密钥文件路径。 | No |
+
+### TLS2RawPluginOptions
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| localAddr | string | 本地服务地址。 | Yes |
+| crtPath | string | TLS 证书文件路径。 | No |
+| keyPath | string | TLS 密钥文件路径。 | No |
