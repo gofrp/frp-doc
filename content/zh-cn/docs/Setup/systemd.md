@@ -34,13 +34,15 @@ description: >
     [Unit]
     # 服务名称，可自定义
     Description = frp server
-    After = network.target syslog.target
-    Wants = network.target
+    After = network-online.target syslog.target
+    Requires = network-online.target
 
     [Service]
     Type = simple
     # 启动frps的命令，需修改为您的frps的安装路径
     ExecStart = /path/to/frps -c /path/to/frps.toml
+    Restart=on-failure
+    RestartSec=10
 
     [Install]
     WantedBy = multi-user.target
