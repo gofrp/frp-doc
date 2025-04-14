@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/gofrp/frp-doc#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.21",
-    "postcss-cli": "^9.1.0"
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0"
   }
 }
