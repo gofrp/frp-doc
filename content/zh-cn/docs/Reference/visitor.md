@@ -17,6 +17,7 @@ description: >
 | serverName | string | 要访问的 proxy 名称。 | Yes |
 | bindAddr | string | visitor 监听的本地地址，通过访问监听的地址和端口，连接到远端代理的服务。 | No |
 | bindPort | int | visitor 监听的本地端口，如果为 -1，表示不需要监听物理端口，通常可以用于作为其他 visitor 的 fallback。 | Yes |
+| plugin | [VisitorPluginOptions](../visitor-plugin) | 访问者插件配置，用于扩展 visitor 功能。不同的插件类型对应不同的配置。 | No |
 
 ### VisitorTransport
 

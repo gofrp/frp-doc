@@ -28,6 +28,8 @@ description: >
 | log | [LogConfig](../common#logconfig) | 日志配置。 | No |
 | webServer | [WebServerConfig](../common#webserverconfig) | 客户端 AdminServer 配置。 | No |
 | transport | [ClientTransportConfig](#clienttransportconfig) | 客户端网络层配置。 | No |
+| virtualNet | [VirtualNetConfig](#virtualnetconfig) | 虚拟网络配置，Alpha 特性。 | No |
+| featureGates | map[string]bool | 特性门控，用于启用或禁用实验性功能。 | No |
 | udpPacketSize | int | 代理 UDP 服务时支持的最大包长度，默认为 1500，服务端和客户端需要保持配置一致。 | No |
 | metadatas | map[string]string | 附加元数据，会传递给服务端插件，提供附加能力。 | No |
 | includes | []string | 指定额外的配置文件目录，其中的 proxy 和 visitor 配置会被读取加载。 | No |
@@ -76,3 +78,9 @@ description: >
 | scope | string | | No |
 | tokenEndpointURL | string | | No |
 | additionalEndpointParams | map[string]string | | No |
+
+### VirtualNetConfig
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| address | string | 虚拟网络接口的 IP 地址和网段，格式为 CIDR (例如 "100.86.0.1/24")。 | Yes |

@@ -9,6 +9,7 @@ description: >
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
+| type | string | 插件类型，设置为 "http_proxy"。 | Yes |
 | httpUser | string | HTTP 代理用户名。 | No |
 | httpPassword | string | HTTP 代理密码。 | No |
 
@@ -16,6 +17,7 @@ description: >
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
+| type | string | 插件类型，设置为 "socks5"。 | Yes |
 | username | string | 用户名。 | No |
 | password | string | 密码。 | No |
 
@@ -23,6 +25,7 @@ description: >
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
+| type | string | 插件类型，设置为 "static_file"。 | Yes |
 | localPath | string | 静态文件所在本地路径。 | Yes |
 | stripPrefix | string | 去除用户 HTTP 请求 Path 的特定前缀。 | No |
 | httpUser | string | HTTP Basic Auth 用户名。 | No |
@@ -32,12 +35,14 @@ description: >
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
+| type | string | 插件类型，设置为 "unix_domain_socket"。 | Yes |
 | unixPath | string | UNIX 域套接字的地址。 | Yes |
 
 ### HTTP2HTTPSPluginOptions
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
+| type | string | 插件类型，设置为 "http2https"。 | Yes |
 | localAddr | string | 本地 HTTPS 服务地址。 | Yes |
 | hostHeaderRewrite | string | 替换 Host header。 | No |
 | requestHeaders | [HeaderOperations](../common#headeroperations) | 对请求 Header 的操作配置。 | No |
@@ -46,6 +51,7 @@ description: >
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
+| type | string | 插件类型，设置为 "https2http"。 | Yes |
 | localAddr | string | 本地 HTTPS 服务地址。 | Yes |
 | hostHeaderRewrite | string | 替换 Host header。 | No |
 | requestHeaders | [HeaderOperations](../common#headeroperations) | 对请求 Header 的操作配置。 | No |
@@ -57,6 +63,7 @@ description: >
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
+| type | string | 插件类型，设置为 "https2https"。 | Yes |
 | localAddr | string | 本地 HTTPS 服务地址。 | Yes |
 | hostHeaderRewrite | string | 替换 Host header。 | No |
 | requestHeaders | [HeaderOperations](../common#headeroperations) | 对请求 Header 的操作配置。 | No |
@@ -68,6 +75,13 @@ description: >
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
+| type | string | 插件类型，设置为 "tls2raw"。 | Yes |
 | localAddr | string | 本地服务地址。 | Yes |
 | crtPath | string | TLS 证书文件路径。 | No |
 | keyPath | string | TLS 密钥文件路径。 | No |
+
+### VirtualNetPluginOptions
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| type | string | 插件类型，设置为 "virtual_net"。 | Yes |
