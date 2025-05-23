@@ -52,4 +52,4 @@ HTTPS 与此类似，但是需要注意，frp 的 https 代理需要本地服务
 
 5. **通过浏览器访问**
 
-   使用浏览器访问 `http://www.yourdomain.com:8080` 即可访问内网机器上的 80 端口服务，访问 `http://www.yourdomain2.com:8080` 可以访问内网机器上的 8080 端口服务。
+   使用浏览器访问 `http://www.yourdomain.com:80` 即可访问内网机器上的 80 端口服务，访问 `http://www.yourdomain2.com:8080` 可以访问内网机器上的 8080 端口服务。
