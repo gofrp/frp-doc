@@ -65,6 +65,32 @@ export FRP_SSH_REMOTE_PORT="6000"
 
 frpc 会自动使用环境变量渲染配置文件模版，所有环境变量需要以 `.Envs` 为前缀。
 
+## YAML 锚点和引用
+
+frp 支持 YAML 合并功能（锚点和引用，包括点前缀字段），在严格配置模式下无需使用 `--strict-config=false` 参数即可正常工作。
+
+可以使用以点开头的字段作为锚点定义，类似于 Docker Compose 的 `x-` 前缀：
+
+```yaml
+# frpc.yaml
+.common: &common
+  type: "stcp"
+  secretKey: "{{.Envs.FRPC_SECRET_KEY}}"
+  localIP: "127.0.0.1"
+
+serverAddr: "x.x.x.x"
+serverPort: 7000
+
+proxies:
+  - name: "ssh"
+    localPort: 22
+    <<: *common
+
+  - name: "web"
+    localPort: 80
+    <<: *common
+```
+
 ## 配置校验
 
 通过执行 `frpc verify -c ./frpc.toml` 或 `frps verify -c ./frps.toml` 可以对配置文件中的参数进行预先校验。
@@ -74,6 +100,14 @@ frpc: the configuration file ./frpc.toml syntax is ok
 ```
 
 如果出现此结果，则说明新的配置文件没有错误，否则会输出具体的错误信息。
+
+### 严格模式校验
+
+默认情况下，frp 使用严格模式进行配置校验。如果需要禁用严格校验，可以使用 `--strict-config=false` 参数：
+
+```bash
+frpc verify -c ./frpc.yaml --strict-config=false
+```
 
 ## 配置拆分
 
