@@ -2,8 +2,8 @@ baseURL = "/"
 title = "frp"
 
 # Language settings
-contentDir = "content/zh-cn"
-defaultContentLanguage = "zh-cn"
+contentDir = "content/en"
+defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
@@ -73,13 +73,13 @@ anchor = "smart"
 title = "frp"
 languageName ="English"
 # Weight used for sorting.
-weight = 1
+weight = 10
 contentDir = "content/en"
 params.description = "frp official website"
 [languages.zh-cn]
 title = "frp"
 languageName ="中文"
-weight = 2
+weight = 20
 contentDir = "content/zh-cn"
 params.description = "frp official website"
 

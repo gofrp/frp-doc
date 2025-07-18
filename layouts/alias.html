@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>frp</title>
+    <link rel="canonical" href="{{ .Permalink }}"/>
+    <meta name="robots" content="noindex">
+    <meta name="description" content="frp official website">
+    <script>
+        (function () {
+            // Only do i18n at root, otherwise redirect immediately
+            if (window.location.pathname !== '/') {
+                window.location.replace('{{ .Permalink }}');
+                return;
+            }
+
+            // Check if user has manually selected a language before
+            var savedLanguage = localStorage.getItem('language');
+            if (savedLanguage) {
+                // User has made a manual choice before, respect it
+                window.location.replace('/' + savedLanguage + '/');
+                return;
+            }
+
+            // First visit - auto-detect browser language
+            var getFirstBrowserLanguage = function () {
+                var nav = window.navigator,
+                    browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage'],
+                    i,
+                    language;
+
+                if (Array.isArray(nav.languages)) {
+                    for (i = 0; i < nav.languages.length; i++) {
+                        language = nav.languages[i];
+                        if (language && language.length) {
+                            return language;
+                        }
+                    }
+                }
+
+                // Support for other well known properties in browsers
+                for (i = 0; i < browserLanguagePropertyKeys.length; i++) {
+                    language = nav[browserLanguagePropertyKeys[i]];
+                    if (language && language.length) {
+                        return language;
+                    }
+                }
+
+                return 'en';
+            };
+
+            var preferLang = getFirstBrowserLanguage();
+            var targetLang = 'en'; // default to English
+
+            if (preferLang.indexOf('zh') !== -1) {
+                targetLang = 'zh-cn';
+            }
+
+            // Save the auto-detected language as initial preference
+            localStorage.setItem('language', targetLang);
+
+            // Redirect to the detected language
+            window.location.replace('/' + targetLang + '/');
+        })();
+    </script>
+</head>
+<body>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=/en/">
+    </noscript>
+    <p>Redirecting to the appropriate language version...</p>
+    <p>If you are not redirected automatically, please <a href="/en/">click here for English</a> or <a href="/zh-cn/">click here for Chinese</a>.</p>
+</body>
+</html>
