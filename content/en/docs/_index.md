@@ -6,3 +6,5 @@ menu:
   main:
     weight: 20
 ---
+
+Learn how to deploy and use frp.

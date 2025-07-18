@@ -1,34 +1,40 @@
 +++
-title = "Goldydocs"
-linkTitle = "Goldydocs"
+title = "frp"
+linkTitle = "frp"
 
 +++
 
-{{< blocks/cover title="Welcome to FRP: A Fast Reverse Proxy!" height="full">}}
+{{< blocks/cover title="Simple and Efficient Intranet Penetration Tool" height="full">}}
 <div class="mx-auto">
 	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
-		Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+		 &nbsp&nbsp&nbsp Get Started <i class="fas fa-arrow-alt-circle-right ml-2"></i>
 	</a>
 	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/fatedier/frp">
 		GITHUB <i class="fab fa-github ml-2 "></i>
 	</a>
-	<p class="lead mt-5">frp helps you expose your service behind a firewall or NAT to the public internet.</p>
+	<p class="lead mt-5">frp supports multiple proxy types and P2P communication, providing rich solutions for different scenarios.</p>
 	{{< blocks/link-down color="info" >}}
 </div>
 {{< /blocks/cover >}}
 
 
 {{% blocks/lead color="primary" %}}
-frp supports multiple proxy types like TCP, UDP, HTTP, HTTPS, STCP, SUDP, XTCP, TCPMUX.
+frp adopts a C/S architecture, deploying the server on machines with public IP addresses and clients on machines within intranets or behind firewalls. By accessing ports exposed on the server, it provides reverse proxy to services in the intranet.
+Built on this foundation, frp supports multiple protocols including TCP, UDP, HTTP, HTTPS, and provides numerous capabilities such as encryption, compression, authentication, proxy rate limiting, load balancing, and more. Additionally, P2P communication can be achieved through xtcp.
 {{% /blocks/lead %}}
 
-{{< blocks/section color="white">}}
+{{< blocks/section color="white" type="row" >}}
 {{% blocks/feature icon="fab fa-app-store-ios" title="Download" %}}
-Download from Github [Release](https://github.com/fatedier/frp/releases).
+Download the latest version from Github [Release](https://github.com/fatedier/frp/releases) page.
 {{% /blocks/feature %}}
+
 
 {{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/fatedier/frp" %}}
-We do a [Issue](https://github.com/fatedier/frp/issues) and [Pull Request](https://github.com/fatedier/frp/pulls) contributions workflow on **GitHub**. New users are always welcome!
+Submit [Issues](https://github.com/fatedier/frp/issues) and [Pull Requests](https://github.com/fatedier/frp/pulls) on Github.
 {{% /blocks/feature %}}
 
+
+{{% blocks/feature icon="fab fa-weixin" title="Community" url="https://t.zsxq.com/eUvBMrZ" %}}
+Join the paid knowledge circle [frp](https://t.zsxq.com/eUvBMrZ) for more help and discussion.
+{{% /blocks/feature %}}
 {{< /blocks/section >}}
