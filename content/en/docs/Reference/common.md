@@ -63,3 +63,16 @@ description: >
 | :--- | :--- | :--- | :--- |
 | name | string | Header name. | Yes |
 | value | string | Header value. | Yes |
+
+### ValueSource
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| type | string | Data source type, currently only supports "file". | Yes |
+| file | [FileSource](#filesource) | File data source configuration, required when type is "file". | No |
+
+### FileSource
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| path | string | File path. | Yes |
