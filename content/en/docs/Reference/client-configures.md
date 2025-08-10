@@ -65,7 +65,8 @@ description: >
 | :--- | :--- | :--- | :--- |
 | method | string | Authentication method. Options are token or oidc, default is token. | No |
 | additionalScopes | []string | Additional scope for authentication information. Options are HeartBeats and NewWorkConns | No |
-| token | string | Effective when method is token. Client needs to set the same value to pass authentication. | No |
+| token | string | Effective when method is token. Client needs to set the same value to pass authentication. Mutually exclusive with tokenSource field. | No |
+| tokenSource | [ValueSource](../common#valuesource) | Configuration for loading token from file. Mutually exclusive with token field. | No |
 | oidc | [AuthOIDCClientConfig](#authoidcclientconfig) | OIDC authentication configuration. | No |
 
 ### AuthOIDCClientConfig

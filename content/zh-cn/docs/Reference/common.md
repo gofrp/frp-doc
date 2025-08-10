@@ -63,3 +63,16 @@ description: >
 | :--- | :--- | :--- | :--- |
 | name | string | Header 名称。 | Yes |
 | value | string | Header 值。 | Yes |
+
+### ValueSource
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| type | string | 数据源类型，目前仅支持 "file"。 | Yes |
+| file | [FileSource](#filesource) | 文件数据源配置，当 type 为 "file" 时必填。 | No |
+
+### FileSource
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| path | string | 文件路径。 | Yes |

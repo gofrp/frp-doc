@@ -41,7 +41,8 @@ description: >
 | :--- | :--- | :--- | :--- |
 | method | string | 鉴权方式，可选值为 token 或 oidc，默认为 token。 | No |
 | additionalScopes | []string | 鉴权信息附加范围，可选值为 HeartBeats 和 NewWorkConns | No |
-| token | string | 在 method 为 token 时生效，客户端需要设置一样的值才能鉴权通过。 | No |
+| token | string | 在 method 为 token 时生效，客户端需要设置一样的值才能鉴权通过。与 tokenSource 字段互斥。 | No |
+| tokenSource | [ValueSource](../common#valuesource) | 从文件中加载 token 的配置。与 token 字段互斥。 | No |
 | oidc | [AuthOIDCServerConfig](#authoidcserverconfig) | oidc 鉴权配置。| No |
 
 ### AuthOIDCServerConfig
