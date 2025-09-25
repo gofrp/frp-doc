@@ -1,0 +1,113 @@
+---
+title: "赞助商"
+linkTitle: "赞助商"
+weight: 10
+description: >
+  感谢我们的赞助商对 frp 项目的支持
+---
+
+# 赞助商
+
+frp 是一个开源项目，其持续开发完全依赖于我们出色的赞助商们的支持。
+
+如果您想加入他们的行列，请考虑[赞助 frp 的开发](https://github.com/sponsors/fatedier)。
+
+## 金牌赞助商
+
+<div class="sponsors-section">
+  <div class="row">
+    <div class="col-md-4">
+      <p align="center">
+        <a href="https://www.recall.ai/?utm_source=github&utm_medium=sponsorship&utm_campaign=fatedier-frp" target="_blank">
+          <b>Recall.ai - 会议录制 API</b><br>
+          <br>
+          <span>如果你正在寻找会议录制的 API，不妨了解一下 Recall.ai。它支持录制 Zoom、Google Meet、Microsoft Teams 以及线下会议等更多场景。</span>
+        </a>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p align="center">
+        <a href="https://go.warp.dev/frp" target="_blank">
+          <img width="250px" src="https://raw.githubusercontent.com/warpdotdev/brand-assets/refs/heads/main/Github/Sponsor/Warp-Github-LG-01.png" alt="Warp">
+          <br>
+          <b>Warp——为与 AI 智能体协作而生</b>
+          <br>
+          <sub>适用于 macOS、Linux 和 Windows</sub>
+        </a>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p align="center">
+        <a href="https://jb.gg/frp" target="_blank">
+          <img width="250px" src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_jetbrains.jpg" alt="JetBrains">
+          <br>
+          <b>为专业 Go 开发者打造的 IDE</b>
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <p align="center">
+        <a href="https://github.com/daytonaio/daytona" target="_blank">
+          <img width="320px" src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_daytona.png" alt="Daytona">
+          <br>
+          <b>运行 AI 生成代码的安全弹性基础设施</b>
+        </a>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <p align="center">
+        <a href="https://github.com/beclab/Olares" target="_blank">
+          <img width="320px" src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_olares.jpeg" alt="Olares">
+          <br>
+          <b>开源个人云，助你重新掌控数据</b>
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<style>
+main {
+  padding-top: 6rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sponsors-section {
+  margin: 2rem 0;
+}
+
+
+.sponsors-section p {
+  margin: 0.5rem 0;
+}
+
+.sponsors-section img {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+
+
+.sponsors-section a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sponsors-section a:hover {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+</style>

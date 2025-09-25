@@ -56,6 +56,12 @@ anchor = "smart"
 
 # Additional menu items
 [[menu.main]]
+  name = "Sponsors"
+  weight = 40
+  url = "/sponsors/"
+  pre = "<i class='fas fa-heart'></i>"
+
+[[menu.main]]
   name = "Github"
   weight = 50
   url = "https://github.com/fatedier/frp"

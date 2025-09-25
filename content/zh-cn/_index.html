@@ -13,15 +13,145 @@ linkTitle = "frp"
 		GITHUB <i class="fab fa-github ml-2 "></i>
 	</a>
 	<p class="lead mt-5">frp 支持多种代理类型以及 P2P 通信，为不同场景下的需求提供丰富的解决方案。</p>
-	{{< blocks/link-down color="info" >}}
+
+	<div class="feature-highlight-card mt-5">
+		<div class="row">
+			<div class="col-lg-4 col-md-12 mb-4">
+				<div class="feature-item text-center">
+					<h4 class="feature-title">简单易用</h4>
+					<p class="feature-desc">frp 采用 C/S 模式，将服务端部署在具有公网 IP 的机器上，客户端部署在内网或防火墙内的机器上，通过访问暴露在服务器上的端口，反向代理到处于内网的服务。</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-12 mb-4">
+				<div class="feature-item text-center">
+					<h4 class="feature-title">功能强大</h4>
+					<p class="feature-desc">支持 TCP, UDP, HTTP, HTTPS 等多种协议，提供了加密、压缩，身份认证，代理限速，负载均衡等众多能力。</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-12 mb-4">
+				<div class="feature-item text-center">
+					<h4 class="feature-title">灵活配置</h4>
+					<p class="feature-desc">支持多种代理类型以及 P2P 通信，还可以通过 xtcp 实现点对点通信，为不同场景提供丰富的解决方案。</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<style>
+	.feature-highlight-card {
+		padding: 3rem 2rem;
+		margin: 2rem 0;
+		position: relative;
+		max-width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.feature-item {
+		padding: 1rem;
+	}
+
+	.feature-title {
+		color: rgba(255, 255, 255, 0.95);
+		font-weight: 600;
+		margin-bottom: 1rem;
+		font-size: 1.25rem;
+	}
+
+	.feature-desc {
+		color: rgba(255, 255, 255, 0.8);
+		line-height: 1.6;
+		margin: 0;
+		font-size: 0.95rem;
+	}
+
+	@media (max-width: 768px) {
+		.feature-highlight-card {
+			padding: 2rem 1rem;
+			margin: 1rem;
+		}
+	}
+	</style>
 </div>
 {{< /blocks/cover >}}
 
+{{< blocks/section color="light" >}}
+<div class="col-12">
+<h2 class="text-center">赞助商</h2>
+<p class="lead text-center">感谢我们的赞助商对 frp 项目的支持</p>
+<h3 class="text-center mb-4" style="color: #000;">Gold Sponsors</h3>
+<div class="sponsors-grid mt-4">
+  <div class="sponsors-row">
+    <a href="https://www.recall.ai/?utm_source=github&utm_medium=sponsorship&utm_campaign=fatedier-frp" target="_blank" class="sponsor-logo-link">
+      <div class="sponsor-text-logo">Recall.ai</div>
+    </a>
+    <a href="https://go.warp.dev/frp" target="_blank" class="sponsor-logo-link">
+      <img src="https://raw.githubusercontent.com/warpdotdev/brand-assets/refs/heads/main/Github/Sponsor/Warp-Github-LG-01.png" alt="Warp" class="sponsor-logo">
+    </a>
+    <a href="https://jb.gg/frp" target="_blank" class="sponsor-logo-link">
+      <img src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_jetbrains.jpg" alt="JetBrains" class="sponsor-logo">
+    </a>
+    <a href="https://github.com/daytonaio/daytona" target="_blank" class="sponsor-logo-link">
+      <img src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_daytona.png" alt="Daytona" class="sponsor-logo">
+    </a>
+    <a href="https://github.com/beclab/Olares" target="_blank" class="sponsor-logo-link">
+      <img src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_olares.jpeg" alt="Olares" class="sponsor-logo">
+    </a>
+  </div>
+</div>
+<div class="text-center mt-4">
+  <a class="btn btn-outline-primary" href="{{< relref "/sponsors" >}}">
+    查看所有赞助商 <i class="fas fa-arrow-right ml-2"></i>
+  </a>
+  <a class="btn btn-outline-secondary ml-3" href="https://github.com/sponsors/fatedier" target="_blank">
+    成为赞助商 <i class="fas fa-heart ml-2"></i>
+  </a>
+</div>
+</div>
 
-{{% blocks/lead color="primary" %}}
-frp 采用 C/S 模式，将服务端部署在具有公网 IP 的机器上，客户端部署在内网或防火墙内的机器上，通过访问暴露在服务器上的端口，反向代理到处于内网的服务。
-在此基础上，frp 支持 TCP, UDP, HTTP, HTTPS 等多种协议，提供了加密、压缩，身份认证，代理限速，负载均衡等众多能力。此外，还可以通过 xtcp 实现 P2P 通信。
-{{% /blocks/lead %}}
+<style>
+.sponsors-grid .sponsors-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sponsors-grid .sponsor-logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  width: 200px;
+  height: 100px;
+}
+
+.sponsors-grid .sponsor-logo-link:hover {
+  text-decoration: none;
+  color: inherit;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.sponsors-grid .sponsor-logo {
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.sponsors-grid .sponsor-text-logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+</style>
+{{< /blocks/section >}}
 
 {{< blocks/section color="white" type="row" >}}
 {{% blocks/feature icon="fab fa-app-store-ios" title="下载" %}}

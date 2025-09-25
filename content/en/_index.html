@@ -13,15 +13,145 @@ linkTitle = "frp"
 		GITHUB <i class="fab fa-github ml-2 "></i>
 	</a>
 	<p class="lead mt-5">frp supports multiple proxy types and P2P communication, providing rich solutions for different scenarios.</p>
-	{{< blocks/link-down color="info" >}}
+
+	<div class="feature-highlight-card mt-5">
+		<div class="row">
+			<div class="col-lg-4 col-md-12 mb-4">
+				<div class="feature-item text-center">
+					<h4 class="feature-title">Simple & Easy</h4>
+					<p class="feature-desc">frp adopts a C/S architecture, deploying the server on machines with public IP addresses and clients on machines within intranets or behind firewalls, providing reverse proxy to services in the intranet.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-12 mb-4">
+				<div class="feature-item text-center">
+					<h4 class="feature-title">Powerful</h4>
+					<p class="feature-desc">Supports multiple protocols including TCP, UDP, HTTP, HTTPS, and provides numerous capabilities such as encryption, compression, authentication, proxy rate limiting, load balancing, and more.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-12 mb-4">
+				<div class="feature-item text-center">
+					<h4 class="feature-title">Versatile</h4>
+					<p class="feature-desc">Supports multiple proxy types and P2P communication. Additionally, P2P communication can be achieved through xtcp, providing rich solutions for different scenarios.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<style>
+	.feature-highlight-card {
+		padding: 3rem 2rem;
+		margin: 2rem 0;
+		position: relative;
+		max-width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.feature-item {
+		padding: 1rem;
+	}
+
+	.feature-title {
+		color: rgba(255, 255, 255, 0.95);
+		font-weight: 600;
+		margin-bottom: 1rem;
+		font-size: 1.25rem;
+	}
+
+	.feature-desc {
+		color: rgba(255, 255, 255, 0.8);
+		line-height: 1.6;
+		margin: 0;
+		font-size: 0.95rem;
+	}
+
+	@media (max-width: 768px) {
+		.feature-highlight-card {
+			padding: 2rem 1rem;
+			margin: 1rem;
+		}
+	}
+	</style>
 </div>
 {{< /blocks/cover >}}
 
+{{< blocks/section color="light" >}}
+<div class="col-12">
+<h2 class="text-center">Sponsors</h2>
+<p class="lead text-center">Thank you to our sponsors for supporting the frp project</p>
+<h3 class="text-center mb-4" style="color: #000;">Gold Sponsors</h3>
+<div class="sponsors-grid mt-4">
+  <div class="sponsors-row">
+    <a href="https://www.recall.ai/?utm_source=github&utm_medium=sponsorship&utm_campaign=fatedier-frp" target="_blank" class="sponsor-logo-link">
+      <div class="sponsor-text-logo">Recall.ai</div>
+    </a>
+    <a href="https://go.warp.dev/frp" target="_blank" class="sponsor-logo-link">
+      <img src="https://raw.githubusercontent.com/warpdotdev/brand-assets/refs/heads/main/Github/Sponsor/Warp-Github-LG-01.png" alt="Warp" class="sponsor-logo">
+    </a>
+    <a href="https://jb.gg/frp" target="_blank" class="sponsor-logo-link">
+      <img src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_jetbrains.jpg" alt="JetBrains" class="sponsor-logo">
+    </a>
+    <a href="https://github.com/daytonaio/daytona" target="_blank" class="sponsor-logo-link">
+      <img src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_daytona.png" alt="Daytona" class="sponsor-logo">
+    </a>
+    <a href="https://github.com/beclab/Olares" target="_blank" class="sponsor-logo-link">
+      <img src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_olares.jpeg" alt="Olares" class="sponsor-logo">
+    </a>
+  </div>
+</div>
+<div class="text-center mt-4">
+  <a class="btn btn-outline-primary" href="{{< relref "/sponsors" >}}">
+    View All Sponsors <i class="fas fa-arrow-right ml-2"></i>
+  </a>
+  <a class="btn btn-outline-secondary ml-3" href="https://github.com/sponsors/fatedier" target="_blank">
+    Become a Sponsor <i class="fas fa-heart ml-2"></i>
+  </a>
+</div>
+</div>
 
-{{% blocks/lead color="primary" %}}
-frp adopts a C/S architecture, deploying the server on machines with public IP addresses and clients on machines within intranets or behind firewalls. By accessing ports exposed on the server, it provides reverse proxy to services in the intranet.
-Built on this foundation, frp supports multiple protocols including TCP, UDP, HTTP, HTTPS, and provides numerous capabilities such as encryption, compression, authentication, proxy rate limiting, load balancing, and more. Additionally, P2P communication can be achieved through xtcp.
-{{% /blocks/lead %}}
+<style>
+.sponsors-grid .sponsors-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sponsors-grid .sponsor-logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  width: 200px;
+  height: 100px;
+}
+
+.sponsors-grid .sponsor-logo-link:hover {
+  text-decoration: none;
+  color: inherit;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.sponsors-grid .sponsor-logo {
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.sponsors-grid .sponsor-text-logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+</style>
+{{< /blocks/section >}}
 
 {{< blocks/section color="white" type="row" >}}
 {{% blocks/feature icon="fab fa-app-store-ios" title="Download" %}}
