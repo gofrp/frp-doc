@@ -122,6 +122,7 @@ description: >
 | | [ProxyBaseConfig](#proxybaseconfig) | Base configuration. | Yes |
 | secretKey | string | Secret key. The secret key between server and access side must be consistent for the access side to access the server. | No |
 | allowUsers | []string | List of visitor users allowed to access. By default, only visitors under the same user are allowed to access. Configure as * to allow any visitor to access. | No |
+| natTraversal | [NatTraversalConfig](../common#nattraversalconfig) | NAT traversal configuration. | No |
 
 ### SUDPProxyConfig
 

@@ -44,4 +44,4 @@ fallbackTimeoutMs = 200
 
 需要注意根据访问端和被访问端的延迟情况来合理设置超时时间，以避免超时时间太短，即使打洞成功连接也来不及建立，而一直触发 fallback。
 
-stcp-visitor 的 `bindPort` 设置为 -1 表示不需要监听物理端口，只接受 fallback 的连接即可。 
+stcp-visitor 的 `bindPort` 设置为 -1 表示不需要监听物理端口，只接受 fallback 的连接即可。

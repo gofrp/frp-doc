@@ -73,12 +73,15 @@ description: >
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| clientID | string | | No |
-| clientSecret | string | | No |
-| audience | string | | No |
-| scope | string | | No |
-| tokenEndpointURL | string | | No |
-| additionalEndpointParams | map[string]string | | No |
+| clientID | string | OIDC client ID. | No |
+| clientSecret | string | OIDC client secret. | No |
+| audience | string | OIDC audience parameter. | No |
+| scope | string | OIDC scope parameter. | No |
+| tokenEndpointURL | string | OIDC token endpoint URL. | No |
+| additionalEndpointParams | map[string]string | Additional endpoint parameters. | No |
+| trustedCaFile | string | Trusted CA certificate file path for verifying OIDC server TLS certificate. | No |
+| insecureSkipVerify | bool | Skip TLS certificate verification, not recommended for production use. | No |
+| proxyURL | string | Proxy server URL to use when accessing OIDC token endpoint. | No |
 
 ### VirtualNetConfig
 

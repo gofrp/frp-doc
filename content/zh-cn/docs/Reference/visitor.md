@@ -44,8 +44,9 @@ description: >
 | :--- | :--- | :--- | :--- |
 | | [VisitorBaseConfig](#visitorbaseconfig) | 基础配置。 | Yes |
 | protocol | string | 隧道底层通信协议，可选 quic 和 kcp，默认为 quic。 | No |
-| keepTunnelOpen | bool | 是否保持隧道打开，如果开启，会定期检查隧道状态并尝试保持打开。 | No | 
+| keepTunnelOpen | bool | 是否保持隧道打开，如果开启，会定期检查隧道状态并尝试保持打开。 | No |
 | maxRetriesAnHour | int | 每小时尝试打开隧道的次数，默认值为 8。 | No |
 | minRetryInterval | int | 重试打开隧道的最小间隔时间，单位: 秒，默认为 90s。 | No |
 | fallbackTo | string | 回退到的其他 visitor 名称。 | No |
 | fallbackTimeoutMs | int | 连接建立超过多长时间(ms) 后回退到其他 visitor。 | No |
+| natTraversal | [NatTraversalConfig](../common#nattraversalconfig) | NAT 穿透配置。 | No |

@@ -76,3 +76,9 @@ description: >
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | path | string | File path. | Yes |
+
+### NatTraversalConfig
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| disableAssistedAddrs | bool | Disable assisted connections using local network interface addresses. When enabled, only uses STUN-discovered public addresses for NAT hole punching, avoiding potentially slow local network interfaces (e.g., VPN). Default is false. | No |
