@@ -49,3 +49,4 @@ description: >
 | minRetryInterval | int | Minimum interval time for retrying to open tunnel, in seconds, default is 90s. | No |
 | fallbackTo | string | Name of other visitor to fallback to. | No |
 | fallbackTimeoutMs | int | Fallback to other visitor after connection establishment exceeds this time (ms). | No |
+| natTraversal | [NatTraversalConfig](../common#nattraversalconfig) | NAT traversal configuration. | No |

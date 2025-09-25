@@ -122,6 +122,7 @@ description: >
 | | [ProxyBaseConfig](#proxybaseconfig) | 基础配置。 | Yes |
 | secretKey | string | 密钥，服务端和访问端的密钥需要一致，访问端才能访问到服务端。 | No |
 | allowUsers | []string | 允许访问的 visitor 用户列表，默认只允许同一用户下的 visitor 访问，配置为 * 则允许任何 visitor 访问。 | No |
+| natTraversal | [NatTraversalConfig](../common#nattraversalconfig) | NAT 穿透配置。 | No |
 
 ### SUDPProxyConfig
 

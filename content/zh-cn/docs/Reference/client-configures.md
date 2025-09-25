@@ -73,12 +73,15 @@ description: >
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| clientID | string | | No |
-| clientSecret | string | | No |
-| audience | string | | No |
-| scope | string | | No |
-| tokenEndpointURL | string | | No |
-| additionalEndpointParams | map[string]string | | No |
+| clientID | string | OIDC 客户端 ID。 | No |
+| clientSecret | string | OIDC 客户端密钥。 | No |
+| audience | string | OIDC audience 参数。 | No |
+| scope | string | OIDC scope 参数。 | No |
+| tokenEndpointURL | string | OIDC 令牌端点 URL。 | No |
+| additionalEndpointParams | map[string]string | 附加的端点参数。 | No |
+| trustedCaFile | string | 信任的 CA 证书文件路径，用于验证 OIDC 服务器的 TLS 证书。 | No |
+| insecureSkipVerify | bool | 跳过 TLS 证书验证，不推荐在生产环境使用。 | No |
+| proxyURL | string | 访问 OIDC 令牌端点时使用的代理服务器 URL。 | No |
 
 ### VirtualNetConfig
 

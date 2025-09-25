@@ -76,3 +76,9 @@ description: >
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | path | string | 文件路径。 | Yes |
+
+### NatTraversalConfig
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| disableAssistedAddrs | bool | 禁用本地网络接口地址的辅助连接。当启用时，仅使用通过 STUN 发现的公网地址进行 NAT 打洞，避免使用可能较慢的本地网络接口（如 VPN）。默认为 false。 | No |
