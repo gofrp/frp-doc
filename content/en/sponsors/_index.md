@@ -27,7 +27,7 @@ If you'd like to join them, please consider [sponsoring frp's development](https
     </div>
     <div class="col-md-4">
       <p align="center">
-        <a href="https://app.requestly.io/api-client/?utm_source=github&utm_medium=partnered&utm_campaign=frp" target="_blank">
+        <a href="https://requestly.com/?utm_source=github&utm_medium=partnered&utm_campaign=frp" target="_blank">
           <img width="250px" src="https://github.com/user-attachments/assets/24670320-997d-4d62-9bca-955c59fe883d" alt="Requestly">
           <br>
           <b>Requestly - Free & Open-Source alternative to Postman</b>
