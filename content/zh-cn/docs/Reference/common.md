@@ -68,14 +68,30 @@ description: >
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| type | string | 数据源类型，目前仅支持 "file"。 | Yes |
+| type | string | 数据源类型，可选值为 "file" 和 "exec"。 | Yes |
 | file | [FileSource](#filesource) | 文件数据源配置，当 type 为 "file" 时必填。 | No |
+| exec | [ExecSource](#execsource) | 外部命令数据源配置，当 type 为 "exec" 时必填。需要启动时添加 `--allow-unsafe=TokenSourceExec` 参数。 | No |
 
 ### FileSource
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | path | string | 文件路径。 | Yes |
+
+### ExecSource
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| command | string | 要执行的命令路径。 | Yes |
+| args | []string | 命令参数列表。 | No |
+| env | [][ExecEnvVar](#execenvvar) | 额外的环境变量。 | No |
+
+### ExecEnvVar
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| name | string | 环境变量名称。 | Yes |
+| value | string | 环境变量值。 | Yes |
 
 ### NatTraversalConfig
 

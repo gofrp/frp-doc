@@ -68,14 +68,30 @@ description: >
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| type | string | Data source type, currently only supports "file". | Yes |
+| type | string | Data source type. Options are "file" and "exec". | Yes |
 | file | [FileSource](#filesource) | File data source configuration, required when type is "file". | No |
+| exec | [ExecSource](#execsource) | External command data source configuration, required when type is "exec". Requires `--allow-unsafe=TokenSourceExec` flag at startup. | No |
 
 ### FileSource
 
 | Field | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | path | string | File path. | Yes |
+
+### ExecSource
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| command | string | Path to the command to execute. | Yes |
+| args | []string | List of command arguments. | No |
+| env | [][ExecEnvVar](#execenvvar) | Additional environment variables. | No |
+
+### ExecEnvVar
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| name | string | Environment variable name. | Yes |
+| value | string | Environment variable value. | Yes |
 
 ### NatTraversalConfig
 

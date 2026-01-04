@@ -54,7 +54,34 @@ auth.tokenSource.file.path = "/etc/frp/client_token"
 1. Token files should have appropriate permissions (e.g., 600) to ensure only the user running frp can read them
 2. Tokens in files will have leading and trailing whitespace automatically trimmed
 3. tokenSource is resolved at configuration load time and does not support runtime dynamic reloading
-4. Currently only the `file` type tokenSource is supported
+
+### Loading Token from External Command
+
+*Added in v0.66.0*
+
+In addition to reading tokens from files, frp also supports obtaining tokens dynamically by executing external commands. This is useful when integrating with cloud service CLIs or secret management systems.
+
+#### Configuration
+
+**Client configuration example:**
+
+```toml
+# frpc.toml
+auth.tokenSource.type = "exec"
+auth.tokenSource.exec.command = "/usr/bin/get-token"
+auth.tokenSource.exec.args = ["--format", "raw"]
+auth.tokenSource.exec.env = [
+    { name = "TOKEN_SERVICE", value = "production" }
+]
+```
+
+#### Security Notes
+
+For security reasons, the `exec` type tokenSource requires the `--allow-unsafe=TokenSourceExec` flag when starting frpc.
+
+```bash
+frpc -c frpc.toml --allow-unsafe=TokenSourceExec
+```
 
 ## OIDC (OpenID Connect) Authentication
 

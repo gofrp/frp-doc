@@ -7,7 +7,7 @@ weight: 60
 
 You can add multiple proxies of the same type to the same `group` to implement load balancing capabilities.
 
-Currently supported proxy types include: `tcp`, `http`, `tcpmux`.
+Currently supported proxy types include: `tcp`, `http`, `https`, `tcpmux`.
 
 ```toml
 # frpc.toml
