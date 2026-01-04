@@ -54,7 +54,34 @@ auth.tokenSource.file.path = "/etc/frp/client_token"
 1. token 文件应该设置适当的权限（如 600），确保只有运行 frp 的用户可以读取
 2. 文件中的 token 会自动去除首尾空白字符
 3. tokenSource 在配置加载时解析，不支持运行时动态重新加载
-4. 目前仅支持 `file` 类型的 tokenSource
+
+### 通过外部命令获取 Token
+
+*Added in v0.66.0*
+
+除了从文件读取 token，frp 还支持通过执行外部命令来动态获取 token。这在需要与云服务 CLI 或密钥管理系统集成时非常有用。
+
+#### 配置方式
+
+**客户端配置示例：**
+
+```toml
+# frpc.toml
+auth.tokenSource.type = "exec"
+auth.tokenSource.exec.command = "/usr/bin/get-token"
+auth.tokenSource.exec.args = ["--format", "raw"]
+auth.tokenSource.exec.env = [
+    { name = "TOKEN_SERVICE", value = "production" }
+]
+```
+
+#### 安全注意事项
+
+出于安全考虑，`exec` 类型的 tokenSource 需要在启动 frpc 时添加 `--allow-unsafe=TokenSourceExec` 参数才能启用。
+
+```bash
+frpc -c frpc.toml --allow-unsafe=TokenSourceExec
+```
 
 ## OIDC (OpenID Connect) 身份认证
 

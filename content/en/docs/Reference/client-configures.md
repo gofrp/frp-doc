@@ -82,6 +82,7 @@ description: >
 | trustedCaFile | string | Trusted CA certificate file path for verifying OIDC server TLS certificate. | No |
 | insecureSkipVerify | bool | Skip TLS certificate verification, not recommended for production use. | No |
 | proxyURL | string | Proxy server URL to use when accessing OIDC token endpoint. | No |
+| tokenSource | [ValueSource](../common#valuesource) | Configuration for dynamically obtaining OIDC token from external source. When configured, other OIDC configuration fields will be ignored. | No |
 
 ### VirtualNetConfig
 

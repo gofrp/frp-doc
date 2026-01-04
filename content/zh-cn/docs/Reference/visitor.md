@@ -11,6 +11,7 @@ description: >
 | :--- | :--- | :--- | :--- |
 | name | string | 访问者名称。 | Yes |
 | type | string | 访问者类型，可选值为 stcp, sudp, xtcp。 | Yes |
+| enabled | *bool | 是否启用该访问者，默认为 true。设置为 false 可禁用该访问者，用于单独控制每个访问者的启用状态。 | No |
 | transport | [VisitorTransport](#visitortransport) | 访问者网络层配置。 | No |
 | secretKey | string | 密钥，服务端和访问端的密钥需要一致，访问端才能访问到服务端。 | No |
 | serverUser | string | 要访问的 proxy 所属的用户名，如果为空，则默认为当前用户。 | No |

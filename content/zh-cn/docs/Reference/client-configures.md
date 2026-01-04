@@ -82,6 +82,7 @@ description: >
 | trustedCaFile | string | 信任的 CA 证书文件路径，用于验证 OIDC 服务器的 TLS 证书。 | No |
 | insecureSkipVerify | bool | 跳过 TLS 证书验证，不推荐在生产环境使用。 | No |
 | proxyURL | string | 访问 OIDC 令牌端点时使用的代理服务器 URL。 | No |
+| tokenSource | [ValueSource](../common#valuesource) | 从外部来源动态获取 OIDC token 的配置。配置此字段后，其他 OIDC 配置字段将被忽略。 | No |
 
 ### VirtualNetConfig
 

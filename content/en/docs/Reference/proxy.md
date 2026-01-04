@@ -11,6 +11,7 @@ description: >
 | :--- | :--- | :--- | :--- |
 | name | string | Proxy name. | Yes |
 | type | string | Proxy type. Options are tcp, udp, http, https, tcpmux, stcp, sudp, xtcp. | Yes |
+| enabled | *bool | Whether this proxy is enabled, default is true. Set to false to disable this proxy, allowing individual control over each proxy's enabled state. | No |
 | annotations | map[string]string | Proxy annotation information that will be displayed in the server's dashboard. | No |
 | transport | [ProxyTransport](#proxytransport) | Proxy network layer configuration. | No |
 | metadatas | map[string]string | Additional metadata that will be passed to server plugins to provide additional capabilities. | No |

@@ -7,7 +7,7 @@ weight: 60
 
 你可以将多个相同类型的代理加入到同一个 `group` 中，以实现负载均衡的能力。
 
-目前支持的代理类型包括：`tcp`, `http`, `tcpmux`。
+目前支持的代理类型包括：`tcp`, `http`, `https`, `tcpmux`。
 
 ```toml
 # frpc.toml

@@ -11,6 +11,7 @@ description: >
 | :--- | :--- | :--- | :--- |
 | name | string | Visitor name. | Yes |
 | type | string | Visitor type. Options are stcp, sudp, xtcp. | Yes |
+| enabled | *bool | Whether this visitor is enabled, default is true. Set to false to disable this visitor, allowing individual control over each visitor's enabled state. | No |
 | transport | [VisitorTransport](#visitortransport) | Visitor network layer configuration. | No |
 | secretKey | string | Secret key. The secret key between server and access side must be consistent for the access side to access the server. | No |
 | serverUser | string | Username that the proxy to be accessed belongs to. If empty, defaults to current user. | No |
