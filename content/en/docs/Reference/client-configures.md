@@ -45,9 +45,9 @@ description: >
 | proxyURL | string | Proxy address used to connect to the server, format: {protocol}://user:passwd@192.168.1.128:8080. Protocol currently supports http, socks5, ntlm. | No |
 | poolCount | int | Connection pool size. | No |
 | tcpMux | bool | TCP multiplexing, enabled by default. | No |
-| tcpMuxKeepaliveInterval | int | Heartbeat check interval time for `tcp_mux`. | No |
+| tcpMuxKeepaliveInterval | int | Heartbeat check interval time for `tcpMux`. | No |
 | quic | [QUICOptions](../common#quicoptions) | QUIC protocol configuration parameters. | No |
-| heartbeatInterval | int | Interval time for sending heartbeat packets to the server, default is 30s. It is recommended to enable `tcp_mux_keepalive_interval` and set this value to -1. | No |
+| heartbeatInterval | int | Interval time for sending heartbeat packets to the server, default is 30s. It is recommended to enable `tcpMuxKeepaliveInterval` and set this value to -1. | No |
 | heartbeatTimeout | int | Timeout for heartbeat with the server, default is 90s. | No |
 | tls | [TLSClientConfig](#tlsclientconfig) | Client TLS protocol configuration. | No |
 

@@ -45,9 +45,9 @@ description: >
 | proxyURL | string | 连接服务端使用的代理地址，格式为 {protocol}://user:passwd@192.168.1.128:8080 protocol 目前支持 http、socks5、ntlm。 | No |
 | poolCount | int | 连接池大小。 | No |
 | tcpMux | bool | TCP 多路复用，默认启用。 | No |
-| tcpMuxKeepaliveInterval | int | `tcp_mux` 的心跳检查间隔时间。 | No |
+| tcpMuxKeepaliveInterval | int | `tcpMux` 的心跳检查间隔时间。 | No |
 | quic | [QUICOptions](../common#quicoptions) | QUIC 协议配置参数。 | No |
-| heartbeatInterval | int | 向服务端发送心跳包的间隔时间，默认为 30s。建议启用 `tcp_mux_keepalive_interval`，将此值设置为 -1。 | No |
+| heartbeatInterval | int | 向服务端发送心跳包的间隔时间，默认为 30s。建议启用 `tcpMuxKeepaliveInterval`，将此值设置为 -1。 | No |
 | heartbeatTimeout | int | 和服务端心跳的超时时间，默认为 90s。 | No |
 | tls | [TLSClientConfig](#tlsclientconfig) | 客户端 TLS 协议配置。 | No |
 
