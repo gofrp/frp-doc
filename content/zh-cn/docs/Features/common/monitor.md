@@ -15,4 +15,4 @@ weight: 20
 
 由于设计问题，Prometheus 对外提供的查询接口与 Dashboard 的地址重用，因此要使用 Prometheus 监控，必须首先启用 Dashboard。
 
-在 frps.ini 中启用 Dashboard 并设置 `enablePrometheus = true`，然后你可以通过访问 `http://{dashboard_addr}/metrics` 来获取 Prometheus 的监控数据。
+在 frps.toml 中启用 Dashboard 并设置 `enablePrometheus = true`，然后你可以通过访问 `http://{dashboard_addr}/metrics` 来获取 Prometheus 的监控数据。

@@ -47,6 +47,22 @@ webServer.password = "admin"
 
 打开浏览器通过 `http://127.0.0.1:7400` 访问 Admin UI。
 
+### 动态代理管理 (Store)
+
+支持在运行时通过 Web UI 或 API 动态创建、修改和删除代理及访问者，无需重启 frpc。
+
+通过配置 `store.path` 指定持久化存储文件来启用此功能：
+
+```toml
+# frpc.toml
+[store]
+path = "./db.json"
+```
+
+注意：需要同时启用客户端管理界面（webServer）才能通过 Web UI 和 API 管理 Store 中的条目。未启用 webServer 时，Store 中的数据仍会在启动时加载，但无法在运行时动态修改。
+
+通过 Store 管理的代理和访问者会保存到磁盘，frpc 重启后自动恢复。它们与配置文件中定义的代理共同工作，当名称冲突时 Store 中的配置优先。
+
 如果想要在外网环境访问 Admin UI，可以将 7400 端口通过 frp 映射出去即可，但需要重视安全风险。
 
 ```toml

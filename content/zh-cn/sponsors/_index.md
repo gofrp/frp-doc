@@ -15,8 +15,8 @@ frp 是一个开源项目，其持续开发完全依赖于我们出色的赞助�
 ## 金牌赞助商
 
 <div class="sponsors-section">
-  <div class="row">
-    <div class="col-md-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
       <p align="center">
         <a href="https://www.recall.ai/?utm_source=github&utm_medium=sponsorship&utm_campaign=fatedier-frp" target="_blank">
           <b>Recall.ai - 会议录制 API</b><br>
@@ -25,7 +25,7 @@ frp 是一个开源项目，其持续开发完全依赖于我们出色的赞助�
         </a>
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <p align="center">
         <a href="https://requestly.com/?utm_source=github&utm_medium=partnered&utm_campaign=frp" target="_blank">
           <img width="250px" src="https://github.com/user-attachments/assets/24670320-997d-4d62-9bca-955c59fe883d" alt="Requestly">
@@ -36,21 +36,10 @@ frp 是一个开源项目，其持续开发完全依赖于我们出色的赞助�
         </a>
       </p>
     </div>
-    <div class="col-md-4">
-      <p align="center">
-        <a href="https://go.warp.dev/frp" target="_blank">
-          <img width="250px" src="https://raw.githubusercontent.com/warpdotdev/brand-assets/refs/heads/main/Github/Sponsor/Warp-Github-LG-01.png" alt="Warp">
-          <br>
-          <b>Warp——为与 AI 智能体协作而生</b>
-          <br>
-          <sub>适用于 macOS、Linux 和 Windows</sub>
-        </a>
-      </p>
-    </div>
   </div>
 
   <div class="row justify-content-center">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <p align="center">
         <a href="https://jb.gg/frp" target="_blank">
           <img width="250px" src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_jetbrains.jpg" alt="JetBrains">
@@ -59,22 +48,10 @@ frp 是一个开源项目，其持续开发完全依赖于我们出色的赞助�
         </a>
       </p>
     </div>
-  </div>
-
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <p align="center">
-        <a href="https://github.com/daytonaio/daytona" target="_blank">
-          <img width="320px" src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_daytona.png" alt="Daytona">
-          <br>
-          <b>运行 AI 生成代码的安全弹性基础设施</b>
-        </a>
-      </p>
-    </div>
     <div class="col-md-6">
       <p align="center">
         <a href="https://github.com/beclab/Olares" target="_blank">
-          <img width="320px" src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_olares.jpeg" alt="Olares">
+          <img width="250px" src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_olares.jpeg" alt="Olares">
           <br>
           <b>开源个人云，助你重新掌控数据</b>
         </a>

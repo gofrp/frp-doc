@@ -15,4 +15,4 @@ Please note that monitoring data in memory will be cleared after each process re
 
 Due to design issues, the query interface provided by Prometheus to the outside world shares the same address as the Dashboard, so to use Prometheus monitoring, you must first enable the Dashboard.
 
-Enable Dashboard in frps.ini and set `enablePrometheus = true`, then you can access `http://{dashboard_addr}/metrics` to get Prometheus monitoring data.
+Enable Dashboard in frps.toml and set `enablePrometheus = true`, then you can access `http://{dashboard_addr}/metrics` to get Prometheus monitoring data.

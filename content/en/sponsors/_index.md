@@ -15,8 +15,8 @@ If you'd like to join them, please consider [sponsoring frp's development](https
 ## Gold Sponsors
 
 <div class="sponsors-section">
-  <div class="row">
-    <div class="col-md-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
       <p align="center">
         <a href="https://www.recall.ai/?utm_source=github&utm_medium=sponsorship&utm_campaign=fatedier-frp" target="_blank">
           <b>Recall.ai - API for meeting recordings</b><br>
@@ -25,7 +25,7 @@ If you'd like to join them, please consider [sponsoring frp's development](https
         </a>
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <p align="center">
         <a href="https://requestly.com/?utm_source=github&utm_medium=partnered&utm_campaign=frp" target="_blank">
           <img width="250px" src="https://github.com/user-attachments/assets/24670320-997d-4d62-9bca-955c59fe883d" alt="Requestly">
@@ -36,21 +36,10 @@ If you'd like to join them, please consider [sponsoring frp's development](https
         </a>
       </p>
     </div>
-    <div class="col-md-4">
-      <p align="center">
-        <a href="https://go.warp.dev/frp" target="_blank">
-          <img width="250px" src="https://raw.githubusercontent.com/warpdotdev/brand-assets/refs/heads/main/Github/Sponsor/Warp-Github-LG-01.png" alt="Warp">
-          <br>
-          <b>Warp, built for collaborating with AI Agents</b>
-          <br>
-          <sub>Available for macOS, Linux and Windows</sub>
-        </a>
-      </p>
-    </div>
   </div>
 
   <div class="row justify-content-center">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <p align="center">
         <a href="https://jb.gg/frp" target="_blank">
           <img width="250px" src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_jetbrains.jpg" alt="JetBrains">
@@ -59,22 +48,10 @@ If you'd like to join them, please consider [sponsoring frp's development](https
         </a>
       </p>
     </div>
-  </div>
-
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <p align="center">
-        <a href="https://github.com/daytonaio/daytona" target="_blank">
-          <img width="320px" src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_daytona.png" alt="Daytona">
-          <br>
-          <b>Secure and Elastic Infrastructure for Running Your AI-Generated Code</b>
-        </a>
-      </p>
-    </div>
     <div class="col-md-6">
       <p align="center">
         <a href="https://github.com/beclab/Olares" target="_blank">
-          <img width="320px" src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_olares.jpeg" alt="Olares">
+          <img width="250px" src="https://raw.githubusercontent.com/fatedier/frp/dev/doc/pic/sponsor_olares.jpeg" alt="Olares">
           <br>
           <b>The sovereign cloud that puts you in control</b>
         </a>

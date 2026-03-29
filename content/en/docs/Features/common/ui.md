@@ -47,6 +47,22 @@ webServer.password = "admin"
 
 Open your browser and access the Admin UI through `http://127.0.0.1:7400`.
 
+### Dynamic Proxy Management (Store)
+
+You can dynamically create, update, and delete proxies and visitors at runtime through the Web UI or API, without restarting frpc.
+
+To enable this feature, configure `store.path` to specify a file for persisting the configurations:
+
+```toml
+# frpc.toml
+[store]
+path = "./db.json"
+```
+
+Note: The Client Management Interface (webServer) must be enabled to manage Store entries through the Web UI and API. Without webServer, Store data will still be loaded on startup, but cannot be modified at runtime.
+
+Proxies and visitors managed through the Store are saved to disk and automatically restored on frpc restart. They work alongside proxies defined in the configuration file — Store entries take precedence when names conflict.
+
 If you want to access the Admin UI from an external network environment, you can map port 7400 through frp, but you need to pay attention to security risks.
 
 ```toml

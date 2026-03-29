@@ -33,6 +33,13 @@ description: >
 | udpPacketSize | int | 代理 UDP 服务时支持的最大包长度，默认为 1500，服务端和客户端需要保持配置一致。 | No |
 | metadatas | map[string]string | 附加元数据，会传递给服务端插件，提供附加能力。 | No |
 | includes | []string | 指定额外的配置文件目录，其中的 proxy 和 visitor 配置会被读取加载。 | No |
+| store | [StoreConfig](#storeconfig) | 持久化存储配置，用于保存代理和访问者配置。启用 webServer 后支持通过 Web UI 或 API 在运行时动态管理。 | No |
+
+### StoreConfig
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| path | string | 存储文件路径，配置后启用 Store 功能，支持运行时动态管理代理和访问者并持久化保存。 | No |
 
 ### ClientTransportConfig
 

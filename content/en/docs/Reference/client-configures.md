@@ -33,6 +33,13 @@ description: >
 | udpPacketSize | int | Maximum packet length supported when proxying UDP services, default is 1500. Server and client need to maintain consistent configuration. | No |
 | metadatas | map[string]string | Additional metadata that will be passed to server plugins to provide additional capabilities. | No |
 | includes | []string | Specify additional configuration file directories where proxy and visitor configurations will be read and loaded. | No |
+| store | [StoreConfig](#storeconfig) | Store configuration for persisting proxy and visitor configurations. Supports runtime management via Web UI or API when webServer is enabled. | No |
+
+### StoreConfig
+
+| Field | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| path | string | Store file path. When configured, enables the Store feature for runtime proxy and visitor management with persistence. | No |
 
 ### ClientTransportConfig
 
