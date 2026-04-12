@@ -38,7 +38,22 @@ description: >
     httpUser = "abc"
     httpPassword = "abc"
     ```
+    这是更简单的版本 (由hello@miw.cn编辑)
+```toml
+[[proxies]]
+name = "static_web2"
+type = "http"
+# subdomain 和 customDomains 任选
+#subdomain = "web2"
+customDomains = ["web2.xxx.cn"]
+[proxies.plugin]
+type = "static_file"
+localPath = "/data/WWW/web2"
+#stripPrefix = ""
+#httpUser = "abc"
+#httpPassword = "abc"
 
+```
     请根据实际情况修改 `localPath`、`stripPrefix`、`httpUser` 和 `httpPassword`。
 
 3. **启动 frps 和 frpc**
