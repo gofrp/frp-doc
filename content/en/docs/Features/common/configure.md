@@ -58,7 +58,7 @@ remotePort = {{ .Envs.FRP_SSH_REMOTE_PORT }}
 Start frpc program:
 
 ```bash
-export FRP_SERVER_ADDR="x.x.x.x"
+export FRP_SERVER_ADDR="frps_address"
 export FRP_SSH_REMOTE_PORT="6000"
 ./frpc -c ./frpc.toml
 ```

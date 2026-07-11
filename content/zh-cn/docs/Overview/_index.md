@@ -2,7 +2,7 @@
 title: "概览"
 weight: 1
 description: >
-  一些概述，便于您快速的了解 frp。
+  简要介绍 frp，帮助您快速了解其用途和主要功能。
 ---
 
 ## frp 是什么？

@@ -17,7 +17,7 @@ description: >
 
 2. **Deploy frpc on the intranet machine that needs to be accessed**
 
-    Deploy frpc and edit the frpc.toml file. Assume the public IP address of the server where frps is located is x.x.x.x. Here is an example configuration:
+    Deploy frpc and edit the frpc.toml file. Assume the public address of the server where frps is located is `frps_address`. Here is an example configuration:
 
     ```toml
     serverAddr = "x.x.x.x"
@@ -41,7 +41,7 @@ description: >
     Use the following command to access the intranet machine via SSH, assuming the username is test:
 
     ```bash
-    ssh -o Port=6000 test@x.x.x.x
+    ssh -p 6000 test@frps_address
     ```
 
-    frp will forward traffic sent to `x.x.x.x:6000` to port 22 of the intranet machine.
+    frp will forward traffic sent to `frps_address:6000` to port 22 of the intranet machine.

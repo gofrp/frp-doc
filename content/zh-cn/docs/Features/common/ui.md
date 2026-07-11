@@ -22,7 +22,7 @@ webServer.user = "admin"
 webServer.password = "admin"
 ```
 
-打开浏览器通过 `http://[server addr]:7500` 访问 Dashboard 界面，输入用户名密码 `admin`。
+在浏览器中访问 `http://frps_address:7500`，将 `frps_address` 替换为实际的 frps 服务端地址，并使用用户名和密码 `admin` 登录。
 
 你也可以通过配置 TLS 证书来启用 HTTPS 接口:
 

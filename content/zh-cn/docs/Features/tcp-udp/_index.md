@@ -2,7 +2,7 @@
 title: "TCP & UDP"
 weight: 2
 description: >
-  了解 frp `TCP`, `UDP` 类型的代理。
+  了解 frp `TCP`、`UDP` 类型的代理。
 ---
 
 TCP 和 UDP 是 frp 中两种最基础的代理类型，用于代理监听在 TCP 和 UDP 端口的服务。

@@ -22,7 +22,7 @@ webServer.user = "admin"
 webServer.password = "admin"
 ```
 
-Open your browser and access the Dashboard interface through `http://[server addr]:7500`, enter username and password `admin`.
+Open `http://frps_address:7500` in your browser, replacing `frps_address` with the actual frps server address, and sign in with the username and password `admin`.
 
 You can also enable HTTPS interface by configuring TLS certificates:
 

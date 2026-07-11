@@ -38,5 +38,5 @@ description: >
 4. **Use curl to view Docker version information**
 
    ```bash
-   curl http://x.x.x.x:6000/version
+   curl http://frps_address:6000/version
    ```

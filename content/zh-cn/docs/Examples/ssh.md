@@ -17,7 +17,7 @@ description: >
 
 2. **在需要被访问的内网机器上部署 frpc**
 
-    部署 frpc 并编辑 frpc.toml 文件，假设 frps 所在服务器的公网 IP 地址为 x.x.x.x。以下是示例配置：
+    部署 frpc 并编辑 frpc.toml 文件，假设 frps 所在服务器的公网地址为 `frps_address`。以下是示例配置：
 
     ```toml
     serverAddr = "x.x.x.x"
@@ -41,7 +41,7 @@ description: >
     使用以下命令通过 SSH 访问内网机器，假设用户名为 test：
 
     ```bash
-    ssh -o Port=6000 test@x.x.x.x
+    ssh -p 6000 test@frps_address
     ```
 
-    frp 将请求发送到 `x.x.x.x:6000` 的流量转发到内网机器的 22 端口。
+    frp 将请求发送到 `frps_address:6000` 的流量转发到内网机器的 22 端口。

@@ -26,4 +26,4 @@ httpPassword = "abc"
 
 `httpUser` 和 `httpPassword` 即为 `http_proxy` 插件可选的配置参数。
 
-其他插件和相关配置请参考 [Reference](../../../reference/) 中的内容。
+其他插件和相关配置请参考[参考](../../../reference/)章节。

@@ -58,5 +58,5 @@ Some intranet services may pose security risks if directly exposed on the public
    Use the following command to access the intranet machine via SSH, assuming the username is test:
 
    ```bash
-   ssh -o Port=6000 test@127.0.0.1
+   ssh -p 6000 test@127.0.0.1
    ```

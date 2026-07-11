@@ -3,7 +3,7 @@ title: "虚拟网络 (VirtualNet)"
 weight: 140
 ---
 
-*Alpha feature, added in v0.62.0*
+*Alpha 阶段特性，自 v0.62.0 版本起支持*
 
 > **注意**：VirtualNet 是一个 Alpha 阶段的特性，目前不稳定，其配置方式和功能可能会在后续版本中随时调整变更。请勿在生产环境中使用此功能，仅建议用于测试和评估目的。
 

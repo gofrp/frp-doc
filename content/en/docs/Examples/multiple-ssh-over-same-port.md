@@ -55,13 +55,13 @@ description: >
     Use SSH ProxyCommand to access intranet machine A, assuming the username is test. Use the following command:
 
     ```bash
-    ssh -o 'proxycommand socat - PROXY:x.x.x.x:%h:%p,proxyport=5002' test@machine-a.example.com
+    ssh -o 'proxycommand socat - PROXY:frps_address:%h:%p,proxyport=5002' test@machine-a.example.com
     ```
 
    To access intranet machine B, simply change the domain name, assuming the username is still test:
 
     ```bash
-    ssh -o 'proxycommand socat - PROXY:x.x.x.x:%h:%p,proxyport=5002' test@machine-b.example.com
+    ssh -o 'proxycommand socat - PROXY:frps_address:%h:%p,proxyport=5002' test@machine-b.example.com
     ```
 
 By following the above steps, you can implement multiple SSH services sharing the same port for access on machines with public IP addresses.

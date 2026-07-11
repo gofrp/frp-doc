@@ -2,7 +2,7 @@
 title: "Overview"
 weight: 1
 description: >
-  Some overview to help you quickly understand frp.
+  A concise introduction to frp, its purpose, and its key features.
 ---
 
 ## What is frp?

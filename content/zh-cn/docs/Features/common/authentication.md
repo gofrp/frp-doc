@@ -24,7 +24,7 @@ auth.token = "abc"
 
 ### 从文件加载 Token
 
-*Added in v0.64.0*
+*自 v0.64.0 版本起支持*
 
 frp 支持使用 `tokenSource` 从文件中加载认证 token，而不是在配置文件中硬编码。这个功能可以避免在配置文件中直接暴露敏感信息。
 
@@ -57,7 +57,7 @@ auth.tokenSource.file.path = "/etc/frp/client_token"
 
 ### 通过外部命令获取 Token
 
-*Added in v0.66.0*
+*自 v0.66.0 版本起支持*
 
 除了从文件读取 token，frp 还支持通过执行外部命令来动态获取 token。这在需要与云服务 CLI 或密钥管理系统集成时非常有用。
 

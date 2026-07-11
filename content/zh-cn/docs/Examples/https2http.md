@@ -21,7 +21,7 @@ description: >
     serverPort = 7000
 
     [[proxies]]
-    name = "test_htts2http"
+    name = "test_https2http"
     type = "https"
     customDomains = ["test.yourdomain.com"]
 

@@ -15,13 +15,13 @@ frp 采用 Go 语言编写，支持跨平台，只需下载适用于您平台的
 
 ## 下载
 
-您可以从 GitHub 的 [Release](https://github.com/fatedier/frp/releases) 页面中下载最新版本的客户端和服务器二进制文件。所有文件都打包在一个压缩包中，还包含了一份完整的配置参数说明。
+您可以从 GitHub [Releases](https://github.com/fatedier/frp/releases) 页面下载最新的客户端和服务端二进制文件。每个版本的压缩包中还包含示例配置文件。
 
 ## 部署
 
 1. 解压下载的压缩包。
 2. 将 `frpc` 复制到内网服务所在的机器上。
-3. 将 `frps` 复制到拥有公网 IP 地址的机器上，并将它们放在任意目录。
+3. 将 `frps` 复制到拥有公网 IP 地址的机器上，并将其放在任意目录中。
 
 ## 开始使用！
 
@@ -30,8 +30,20 @@ frp 采用 Go 语言编写，支持跨平台，只需下载适用于您平台的
 3. 使用以下命令启动客户端：`./frpc -c ./frpc.toml`。
 4. 如果需要在后台长期运行，建议结合其他工具，如 [systemd](systemd/) 和 `supervisor`。
 
-如果您是 Windows 用户，需要在命令提示符中执行相同的命令。
+在 Windows 上，请根据所用终端执行对应的命令。在命令提示符 (CMD) 中：
+
+```bat
+frps.exe -c frps.toml
+frpc.exe -c frpc.toml
+```
+
+在 PowerShell 中：
+
+```powershell
+.\frps.exe -c .\frps.toml
+.\frpc.exe -c .\frpc.toml
+```
 
 有关如何编写配置文件，请参考 [示例](../examples/) 部分中的内容。
 
-完整的配置项说明，请参考 [Reference](../reference/) 中的内容。
+完整的配置项说明，请参阅[参考](../reference/)部分。

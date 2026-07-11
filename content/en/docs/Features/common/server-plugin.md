@@ -21,7 +21,7 @@ After receiving operation requests, server plugins can give three types of respo
 
 The interface path can be configured separately for each plugin in frps configuration. Here we use `/handler` as an example.
 
-Request
+Request format
 
 ```
 POST /handler?version=0.1.0&op=Login
@@ -31,15 +31,15 @@ POST /handler?version=0.1.0&op=Login
     }
 }
 
-Request Header
-X-Frp-Reqid: For tracking requests
+Request header
+X-Frp-Reqid: Used to track requests
 ```
 
-Response
+Response format
 
-Any non-200 return is considered a request exception.
+Any non-200 response is treated as an error.
 
-Reject operation execution
+Reject the operation
 
 ```
 {
@@ -48,7 +48,7 @@ Reject operation execution
 }
 ```
 
-Allow and content doesn't need to change
+Allow the operation without changing its content
 
 ```
 {
@@ -57,7 +57,7 @@ Allow and content doesn't need to change
 }
 ```
 
-Allow and need to replace operation content
+Allow the operation and replace its content
 
 ```
 {
@@ -103,7 +103,7 @@ Information related to creating proxy
     "content": {
         "user": {
             "user": <string>,
-            "metas": map<string>string
+            "metas": map<string>string,
             "run_id": <string>
         },
         "proxy_name": <string>,
@@ -131,7 +131,7 @@ Information related to creating proxy
         "sk": <string>,
 
         // tcpmux only
-        "multiplexer": <string>
+        "multiplexer": <string>,
 
         "metas": map<string>string
     }
@@ -149,7 +149,7 @@ Note: When a single frpc registers a large number of proxies, use this interface
     "content": {
         "user": {
             "user": <string>,
-            "metas": map<string>string
+            "metas": map<string>string,
             "run_id": <string>
         },
         "proxy_name": <string>
@@ -166,7 +166,7 @@ Heartbeat related information
     "content": {
         "user": {
             "user": <string>,
-            "metas": map<string>string
+            "metas": map<string>string,
             "run_id": <string>
         },
         "timestamp": <int64>,
@@ -184,10 +184,10 @@ Create work connection
     "content": {
         "user": {
             "user": <string>,
-            "metas": map<string>string
+            "metas": map<string>string,
             "run_id": <string>
         },
-        "run_id": <string>
+        "run_id": <string>,
         "timestamp": <int64>,
         "privilege_key": <string>
     }
@@ -203,7 +203,7 @@ Create user connection (supports `tcp`, `stcp`, `https`, and `tcpmux` protocols)
     "content": {
         "user": {
             "user": <string>,
-            "metas": map<string>string
+            "metas": map<string>string,
             "run_id": <string>
         },
         "proxy_name": <string>,
@@ -234,7 +234,7 @@ ops = ["NewProxy"]
 * addr: Network address the plugin listens on, supports HTTP and HTTPS, defaults to HTTP.
 * path: Request path the plugin listens on.
 * ops: List of operations the plugin needs to handle, multiple ops separated by commas.
-* tls_verify: If using HTTPS protocol, supports ignoring TLS identity verification.
+* tlsVerify: Whether to verify the plugin's TLS certificate when its address uses HTTPS. Defaults to false.
 
 ## Metadata
 

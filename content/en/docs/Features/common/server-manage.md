@@ -8,7 +8,7 @@ weight: 100
 To prevent port abuse, you can manually specify which ports are allowed to be used. In the server configuration, specify through `allowPorts`:
 
 ```toml
-# frps.ini
+# frps.toml
 allowPorts = [
   { start = 2000, end = 3000 },
   { single = 3001 },

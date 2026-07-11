@@ -8,7 +8,7 @@ weight: 100
 为了防止端口被滥用，可以手动指定允许哪些端口被使用，在服务端配置中通过 `allowPorts` 来指定：
 
 ```toml
-# frps.ini
+# frps.toml
 allowPorts = [
   { start = 2000, end = 3000 },
   { single = 3001 },

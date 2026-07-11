@@ -60,5 +60,5 @@ Note that `xtcp` is not suitable for all types of NAT devices. If penetration fa
    Use the SSH command to access the intranet machine, assuming the username is `test`:
 
     ```bash
-    ssh -oPort=6000 test@127.0.0.1
+    ssh -p 6000 test@127.0.0.1
     ```

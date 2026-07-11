@@ -45,4 +45,4 @@ By using the `static_file` plugin, you can easily provide an HTTP-based file acc
 
 4. **Access Files via Browser**
 
-    Use a browser to visit `http://x.x.x.x:6000/static/` to view files located in the `/tmp/file` directory. The system will require you to enter the username and password you set.
+    Use a browser to visit `http://frps_address:6000/static/` to view files located in the `/tmp/file` directory. The system will require you to enter the username and password you set.

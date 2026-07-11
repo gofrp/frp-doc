@@ -23,12 +23,12 @@ description: >
 | serverPort | int | 连接服务端的端口，默认为 7000。 | No |
 | natHoleStunServer | string | xtcp 打洞所需的 stun 服务器地址，默认为 stun.easyvoip.com:3478。 | No |
 | dnsServer | string | 使用 DNS 服务器地址，默认使用系统配置的 DNS 服务器，指定此参数可以强制替换为自定义的 DNS 服务器地址。 | No |
-| loginFailExit | bool | 第一次登陆失败后是否退出，默认为 true。 | No |
+| loginFailExit | bool | 第一次登录失败后是否退出，默认为 true。 | No |
 | start | []string | 指定启用部分代理，当配置了较多代理，但是只希望启用其中部分时可以通过此参数指定，默认为全部启用。 | No |
 | log | [LogConfig](../common#logconfig) | 日志配置。 | No |
 | webServer | [WebServerConfig](../common#webserverconfig) | 客户端 AdminServer 配置。 | No |
 | transport | [ClientTransportConfig](#clienttransportconfig) | 客户端网络层配置。 | No |
-| virtualNet | [VirtualNetConfig](#virtualnetconfig) | 虚拟网络配置，Alpha 特性。 | No |
+| virtualNet | [VirtualNetConfig](#virtualnetconfig) | 虚拟网络配置，Alpha 阶段特性。 | No |
 | featureGates | map[string]bool | 特性门控，用于启用或禁用实验性功能。 | No |
 | udpPacketSize | int | 代理 UDP 服务时支持的最大包长度，默认为 1500，服务端和客户端需要保持配置一致。 | No |
 | metadatas | map[string]string | 附加元数据，会传递给服务端插件，提供附加能力。 | No |

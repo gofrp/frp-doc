@@ -38,5 +38,5 @@ description: >
 4. **使用 curl 查看 Docker 版本信息**
 
    ```bash
-   curl http://x.x.x.x:6000/version
+   curl http://frps_address:6000/version
    ```

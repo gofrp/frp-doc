@@ -44,5 +44,5 @@ DNS query requests typically use the UDP protocol, and frp supports penetration 
    Use the following command to test UDP packet forwarding with the `dig` tool, expecting to return the resolution result for the `www.baidu.com` domain:
 
    ```bash
-   dig @x.x.x.x -p 6000 www.baidu.com
+   dig @frps_address -p 6000 www.baidu.com
    ```

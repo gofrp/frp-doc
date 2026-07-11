@@ -53,12 +53,12 @@ frp 提供了一种新的代理类型 `xtcp`，用于在需要传输大量数据
     bindPort = 6000
     # 如果需要自动保持隧道打开，将其设置为 true
     # keepTunnelOpen = false
-    
+    ```
 
 3. **通过 SSH 访问内网机器**
 
    使用 SSH 命令访问内网机器，假设用户名为 `test`：
 
-    ```
-    ssh -oPort=6000 test@127.0.0.1
+    ```bash
+    ssh -p 6000 test@127.0.0.1
     ```

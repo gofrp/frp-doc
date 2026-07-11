@@ -21,7 +21,7 @@ frps 在执行某些操作前，会根据配置向服务端插件发送 RPC 请�
 
 接口路径可以在 frps 配置中为每个插件单独配置，这里以 `/handler` 为例。
 
-Request
+请求格式
 
 ```
 POST /handler?version=0.1.0&op=Login
@@ -31,11 +31,11 @@ POST /handler?version=0.1.0&op=Login
     }
 }
 
-请求 Header
+请求头
 X-Frp-Reqid: 用于追踪请求
 ```
 
-Response
+响应格式
 
 非 200 的返回都认为是请求异常。
 
@@ -103,7 +103,7 @@ Response
     "content": {
         "user": {
             "user": <string>,
-            "metas": map<string>string
+            "metas": map<string>string,
             "run_id": <string>
         },
         "proxy_name": <string>,
@@ -131,7 +131,7 @@ Response
         "sk": <string>,
 
         // tcpmux only
-        "multiplexer": <string>
+        "multiplexer": <string>,
 
         "metas": map<string>string
     }
@@ -149,7 +149,7 @@ Response
     "content": {
         "user": {
             "user": <string>,
-            "metas": map<string>string
+            "metas": map<string>string,
             "run_id": <string>
         },
         "proxy_name": <string>
@@ -166,7 +166,7 @@ Response
     "content": {
         "user": {
             "user": <string>,
-            "metas": map<string>string
+            "metas": map<string>string,
             "run_id": <string>
         },
         "timestamp": <int64>,
@@ -184,10 +184,10 @@ Response
     "content": {
         "user": {
             "user": <string>,
-            "metas": map<string>string
+            "metas": map<string>string,
             "run_id": <string>
         },
-        "run_id": <string>
+        "run_id": <string>,
         "timestamp": <int64>,
         "privilege_key": <string>
     }
@@ -203,7 +203,7 @@ Response
     "content": {
         "user": {
             "user": <string>,
-            "metas": map<string>string
+            "metas": map<string>string,
             "run_id": <string>
         },
         "proxy_name": <string>,
@@ -235,7 +235,7 @@ ops = ["NewProxy"]
 * addr: 插件监听的网络地址，支持 HTTP 和 HTTPS，默认为 HTTP。
 * path: 插件监听的请求路径。
 * ops: 插件需要处理的操作列表，多个 op 以英文逗号分隔。
-* tls_verify: 如果是 HTTPS 协议，支持忽略 TLS 身份验证。
+* tlsVerify: 当插件地址使用 HTTPS 时，是否校验插件的 TLS 证书，默认为 false。
 
 ## 元数据
 

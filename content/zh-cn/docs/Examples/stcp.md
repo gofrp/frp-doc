@@ -58,5 +58,5 @@ description: >
    使用以下命令通过 SSH 访问内网机器，假设用户名为 test：
 
    ```bash
-   ssh -o Port=6000 test@127.0.0.1
+   ssh -p 6000 test@127.0.0.1
    ```

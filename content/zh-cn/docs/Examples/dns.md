@@ -44,5 +44,5 @@ DNS 查询请求通常使用 UDP 协议，而 frp 支持对内网 UDP 服务的�
    使用以下命令通过 `dig` 工具测试 UDP 包转发是否成功，预期会返回 `www.baidu.com` 域名的解析结果：
 
    ```bash
-   dig @x.x.x.x -p 6000 www.baidu.com
+   dig @frps_address -p 6000 www.baidu.com
    ```

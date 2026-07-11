@@ -8,4 +8,4 @@ cascade:
 - type: "docs"
 ---
 
-Github [Release](https://github.com/fatedier/frp/releases) 页面查看
+请前往 GitHub [Releases](https://github.com/fatedier/frp/releases) 页面查看版本历史。
