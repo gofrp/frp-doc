@@ -23,7 +23,7 @@ description: >
 | serverPort | int | 连接服务端的端口，默认为 7000。 | No |
 | natHoleStunServer | string | xtcp 打洞所需的 stun 服务器地址，默认为 stun.easyvoip.com:3478。 | No |
 | dnsServer | string | 使用 DNS 服务器地址，默认使用系统配置的 DNS 服务器，指定此参数可以强制替换为自定义的 DNS 服务器地址。 | No |
-| loginFailExit | bool | 第一次登陆失败后是否退出，默认为 true。 | No |
+| loginFailExit | bool | 第一次登录失败后是否退出，默认为 true。 | No |
 | start | []string | 指定启用部分代理，当配置了较多代理，但是只希望启用其中部分时可以通过此参数指定，默认为全部启用。 | No |
 | log | [LogConfig](../common#logconfig) | 日志配置。 | No |
 | webServer | [WebServerConfig](../common#webserverconfig) | 客户端 AdminServer 配置。 | No |
